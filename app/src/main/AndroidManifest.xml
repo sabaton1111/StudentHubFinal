@@ -4,10 +4,20 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/logo_var2"
+        android:icon="@drawable/logo_var2"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity
+            android:name=".Login"
+            android:label="@string/login"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="com.example.dimitar.studenthub.Login" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".HomeActivity"
             android:label="@string/app_name"
@@ -118,11 +128,12 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-        <activity android:name=".Login">
+        <activity android:name=".SignUp"
+            android:screenOrientation="portrait">
             <intent-filter>
-                <action android:name="com.example.dimitar.studenthub.Login" />
+                <action android:name="com.example.dimitar.studenthub.SignUp" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
+                <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
     </application>

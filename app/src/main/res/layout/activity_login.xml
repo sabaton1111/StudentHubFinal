@@ -8,7 +8,8 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.dimitar.studenthub.Login"
-    android:background="@drawable/login_background">
+    android:background="@drawable/login_background"
+    android:fitsSystemWindows="true">
 
     <ImageView
         android:layout_width="wrap_content"
@@ -93,7 +94,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="SignUp"
-        android:id="@+id/button2"
+        android:id="@+id/buttonSignUp"
         android:background="@android:color/transparent"
         android:textColor="#90aabf"
         android:textSize="17sp"
