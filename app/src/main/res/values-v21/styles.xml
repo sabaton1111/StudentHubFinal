@@ -1,0 +1,31 @@
+<resources>>
+
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+    </style>
+
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorPrimary">@color/blue</item>
+        <item name="colorPrimaryDark">@color/blue</item>
+        <item name="colorAccent">@color/blue</item>
+        <item name="android:colorForeground">@color/blue</item>
+        <item name="android:textColorPrimary">@color/blue</item>
+        <item name="android:textColorSecondary">@color/blue</item>
+        <item name="android:statusBarColor">@color/blue</item>
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="RedTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorPrimary">@color/red</item>
+        <item name="colorPrimaryDark">@color/red</item>
+        <item name="colorAccent">@color/red</item>
+        <item name="android:colorForeground">@color/red</item>
+        <item name="android:textColorPrimary">@color/red</item>
+        <item name="android:textColorSecondary">@color/red</item>
+        <item name="android:statusBarColor">@color/red</item>
+    </style>
+</resources>
