@@ -12,14 +12,6 @@
     tools:context="com.example.dimitar.studenthub.SettingsActivity"
     tools:showIn="@layout/app_bar_settings">
 
-    <ScrollView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/scrollView"
-        android:layout_alignBottom="@+id/textView"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true" />
-
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -28,27 +20,6 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentStart="true" />
 
-    <RadioButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Blue"
-        android:id="@+id/radioButtonBlueTheme"
-        android:layout_below="@+id/textView2"
-        android:layout_alignStart="@+id/radioButtonRedTheme"
-        android:textColor="#1685ad"
-        android:textSize="17dp"
-        android:checked="true" />
-
-    <RadioButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Red"
-        android:id="@+id/radioButtonRedTheme"
-        android:layout_below="@+id/radioButtonBlueTheme"
-        android:layout_toRightOf="@+id/textView3"
-        android:textColor="#1685ad"
-        android:textSize="17dp" />
-
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -56,17 +27,6 @@
         android:text="Theme color:"
         android:id="@+id/textView2"
         android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true"
-        android:textColor="#375967"
-        android:textSize="24dp" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Change password:"
-        android:id="@+id/textView3"
-        android:layout_below="@+id/radioButtonRedTheme"
         android:layout_alignParentStart="true"
         android:textColor="#375967"
         android:textSize="24dp" />
@@ -152,6 +112,38 @@
         android:layout_below="@+id/textView7"
         android:layout_alignParentStart="true"
         android:textSize="17dp" />
+
+    <RadioButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Blue"
+        android:id="@+id/radioButtonBlueTheme"
+        android:layout_below="@+id/textView2"
+        android:layout_alignStart="@+id/radioButtonRedTheme"
+        android:textColor="#1685ad"
+        android:textSize="17dp"
+        android:checked="true" />
+
+    <RadioButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Red"
+        android:id="@+id/radioButtonRedTheme"
+        android:layout_below="@+id/radioButtonBlueTheme"
+        android:layout_toRightOf="@+id/textView3"
+        android:textColor="#1685ad"
+        android:textSize="17dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Change password:"
+        android:id="@+id/textView3"
+        android:layout_below="@+id/radioButtonRedTheme"
+        android:layout_alignParentStart="true"
+        android:textColor="#375967"
+        android:textSize="24dp" />
 
     <EditText
         android:layout_width="wrap_content"

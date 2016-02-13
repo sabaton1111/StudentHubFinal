@@ -33,9 +33,7 @@ public class SettingsActivity extends AppCompatActivity
             {
                 if(radio_red.isChecked())
                 {
-                   // ChangeThemes.changeToTheme(SettingsActivity.this, ChangeThemes.THEME_RED);
-                    getApplication().setTheme(R.style.RedTheme);
-
+                    ChangeThemes.changeToTheme(SettingsActivity.this, ChangeThemes.THEME_RED);
                 }
                 else {ChangeThemes.changeToTheme(SettingsActivity.this, ChangeThemes.THEME_BLUE);}
             }

@@ -2,4 +2,5 @@
 <resources>
     <color name="blue">#1685ad</color>
     <color name="red">#FFCF3F34</color>
+    <color name="login">#227e8b</color>
 </resources>
