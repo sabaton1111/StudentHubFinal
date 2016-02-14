@@ -1,44 +1,45 @@
 package com.example.dimitar.studenthub;
 
+import android.app.FragmentManager;
+import android.app.FragmentTransaction;
 import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
 import android.app.Fragment;
-import android.app.FragmentManager;
-import android.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
+public class EmailFragment extends Fragment {
 
-public class PasswordFragment extends Fragment {
+        View view;
 
-    View view;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        view= inflater.inflate(R.layout.fragment_password, container, false);
-        Button button10 = (Button)view.findViewById(R.id.buttonNext2);
+        view= inflater.inflate(R.layout.fragment_email, container, false);
+        Button button4 = (Button)view.findViewById(R.id.buttonNext10);
         if (container != null) {
             container.removeAllViews();
         }
-        button10.setOnClickListener(new View.OnClickListener()
+        button4.setOnClickListener(new View.OnClickListener()
         {
             @Override
             public void onClick(View v)
             {
 
-                Fragment fragment2;
-                fragment2 = new EmailFragment();
+                Fragment fragment3;
+                fragment3 = new NamesFragment();
                 FragmentManager fm = getFragmentManager();
                 FragmentTransaction ft = fm.beginTransaction();
-                ft.replace(R.id.parent_fragment,fragment2);
+                ft.replace(R.id.parent_fragment,fragment3);
                 ft.commit();
             }
         });
         return view;
     }
+
 
 }

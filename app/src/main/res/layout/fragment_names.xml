@@ -1,0 +1,76 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.dimitar.studenthub.NamesFragment"
+    android:background="@drawable/login_background">
+
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:gravity="center"
+        android:drawablePadding="15dp"
+        android:ems="15"
+        android:id="@+id/editText14"
+        android:textColorHint="#c7d0d7"
+        android:hint="First Name"
+        android:textSize="20sp"
+        android:textColor="#c7d0d7"
+        android:layout_centerVertical="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="160dp"
+        android:layout_marginLeft="10dp" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:gravity="center"
+        android:drawablePadding="15dp"
+        android:ems="15"
+        android:id="@+id/editText12"
+        android:textColorHint="#c7d0d7"
+        android:hint="Middle Name"
+        android:textSize="20sp"
+        android:textColor="#c7d0d7"
+        android:layout_centerVertical="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="215dp"
+        android:layout_marginLeft="10dp" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:gravity="center"
+        android:drawablePadding="15dp"
+        android:ems="15"
+        android:id="@+id/editText13"
+        android:textColorHint="#c7d0d7"
+        android:hint="Last Name"
+        android:textSize="20sp"
+        android:textColor="#c7d0d7"
+        android:layout_centerVertical="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="270dp"
+        android:layout_marginLeft="10dp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Next"
+        android:id="@+id/buttonNext3"
+        android:textColor="#c7d0d7"
+        android:background="@drawable/button"
+        android:textSize="20sp"
+        android:width="200dp"
+        android:layout_below="@+id/editText8"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="80dp"
+        android:layout_marginRight="80dp"
+        android:layout_gravity="center_horizontal|bottom"
+        android:layout_marginTop="65dp"
+        android:layout_marginBottom="130dp" />
+</FrameLayout>

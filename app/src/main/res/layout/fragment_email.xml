@@ -2,52 +2,38 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.dimitar.studenthub.PasswordFragment"
+    tools:context=".EmailFragment"
     android:background="@drawable/login_background">
 
 
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:inputType="textPassword"
+        android:inputType="textEmailAddress"
         android:gravity="center"
         android:drawablePadding="15dp"
         android:ems="15"
-        android:id="@+id/editText9"
+        android:id="@+id/editText11"
         android:textColorHint="#c7d0d7"
-        android:hint="Repeat password"
+        android:hint="Email"
         android:textSize="20sp"
         android:textColor="#c7d0d7"
-        android:layout_marginTop="230dp"
+        android:layout_marginTop="225dp"
         android:layout_gravity="center_horizontal|top" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textPassword"
-        android:gravity="center"
-        android:drawablePadding="15dp"
-        android:ems="15"
-        android:id="@+id/editText10"
-        android:textColorHint="#c7d0d7"
-        android:hint="Password"
-        android:textSize="20sp"
-        android:textColor="#c7d0d7"
-        android:layout_marginTop="180dp"
-        android:layout_gravity="center_horizontal|top" />
-
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Next"
-        android:id="@+id/buttonNext2"
+        android:id="@+id/buttonNext10"
         android:textColor="#c7d0d7"
         android:background="@drawable/button"
         android:textSize="20sp"
         android:width="200dp"
-        android:layout_marginLeft="80dp"
+        android:layout_below="@+id/editText8"
+        android:layout_centerHorizontal="true"
         android:layout_marginTop="65dp"
+        android:layout_marginLeft="80dp"
+        android:layout_gravity="center_horizontal|bottom"
         android:layout_marginRight="80dp"
-        android:layout_marginBottom="175dp"
-        android:layout_gravity="center_horizontal|bottom" />
+        android:layout_marginBottom="175dp" />
 </FrameLayout>
