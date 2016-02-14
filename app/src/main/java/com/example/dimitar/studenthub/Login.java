@@ -13,6 +13,7 @@ public class Login extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         onClickListener();
+        onClickLogin();
     }
 
     public void onClickListener()
@@ -23,6 +24,18 @@ public class Login extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intentSignUp = new Intent("com.example.dimitar.studenthub.SignUp");
                 startActivity(intentSignUp);
+            }
+        });
+    }
+
+    public void onClickLogin()
+    {
+        Button buttonLogin = (Button) findViewById(R.id.buttonLogin);
+        buttonLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intentLogin = new Intent("android.intent.action.MAIN");
+                startActivity(intentLogin);
             }
         });
     }
