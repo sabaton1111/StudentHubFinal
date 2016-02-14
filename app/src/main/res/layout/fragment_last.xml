@@ -1,0 +1,47 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.dimitar.studenthub.LastFragment"
+    android:background="@drawable/login_background">
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:gravity="center"
+        android:drawablePadding="15dp"
+        android:ems="15"
+        android:id="@+id/editText15"
+        android:textColorHint="#c7d0d7"
+        android:hint="Organization"
+        android:textSize="20sp"
+        android:textColor="#c7d0d7"
+        android:layout_centerVertical="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="190dp" />
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Are you a student?"
+        android:textColor="#c7d0d7"
+        android:ems="10"
+        android:textSize="20sp"
+        android:id="@+id/checkBox"
+        android:layout_gravity="center"
+        android:layout_marginLeft="10dp" />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Register"
+        android:id="@+id/button8"
+        android:textColor="#c7d0d7"
+        android:background="@drawable/button"
+        android:textSize="20sp"
+        android:width="200dp"
+        android:layout_marginTop="340dp"
+        android:layout_gravity="top|left|center"
+        android:layout_marginLeft="65dp" />
+
+</FrameLayout>
