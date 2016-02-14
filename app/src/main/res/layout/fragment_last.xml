@@ -44,4 +44,16 @@
         android:layout_gravity="top|left|center"
         android:layout_marginLeft="65dp" />
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Other information:"
+        android:textStyle="bold"
+        android:id="@+id/textView16"
+        android:layout_gravity="center_horizontal|top"
+        android:textColor="#c7d0d7"
+        android:textSize="20sp"
+        android:layout_marginTop="120dp" />
+
 </FrameLayout>

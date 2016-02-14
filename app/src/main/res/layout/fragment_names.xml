@@ -20,7 +20,7 @@
         android:textColor="#c7d0d7"
         android:layout_centerVertical="true"
         android:layout_alignParentStart="true"
-        android:layout_marginTop="160dp"
+        android:layout_marginTop="140dp"
         android:layout_marginLeft="10dp" />
 
     <EditText
@@ -37,7 +37,7 @@
         android:textColor="#c7d0d7"
         android:layout_centerVertical="true"
         android:layout_alignParentStart="true"
-        android:layout_marginTop="215dp"
+        android:layout_marginTop="195dp"
         android:layout_marginLeft="10dp" />
 
     <EditText
@@ -54,7 +54,7 @@
         android:textColor="#c7d0d7"
         android:layout_centerVertical="true"
         android:layout_alignParentStart="true"
-        android:layout_marginTop="270dp"
+        android:layout_marginTop="250dp"
         android:layout_marginLeft="10dp" />
 
     <Button
@@ -72,5 +72,17 @@
         android:layout_marginRight="80dp"
         android:layout_gravity="center_horizontal|bottom"
         android:layout_marginTop="65dp"
-        android:layout_marginBottom="130dp" />
+        android:layout_marginBottom="175dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="What&apos;s your name?"
+        android:textStyle="bold"
+        android:id="@+id/textView14"
+        android:layout_gravity="center_horizontal|top"
+        android:textColor="#c7d0d7"
+        android:textSize="20sp"
+        android:layout_marginTop="90dp" />
 </FrameLayout>

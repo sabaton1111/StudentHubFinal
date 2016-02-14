@@ -39,4 +39,16 @@
         android:layout_gravity="center_horizontal|bottom"
         android:layout_marginRight="80dp"
         android:layout_marginBottom="175dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Choose your username:"
+        android:textStyle="bold"
+        android:id="@+id/textView12"
+        android:layout_gravity="center_horizontal|top"
+        android:textSize="20sp"
+        android:textColor="#c7d0d7"
+        android:layout_marginTop="120dp" />
 </FrameLayout>

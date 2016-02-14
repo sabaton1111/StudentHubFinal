@@ -36,4 +36,16 @@
         android:layout_gravity="center_horizontal|bottom"
         android:layout_marginRight="80dp"
         android:layout_marginBottom="175dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="What&apos;s your email address?"
+        android:textStyle="bold"
+        android:id="@+id/textView15"
+        android:layout_gravity="center_horizontal|top"
+        android:textColor="#c7d0d7"
+        android:textSize="20sp"
+        android:layout_marginTop="120dp" />
 </FrameLayout>
