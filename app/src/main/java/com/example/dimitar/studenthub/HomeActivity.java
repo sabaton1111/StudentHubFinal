@@ -14,6 +14,9 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.parse.Parse;
+import com.parse.ParseUser;
+
 public class HomeActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -91,6 +94,7 @@ public class HomeActivity extends AppCompatActivity
             startActivity(intentHelp);
         }
         else if (id == R.id.nav_exit) {
+            ParseUser.getCurrentUser().logOut();
             finishAffinity();
         }
 

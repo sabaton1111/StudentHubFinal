@@ -3,7 +3,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".EmailFragment"
-    android:background="@drawable/login_background">
+    android:background="@drawable/login_background"
+    android:id="@+id/fragment_email">
 
 
     <EditText
@@ -13,7 +14,7 @@
         android:gravity="center"
         android:drawablePadding="15dp"
         android:ems="15"
-        android:id="@+id/editText11"
+        android:id="@+id/emailSignUpField"
         android:textColorHint="#c7d0d7"
         android:hint="Email"
         android:textSize="20sp"
