@@ -22,9 +22,12 @@ import android.view.MenuItem;
 
 import java.util.List;
 
+import com.parse.Parse;
+import com.parse.ParseUser;
+
 public class HomeActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
-    View view;
+
     @Override
    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -58,7 +61,6 @@ public class HomeActivity extends AppCompatActivity
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
-
         int id = item.getItemId();
 
         if (id == R.id.nav_home) {
@@ -108,6 +110,7 @@ public class HomeActivity extends AppCompatActivity
             startActivity(intentHelp);
         }
         else if (id == R.id.nav_exit) {
+            ParseUser.getCurrentUser().logOut();
             finishAffinity();
         }
 

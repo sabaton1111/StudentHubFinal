@@ -1,5 +1,6 @@
 package com.example.dimitar.studenthub;
 
+import android.app.Activity;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.content.Context;
@@ -12,7 +13,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 
 public class EmailFragment extends Fragment {
-
+    Activity activity;
         View view;
 
     @Override
@@ -20,6 +21,7 @@ public class EmailFragment extends Fragment {
                              Bundle savedInstanceState) {
 
         view= inflater.inflate(R.layout.fragment_email, container, false);
+        activity = getActivity();
         Button button4 = (Button)view.findViewById(R.id.buttonNext10);
         if (container != null) {
             container.removeAllViews();
@@ -29,13 +31,7 @@ public class EmailFragment extends Fragment {
             @Override
             public void onClick(View v)
             {
-
-                Fragment fragment3;
-                fragment3 = new NamesFragment();
-                FragmentManager fm = getFragmentManager();
-                FragmentTransaction ft = fm.beginTransaction();
-                ft.replace(R.id.parent_fragment,fragment3);
-                ft.commit();
+                ((OnClickSignUpNextButtonListener) activity).onClickSignUpNextButton(R.id.fragment_email);
             }
         });
         return view;

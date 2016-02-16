@@ -68,7 +68,8 @@
         android:textSize="20sp"
         android:layout_below="@+id/editText7"
         android:layout_centerHorizontal="true"
-        android:width="200dp" />
+        android:width="200dp"
+        android:onClick="onClickLoginButton" />
 
     <TextView
         android:layout_width="wrap_content"

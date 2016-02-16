@@ -1,5 +1,6 @@
 package com.example.dimitar.studenthub;
 
+import android.app.Activity;
 import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
@@ -12,14 +13,14 @@ import android.view.ViewGroup;
 import android.widget.Button;
 
 public class UsernameFragment extends Fragment {
-
-
+    Activity activity;
     View view;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         view= inflater.inflate(R.layout.fragment_username, container, false);
+        activity = getActivity();
        Button button = (Button)view.findViewById(R.id.buttonNext);
         if (container != null) {
             container.removeAllViews();
@@ -29,20 +30,9 @@ public class UsernameFragment extends Fragment {
             @Override
             public void onClick(View v)
             {
-
-                Fragment fragment1;
-                fragment1 = new PasswordFragment();
-                FragmentManager fm = getFragmentManager();
-                FragmentTransaction ft = fm.beginTransaction();
-                ft.replace(R.id.parent_fragment,fragment1);
-                ft.commit();
+                ((OnClickSignUpNextButtonListener) activity).onClickSignUpNextButton(R.id.fragment_username);
             }
         });
         return view;
-
     }
-
-
-
-
 }

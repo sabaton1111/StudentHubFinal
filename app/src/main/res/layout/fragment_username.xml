@@ -2,6 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:id="@+id/fragment_username"
     tools:context="com.example.dimitar.studenthub.UsernameFragment"
     android:background="@drawable/login_background">
 
@@ -13,7 +14,7 @@
         android:gravity="center"
         android:drawablePadding="15dp"
         android:ems="15"
-        android:id="@+id/editText9"
+        android:id="@+id/usernameSignUpField"
         android:textColorHint="#c7d0d7"
         android:hint="Username"
         android:textSize="20sp"

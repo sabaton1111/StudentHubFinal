@@ -3,7 +3,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.dimitar.studenthub.NamesFragment"
-    android:background="@drawable/login_background">
+    android:background="@drawable/login_background"
+    android:id="@+id/fragment_names">
 
 
     <EditText
@@ -13,7 +14,7 @@
         android:gravity="center"
         android:drawablePadding="15dp"
         android:ems="15"
-        android:id="@+id/editText14"
+        android:id="@+id/firstNameSignUpField"
         android:textColorHint="#c7d0d7"
         android:hint="First Name"
         android:textSize="20sp"
@@ -30,7 +31,7 @@
         android:gravity="center"
         android:drawablePadding="15dp"
         android:ems="15"
-        android:id="@+id/editText12"
+        android:id="@+id/middleNameSignUpField"
         android:textColorHint="#c7d0d7"
         android:hint="Middle Name"
         android:textSize="20sp"
@@ -47,7 +48,7 @@
         android:gravity="center"
         android:drawablePadding="15dp"
         android:ems="15"
-        android:id="@+id/editText13"
+        android:id="@+id/lastNameSignUpField"
         android:textColorHint="#c7d0d7"
         android:hint="Last Name"
         android:textSize="20sp"
