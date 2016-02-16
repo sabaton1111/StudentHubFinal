@@ -58,8 +58,7 @@ public class ProfileActivity extends AppCompatActivity
         } else if (id == R.id.nav_profile) {
 
         } else if (id == R.id.nav_forum) {
-            Intent intentForum = new Intent("com.example.dimitar.studenthub.ForumActivity");
-            startActivity(intentForum);
+
         } else if (id == R.id.nav_library) {
             Intent intentLibrary = new Intent("com.example.dimitar.studenthub.LibraryActivity");
             startActivity(intentLibrary);

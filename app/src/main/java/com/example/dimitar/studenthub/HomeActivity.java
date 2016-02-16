@@ -1,9 +1,15 @@
 package com.example.dimitar.studenthub;
 
+import android.app.Fragment;
+import android.app.FragmentManager;
+import android.app.FragmentTransaction;
+import android.app.ListFragment;
 import android.content.Intent;
+import android.view.ViewGroup;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -14,9 +20,11 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import java.util.List;
+
 public class HomeActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
-
+    View view;
     @Override
    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -50,6 +58,7 @@ public class HomeActivity extends AppCompatActivity
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
+
         int id = item.getItemId();
 
         if (id == R.id.nav_home) {
@@ -58,8 +67,12 @@ public class HomeActivity extends AppCompatActivity
                 Intent intentProfile = new Intent("com.example.dimitar.studenthub.ProfileActivity");
                 startActivity(intentProfile);
         } else if (id == R.id.nav_forum) {
-            Intent intentForum = new Intent("com.example.dimitar.studenthub.ForumActivity");
-            startActivity(intentForum);
+            Fragment fragment1;
+            fragment1 = new ForumFragment();
+            FragmentManager fm = getFragmentManager();
+            FragmentTransaction ft = fm.beginTransaction();
+            ft.replace(R.id.home_fragment,fragment1);
+            ft.commit();
         } else if (id == R.id.nav_library) {
             Intent intentLibrary = new Intent("com.example.dimitar.studenthub.LibraryActivity");
             startActivity(intentLibrary);
@@ -71,8 +84,12 @@ public class HomeActivity extends AppCompatActivity
             startActivity(intentTasks);
         }
         else if (id == R.id.nav_diary) {
-            Intent intentDiary = new Intent("com.example.dimitar.studenthub.DiaryActivity");
-            startActivity(intentDiary);
+            Fragment fragment2;
+            fragment2 = new DiaryFragment();
+            FragmentManager fm = getFragmentManager();
+            FragmentTransaction ft = fm.beginTransaction();
+            ft.replace(R.id.home_fragment, fragment2);
+            ft.commit();
         }
         else if (id == R.id.nav_inquiry) {
             Intent intentInquiry = new Intent("com.example.dimitar.studenthub.InquiryActivity");

@@ -11,15 +11,6 @@
     android:background="@drawable/login_background"
     android:fitsSystemWindows="true">
 
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/imageView"
-        android:background="@drawable/logotext_var2"
-        android:layout_marginTop="73dp"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true" />
-
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -29,9 +20,9 @@
         android:textSize="18sp"
         android:textStyle="bold"
         android:textColor="#c7d0d7"
-        android:layout_alignBottom="@+id/imageView"
         android:layout_centerHorizontal="true"
-        android:textColorHint="#c7d0d7" />
+        android:textColorHint="#c7d0d7"
+        android:layout_marginTop="160dp" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -100,6 +91,22 @@
         android:textSize="17sp"
         android:layout_alignTop="@+id/textView11"
         android:layout_toEndOf="@+id/textView11" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="StudentHub"
+        android:id="@+id/textView17"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:textSize="65dp"
+        android:textColor="#c7d0d7"
+        android:fontFamily="sans-serif-condensed"
+        android:layout_marginTop="75dp"
+        android:layout_marginLeft="17dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true" />
 
 
 </RelativeLayout>

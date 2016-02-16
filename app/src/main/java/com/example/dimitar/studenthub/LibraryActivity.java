@@ -60,8 +60,7 @@ public class LibraryActivity extends AppCompatActivity
             Intent intentProfile = new Intent("com.example.dimitar.studenthub.ProfileActivity");
             startActivity(intentProfile);
         } else if (id == R.id.nav_forum) {
-            Intent intentForum = new Intent("com.example.dimitar.studenthub.ForumActivity");
-            startActivity(intentForum);
+
         } else if (id == R.id.nav_library) {
 
         } else if (id == R.id.nav_message) {
