@@ -1,8 +1,8 @@
 package com.example.dimitar.studenthub;
 
-import android.app.Fragment;
-import android.app.FragmentManager;
-import android.app.FragmentTransaction;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.app.ListFragment;
 import android.content.Intent;
 import android.view.ViewGroup;
@@ -26,10 +26,24 @@ import com.parse.Parse;
 import com.parse.ParseUser;
 
 public class HomeActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
+        implements NavigationView.OnNavigationItemSelectedListener, ForumFragment.OnClickSubjectItemListener
+{
+    FragmentManager fragmentManager;
+
+    private void ChangeFragment(Fragment fragment, boolean addReverseTransaction)
+    {
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        fragmentTransaction.replace(R.id.home_container, fragment);
+        if (addReverseTransaction)
+        {
+            fragmentTransaction.addToBackStack(null);
+        }
+        fragmentTransaction.commit();
+    }
 
     @Override
-   public void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState)
+    {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -40,9 +54,21 @@ public class HomeActivity extends AppCompatActivity
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.setDrawerListener(toggle);
         toggle.syncState();
-
+        fragmentManager = getSupportFragmentManager();
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+    }
+
+    @Override
+    public void onClickSubjectItem(String subjectId)
+    {
+        Fragment categoriesBySubjectFragment;
+        categoriesBySubjectFragment = fragmentManager.findFragmentById(R.id.categories_subject_fragment);
+        if (categoriesBySubjectFragment == null)
+        {
+            categoriesBySubjectFragment = CategoriesBySubjectFragment.newInstance(subjectId);
+        }
+        ChangeFragment(categoriesBySubjectFragment, true);
     }
 
     @Override
@@ -69,12 +95,9 @@ public class HomeActivity extends AppCompatActivity
                 Intent intentProfile = new Intent("com.example.dimitar.studenthub.ProfileActivity");
                 startActivity(intentProfile);
         } else if (id == R.id.nav_forum) {
-            Fragment fragment1;
-            fragment1 = new ForumFragment();
-            FragmentManager fm = getFragmentManager();
-            FragmentTransaction ft = fm.beginTransaction();
-            ft.replace(R.id.home_fragment,fragment1);
-            ft.commit();
+            Fragment forumFragment;
+            forumFragment = new ForumFragment();
+            ChangeFragment(forumFragment, true);
         } else if (id == R.id.nav_library) {
             Intent intentLibrary = new Intent("com.example.dimitar.studenthub.LibraryActivity");
             startActivity(intentLibrary);
@@ -86,12 +109,9 @@ public class HomeActivity extends AppCompatActivity
             startActivity(intentTasks);
         }
         else if (id == R.id.nav_diary) {
-            Fragment fragment2;
-            fragment2 = new DiaryFragment();
-            FragmentManager fm = getFragmentManager();
-            FragmentTransaction ft = fm.beginTransaction();
-            ft.replace(R.id.home_fragment, fragment2);
-            ft.commit();
+            Fragment diaryFragment;
+            diaryFragment = new DiaryFragment();
+            ChangeFragment(diaryFragment, true);
         }
         else if (id == R.id.nav_inquiry) {
             Intent intentInquiry = new Intent("com.example.dimitar.studenthub.InquiryActivity");

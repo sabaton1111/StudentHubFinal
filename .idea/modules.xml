@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/StudentHub - final final.iml" filepath="$PROJECT_DIR$/StudentHub - final final.iml" />
+      <module fileurl="file://$PROJECT_DIR$/StudentHubFinal.iml" filepath="$PROJECT_DIR$/StudentHubFinal.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>
