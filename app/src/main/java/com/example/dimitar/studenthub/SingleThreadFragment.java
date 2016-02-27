@@ -11,6 +11,7 @@ import android.view.ViewGroup;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import com.parse.DeleteCallback;
 import com.parse.FindCallback;
 import com.parse.FunctionCallback;
 import com.parse.ParseCloud;
@@ -119,11 +120,16 @@ public class SingleThreadFragment extends Fragment
         Log.d("Deba", "categoriqta e " + this.thread.getObjectId());
         ParseCloud.callFunctionInBackground("GetAllPosts", parseRequestHashMap, new FunctionCallback<List<ParseObject>>() {
             @Override
-            public void done(List<ParseObject> parseObjects, ParseException e) {
+            public void done(final List<ParseObject> parseObjects, ParseException e) {
                 if (e == null) {
                     ForumModel.UpdatePostData(thread.getObjectId(), parseObjects);
-                    ParseObject.pinAllInBackground(parseObjects);
-                    FetchDataWithModel();
+                    final String pinName = "threads" + thread.getObjectId();
+                    ParseObject.unpinAllInBackground(pinName, new DeleteCallback() {
+                        @Override
+                        public void done(ParseException e) {
+                            ParseObject.pinAllInBackground(pinName, parseObjects);
+                        }
+                    });
                 } else {
                     createToast(e.getMessage());
                 }

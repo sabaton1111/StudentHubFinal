@@ -12,6 +12,7 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import com.parse.DeleteCallback;
 import com.parse.FindCallback;
 import com.parse.FunctionCallback;
 import com.parse.GetCallback;
@@ -111,7 +112,7 @@ public class ThreadsByCategoryFragment extends Fragment
                         try {
                             throw throwable;
                         } catch (Throwable t) {
-                            createToast(t.getMessage());
+                            t.printStackTrace();
                         }
                     }
                     Log.d("emi", " update s o za threadove");
@@ -132,10 +133,16 @@ public class ThreadsByCategoryFragment extends Fragment
         Log.d("Deba", "categoriqta e " + this.category.getObjectId());
         ParseCloud.callFunctionInBackground("GetAllThreads", parseRequestHashMap, new FunctionCallback<List<ParseObject>>() {
             @Override
-            public void done(List<ParseObject> parseObjects, ParseException e) {
+            public void done(final List<ParseObject> parseObjects, ParseException e) {
                 if (e == null) {
                     ForumModel.UpdateThreadData(category.getObjectId(), parseObjects);
-                    ParseObject.pinAllInBackground(parseObjects);
+                    final String pinName = "threads" + category.getObjectId();
+                    ParseObject.unpinAllInBackground(pinName, new DeleteCallback() {
+                        @Override
+                        public void done(ParseException e) {
+                            ParseObject.pinAllInBackground(pinName, parseObjects);
+                        }
+                    });
                     FetchDataWithModel();
                 } else {
                     createToast(e.getMessage());
