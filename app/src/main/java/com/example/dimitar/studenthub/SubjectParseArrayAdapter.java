@@ -29,33 +29,39 @@ public class SubjectParseArrayAdapter extends ArrayAdapter<ParseObject>
     }
 
     @Override
-    public int getItemViewType(int position) {
-        return super.getItemViewType(parseObjects.size() - 1 - position);
+    public ParseObject getItem(int position) {
+        return super.getItem(super.getCount() - 1 - position);
     }
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent)
     {
-        ViewHolder viewHolder;
+        SubjectViewHolder viewHolder;
         View view = convertView;
         if (view == null)
         {
             LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             view = inflater.inflate(R.layout.layout_item_subject, parent, false);
-            viewHolder = new ViewHolder();
+            viewHolder = new SubjectViewHolder();
             viewHolder.textFirst = (TextView) view.findViewById(R.id.textViewFirst);
             viewHolder.textSecond = (TextView) view.findViewById(R.id.textViewSecond);
             view.setTag(viewHolder);
         }
         else
         {
-            viewHolder = (ViewHolder) view.getTag();
+            viewHolder = (SubjectViewHolder) view.getTag();
         }
-        ParseObject parseObject = parseObjects.get(position);
+        ParseObject parseObject = super.getItem(position);
 
         viewHolder.textFirst.setText(parseObject.getString("title"));
         viewHolder.textSecond.setText(parseObject.getCreatedAt().toString());
 
         return view;
+    }
+
+    private class SubjectViewHolder
+    {
+        public TextView textFirst;
+        public TextView textSecond;
     }
 }

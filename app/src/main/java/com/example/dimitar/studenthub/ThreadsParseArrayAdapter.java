@@ -5,26 +5,25 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.EditText;
 import android.widget.TextView;
 
 import com.parse.ParseObject;
+import com.parse.ParseUser;
 
 import org.w3c.dom.Text;
 
 import java.util.List;
 
 /**
- * Created by Martin on 18.2.2016 г..
+ * Created by martin on 2/24/16.
  */
-
-
-
-public class CategoriesParseArrayAdapter extends ArrayAdapter<ParseObject> {
+public class ThreadsParseArrayAdapter extends ArrayAdapter<ParseObject>
+{
     Context context;
     List<ParseObject> parseObjects;
 
-    public CategoriesParseArrayAdapter(Context context, int textViewResourceId, List<ParseObject> objects) {
+    public ThreadsParseArrayAdapter(Context context, int textViewResourceId, List<ParseObject> objects)
+    {
         super(context, textViewResourceId, objects);
         this.context = context;
         this.parseObjects = objects;
@@ -36,30 +35,38 @@ public class CategoriesParseArrayAdapter extends ArrayAdapter<ParseObject> {
     }
 
     @Override
-    public View getView(int position, View convertView, ViewGroup parent) {
-        CategoryViewHolder viewHolder;
+    public View getView(int position, View convertView, ViewGroup parent)
+    {
+        ThreadViewHolder viewHolder;
         View view = convertView;
-        if (view == null) {
+        if (view == null)
+        {
             LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            view = inflater.inflate(R.layout.layout_item_category, parent, false);
-            viewHolder = new CategoryViewHolder();
+            view = inflater.inflate(R.layout.layout_item_thread, parent, false);
+            viewHolder = new ThreadViewHolder();
             viewHolder.textFirst = (TextView) view.findViewById(R.id.textViewFirst);
             viewHolder.textSecond = (TextView) view.findViewById(R.id.textViewSecond);
+            viewHolder.textUsername = (TextView) view.findViewById(R.id.textViewUsername);
             view.setTag(viewHolder);
-        } else {
-            viewHolder = (CategoryViewHolder) view.getTag();
+        }
+        else
+        {
+            viewHolder = (ThreadViewHolder) view.getTag();
         }
         ParseObject parseObject = super.getItem(position);
+        //ParseUser author = (ParseUser) parseObject.get("user");
 
         viewHolder.textFirst.setText(parseObject.getString("title"));
         viewHolder.textSecond.setText(parseObject.getCreatedAt().toString());
+        //viewHolder.textUsername.setText(author.getUsername());
 
         return view;
     }
 
-    private class CategoryViewHolder
+    private class ThreadViewHolder
     {
         public TextView textFirst;
         public TextView textSecond;
+        public TextView textUsername;
     }
 }

@@ -16,7 +16,6 @@ public class ChangeThemes {
         //Problemyt sus zadavaneto na temata idva ot noviqt intent
         activity.startActivity(new Intent(activity, activity.getClass()));
         selectedTheme = theme;
-
     }
 
     public static void onActivityCreateSetTheme(Activity activity)

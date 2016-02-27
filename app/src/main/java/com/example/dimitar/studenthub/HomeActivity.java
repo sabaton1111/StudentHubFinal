@@ -20,16 +20,25 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import com.parse.Parse;
+import com.parse.ParseObject;
 import com.parse.ParseUser;
 
 public class HomeActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener, ForumFragment.OnClickSubjectItemListener
+        implements NavigationView.OnNavigationItemSelectedListener,
+        ForumFragment.OnClickSubjectItemListener,
+        CategoriesBySubjectFragment.OnClickCategoryItemListener,
+        ThreadsByCategoryFragment.OnClickThreadItemListener
 {
     FragmentManager fragmentManager;
+    Fragment categoriesBySubjectFragment;
+    Fragment threadsByCategoryFragment;
+    Fragment singeThreadFragment;
 
+    // Set addReverseTransaction to true if you want to go back to previous fragment on back press
     private void ChangeFragment(Fragment fragment, boolean addReverseTransaction)
     {
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
@@ -55,20 +64,30 @@ public class HomeActivity extends AppCompatActivity
         drawer.setDrawerListener(toggle);
         toggle.syncState();
         fragmentManager = getSupportFragmentManager();
+        ForumModel.Initialize();
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
     }
 
     @Override
-    public void onClickSubjectItem(String subjectId)
+    public void onClickSubjectItem(ParseObject subject)
     {
-        Fragment categoriesBySubjectFragment;
-        categoriesBySubjectFragment = fragmentManager.findFragmentById(R.id.categories_subject_fragment);
-        if (categoriesBySubjectFragment == null)
-        {
-            categoriesBySubjectFragment = CategoriesBySubjectFragment.newInstance(subjectId);
-        }
+        categoriesBySubjectFragment = CategoriesBySubjectFragment.newInstance(subject);
         ChangeFragment(categoriesBySubjectFragment, true);
+    }
+
+    @Override
+    public void onClickCategoryItem(ParseObject category)
+    {
+        threadsByCategoryFragment = ThreadsByCategoryFragment.newInstance(category);
+        ChangeFragment(threadsByCategoryFragment, true);
+    }
+
+    @Override
+    public void onClickThreadItem(ParseObject thread)
+    {
+        singeThreadFragment = SingleThreadFragment.newInstance(thread);
+        ChangeFragment(singeThreadFragment, true);
     }
 
     @Override

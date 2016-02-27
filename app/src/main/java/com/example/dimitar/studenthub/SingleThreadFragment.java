@@ -1,20 +1,18 @@
 package com.example.dimitar.studenthub;
 
-import android.support.v4.app.Fragment;
 import android.content.Context;
+import android.net.Uri;
 import android.os.Bundle;
-//import android.support.v4.app.Fragment;
+import android.support.v4.app.Fragment;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.Toast;
 
 import com.parse.FindCallback;
 import com.parse.FunctionCallback;
-import com.parse.Parse;
 import com.parse.ParseCloud;
 import com.parse.ParseException;
 import com.parse.ParseObject;
@@ -24,37 +22,49 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-public class CategoriesBySubjectFragment extends Fragment
+
+/**
+ * A simple {@link Fragment} subclass.
+ * Activities that contain this fragment must implement the
+ * {@link SingleThreadFragment.OnFragmentInteractionListener} interface
+ * to handle interaction events.
+ * Use the {@link SingleThreadFragment#newInstance} factory method to
+ * create an instance of this fragment.
+ */
+public class SingleThreadFragment extends Fragment
 {
-    private static final String ARG_SUBJECT_ID = "param1";
     Context context;
     View view;
-    private ParseObject subject;
+    private ParseObject thread;
     List<ParseObject> parseObjectList = new ArrayList<ParseObject>();
-    CategoriesParseArrayAdapter parseArrayAdapter;
+    PostsParseArrayAdapter parseArrayAdapter;
     HashMap<String, Object> parseRequestHashMap = new HashMap<String, Object>();
-    OnClickCategoryItemListener onClickCategoryItemListener;
 
-    public CategoriesBySubjectFragment()
+    public SingleThreadFragment()
     {
     }
 
-    public void setSubject(ParseObject subject)
+    public void setThread(ParseObject thread)
     {
-        this.subject = subject;
+        this.thread = thread;
     }
 
-    public static CategoriesBySubjectFragment newInstance(ParseObject subject)
+    public static SingleThreadFragment newInstance(ParseObject thread)
     {
-        CategoriesBySubjectFragment fragment = new CategoriesBySubjectFragment();
-        fragment.setSubject(subject);
+        SingleThreadFragment fragment = new SingleThreadFragment();
+        fragment.setThread(thread);
         return fragment;
     }
 
     public void FetchDataWithModel()
     {
         parseObjectList.clear();
-        parseObjectList.addAll(ForumModel.getCategories(subject.getObjectId()));
+        parseObjectList.addAll(ForumModel.getPosts(this.thread.getObjectId()));
+        if (parseArrayAdapter == null)
+        {
+            Log.d("adaptera e null...", "---------");
+        }
+        Log.d(parseObjectList.toString(), "--te tova e lista na postovete");
         parseArrayAdapter.notifyDataSetChanged();
     }
 
@@ -67,23 +77,32 @@ public class CategoriesBySubjectFragment extends Fragment
 
     public void LoadLocalData()
     {
-        final List<ParseObject> ramCategories = ForumModel.getCategories(this.subject.getObjectId());
-        if (ramCategories == null || ramCategories.size() == 0) {
-            ParseQuery query = ParseQuery.getQuery("Category");
-            query.whereEqualTo("subject", this.subject);
+        final List<ParseObject> ramPosts = ForumModel.getPosts(this.thread.getObjectId());
+        if (ramPosts == null || ramPosts.size() == 0) {
+            ParseQuery query = ParseQuery.getQuery("Post");
+            query.whereEqualTo("thread", this.thread);
+            //query.include("user");
+            //query.fromPin();
             query.fromLocalDatastore();
+            query.ignoreACLs();
+            query.include("user");
             query.findInBackground(new FindCallback() {
                 @Override
                 public void done(List list, ParseException e) {
-                    Log.d("Deba", "!!!!! Cat");
-                    ForumModel.UpdateCategoryData(subject.getObjectId(), list);
+                    Log.d("Deba", "!!!!! Post");
+                    ForumModel.UpdatePostData(thread.getObjectId(), list);
                     FetchDataWithModel();
                 }
 
                 @Override
                 public void done(Object o, Throwable throwable) {
                     //Log.d("Deba", "))))) category" + o.toString() + ((ParseObject)((List)o).get(0)).getParseObject("subject"));
-                    ForumModel.UpdateCategoryData(subject.getObjectId(), (List) o);
+                    try {
+                        throw throwable;
+                    } catch (Throwable throwable1) {
+                        throwable1.printStackTrace();
+                    }
+                    ForumModel.UpdatePostData(thread.getObjectId(), (List) o);
                     FetchDataWithModel();
                 }
             });
@@ -96,12 +115,13 @@ public class CategoriesBySubjectFragment extends Fragment
 
     public void LoadOnlineData()
     {
-        parseRequestHashMap.put("subjectId", this.subject.getObjectId());
-        ParseCloud.callFunctionInBackground("GetAllCategories", parseRequestHashMap, new FunctionCallback<List<ParseObject>>() {
+        parseRequestHashMap.put("threadId", this.thread.getObjectId());
+        Log.d("Deba", "categoriqta e " + this.thread.getObjectId());
+        ParseCloud.callFunctionInBackground("GetAllPosts", parseRequestHashMap, new FunctionCallback<List<ParseObject>>() {
             @Override
             public void done(List<ParseObject> parseObjects, ParseException e) {
                 if (e == null) {
-                    ForumModel.UpdateCategoryData(subject.getObjectId(), parseObjects);
+                    ForumModel.UpdatePostData(thread.getObjectId(), parseObjects);
                     ParseObject.pinAllInBackground(parseObjects);
                     FetchDataWithModel();
                 } else {
@@ -114,7 +134,7 @@ public class CategoriesBySubjectFragment extends Fragment
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        parseArrayAdapter = new CategoriesParseArrayAdapter(this.context, R.layout.layout_item_category, parseObjectList);
+        parseArrayAdapter = new PostsParseArrayAdapter(context, R.layout.layout_item_threadpost, parseObjectList);
         LoadData();
     }
 
@@ -129,15 +149,9 @@ public class CategoriesBySubjectFragment extends Fragment
     {
         Log.d("Created", "Done!!!");
         // Inflate the layout for this fragment
-        view = inflater.inflate(R.layout.fragment_categories_by_subject, container, false);
-        ListView categoriesListView = (ListView) view.findViewById(R.id.listViewCategories);
-        categoriesListView.setAdapter(parseArrayAdapter);
-        categoriesListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                onClickCategoryItemListener.onClickCategoryItem(parseArrayAdapter.getItem(position));
-            }
-        });
+        view = inflater.inflate(R.layout.fragment_single_thread, container, false);
+        ListView threadPostsListView = (ListView) view.findViewById(R.id.listViewThreadPosts);
+        threadPostsListView.setAdapter(parseArrayAdapter);
         return view;
     }
 
@@ -146,19 +160,6 @@ public class CategoriesBySubjectFragment extends Fragment
     {
         super.onAttach(context);
         this.context = context;
-        if (context instanceof OnClickCategoryItemListener)
-        {
-            this.onClickCategoryItemListener = (OnClickCategoryItemListener) context;
-        }
-        else
-        {
-            throw new RuntimeException(context.toString() + " must implement OnClickCategoryItemListener");
-        }
         Log.d("context", context.toString());
-    }
-
-    public interface OnClickCategoryItemListener
-    {
-        public void onClickCategoryItem(ParseObject category);
     }
 }
