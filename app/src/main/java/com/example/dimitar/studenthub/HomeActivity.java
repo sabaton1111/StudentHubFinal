@@ -2,15 +2,20 @@ package com.example.dimitar.studenthub;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTabHost;
 import android.support.v4.app.FragmentTransaction;
 import android.app.ListFragment;
 import android.content.Intent;
+import android.support.v4.view.MenuItemCompat;
+import android.view.MenuInflater;
 import android.view.ViewGroup;
 import android.os.Bundle;
+import android.widget.SearchView;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.app.SearchManager;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -19,6 +24,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TabHost;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -31,12 +38,15 @@ public class HomeActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener,
         ForumFragment.OnClickSubjectItemListener,
         CategoriesBySubjectFragment.OnClickCategoryItemListener,
-        ThreadsByCategoryFragment.OnClickThreadItemListener
+        ThreadsByCategoryFragment.OnClickThreadItemListener,
+        LibraryFragment.OnClickNewCourseButtonListener
 {
     FragmentManager fragmentManager;
     Fragment categoriesBySubjectFragment;
     Fragment threadsByCategoryFragment;
     Fragment singeThreadFragment;
+
+
 
     // Set addReverseTransaction to true if you want to go back to previous fragment on back press
     private void ChangeFragment(Fragment fragment, boolean addReverseTransaction)
@@ -55,7 +65,9 @@ public class HomeActivity extends AppCompatActivity
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+
+
+       Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         ChangeThemes.onActivityCreateSetTheme(this);
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -67,7 +79,14 @@ public class HomeActivity extends AppCompatActivity
         ForumModel.Initialize();
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+
+        Fragment homeFragment;
+        homeFragment = new HomeFragment();
+        ChangeFragment(homeFragment, true);
     }
+
+
 
     @Override
     public void onClickSubjectItem(ParseObject subject)
@@ -91,6 +110,14 @@ public class HomeActivity extends AppCompatActivity
     }
 
     @Override
+    public void onClickNewCourseButton()
+    {
+        Fragment newLessonFragment;
+        newLessonFragment = new MakeNewLesson();
+        ChangeFragment(newLessonFragment, true);
+    }
+
+    @Override
     public void onBackPressed() {
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         if (drawer.isDrawerOpen(GravityCompat.START)) {
@@ -101,7 +128,6 @@ public class HomeActivity extends AppCompatActivity
     }
 
 
-
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
@@ -109,17 +135,21 @@ public class HomeActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_home) {
-
+            Fragment homeFragment;
+            homeFragment = new HomeFragment();
+            ChangeFragment(homeFragment, true);
         } else if (id == R.id.nav_profile) {
-                Intent intentProfile = new Intent("com.example.dimitar.studenthub.ProfileActivity");
-                startActivity(intentProfile);
+            Fragment profileFragment;
+            profileFragment = new ProfileFragment();
+            ChangeFragment(profileFragment, true);
         } else if (id == R.id.nav_forum) {
             Fragment forumFragment;
             forumFragment = new ForumFragment();
             ChangeFragment(forumFragment, true);
         } else if (id == R.id.nav_library) {
-            Intent intentLibrary = new Intent("com.example.dimitar.studenthub.LibraryActivity");
-            startActivity(intentLibrary);
+            Fragment libraryFragment;
+            libraryFragment = new LibraryFragment();
+            ChangeFragment(libraryFragment, true);
         } else if (id == R.id.nav_message) {
             Intent intentMessage = new Intent("com.example.dimitar.studenthub.MessageActivity");
             startActivity(intentMessage);
@@ -157,4 +187,5 @@ public class HomeActivity extends AppCompatActivity
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
+
 }

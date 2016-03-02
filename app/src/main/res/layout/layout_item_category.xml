@@ -7,17 +7,34 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="New Text"
+        android:textColor="#545454"
+        android:textSize="18sp"
+        android:textStyle="bold"
         android:id="@+id/textViewFirst"
-        android:layout_alignParentTop="true"
+        android:layout_centerVertical="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="20dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="New Text"
+        android:textColor="#878787"
+        android:id="@+id/textViewSecond"
+        android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="New Text"
-        android:id="@+id/textViewSecond"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text=">"
+        android:id="@+id/textViewGo"
+        android:textColor="#545454"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:layout_alignTop="@+id/textViewFirst"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="30dp" />
 </RelativeLayout>

@@ -56,13 +56,11 @@ public class HelpActivity extends AppCompatActivity
             Intent intentHome = new Intent("android.intent.action.MAIN");
             startActivity(intentHome);
         } else if (id == R.id.nav_profile) {
-            Intent intentProfile = new Intent("com.example.dimitar.studenthub.ProfileActivity");
-            startActivity(intentProfile);
+
         } else if (id == R.id.nav_forum) {
 
         } else if (id == R.id.nav_library) {
-            Intent intentLibrary = new Intent("com.example.dimitar.studenthub.LibraryActivity");
-            startActivity(intentLibrary);
+
         } else if (id == R.id.nav_message) {
             Intent intentMessage = new Intent("com.example.dimitar.studenthub.MessageActivity");
             startActivity(intentMessage);

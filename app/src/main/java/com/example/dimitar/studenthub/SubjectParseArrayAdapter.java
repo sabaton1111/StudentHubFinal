@@ -44,7 +44,7 @@ public class SubjectParseArrayAdapter extends ArrayAdapter<ParseObject>
             view = inflater.inflate(R.layout.layout_item_subject, parent, false);
             viewHolder = new SubjectViewHolder();
             viewHolder.textFirst = (TextView) view.findViewById(R.id.textViewFirst);
-            viewHolder.textSecond = (TextView) view.findViewById(R.id.textViewSecond);
+         //   viewHolder.textSecond = (TextView) view.findViewById(R.id.textViewSecond);
             view.setTag(viewHolder);
         }
         else
@@ -54,7 +54,7 @@ public class SubjectParseArrayAdapter extends ArrayAdapter<ParseObject>
         ParseObject parseObject = super.getItem(position);
 
         viewHolder.textFirst.setText(parseObject.getString("title"));
-        viewHolder.textSecond.setText(parseObject.getCreatedAt().toString());
+      //  viewHolder.textSecond.setText(parseObject.getCreatedAt().toString());
 
         return view;
     }

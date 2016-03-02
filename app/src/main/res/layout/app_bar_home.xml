@@ -6,22 +6,96 @@
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
     tools:context="com.example.dimitar.studenthub.HomeActivity">
-
-    <android.support.design.widget.AppBarLayout
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:minHeight="?attr/actionBarSize"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:theme="@style/AppTheme.AppBarOverlay">
+        app:titleTextColor="@android:color/white"
+        android:background="?attr/colorPrimary">
+    </android.support.v7.widget.Toolbar>
 
-        <android.support.v7.widget.Toolbar
-            android:id="@+id/toolbar"
+    <View
+        android:id="@+id/transparent_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/search_layover_bg"
+        android:visibility="gone"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="#616161">
+
+        <RelativeLayout
+            android:id="@+id/search_top_bar"
             android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:background="?attr/colorPrimary"
-            app:popupTheme="@style/AppTheme.PopupOverlay" />
+            android:background="@drawable/layout_bg"
+            android:layout_height="45dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp">
 
-    </android.support.design.widget.AppBarLayout>
+            <EditText
+                android:id="@+id/searchTextView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@null"
+                android:hint="Search"
+                android:imeOptions="actionSearch"
+                android:inputType="textNoSuggestions"
+                android:paddingLeft="65dp"
+                android:paddingRight="65dp"
+                android:singleLine="true"
+                android:textColor="#212121"
+                android:textColorHint="#727272"
+                android:textSize="16sp"/>
 
-    <include layout="@layout/content_home" />
+            <ImageButton
+                android:id="@+id/action_up_btn"
+                style="@style/MSV_ImageButton"
+                android:layout_centerVertical="true"
+                android:src="@drawable/ic_action_navigation_arrow_back"/>
+
+            <ImageButton
+                android:id="@+id/action_voice_btn"
+                style="@style/MSV_ImageButton"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:src="@drawable/ic_action_voice_search"/>
+
+            <ImageButton
+                android:id="@+id/action_empty_btn"
+                style="@style/MSV_ImageButton"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:src="@drawable/ic_action_navigation_close"
+                android:visibility="gone"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dip"
+                android:layout_alignParentBottom="true"
+                android:background="#fff"
+                android:backgroundTint="#10000000"/>
+
+        </RelativeLayout>
+
+
+        <include layout="@layout/content_home"
+            android:layout_alignParentTop="true"
+            android:layout_toEndOf="@+id/action_empty_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <ListView
+            android:id="@+id/suggestion_list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/white"
+            android:divider="@android:color/transparent"/>
+    </LinearLayout>
 
 
 </android.support.design.widget.CoordinatorLayout>

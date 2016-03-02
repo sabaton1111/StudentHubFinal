@@ -3,6 +3,7 @@
     package="com.example.dimitar.studenthub">
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <application
         android:allowBackup="true"
         android:icon="@drawable/logo_var2"
@@ -28,6 +29,7 @@
         <activity
             android:name=".HomeActivity"
             android:label="@string/app_name"
+            android:windowSoftInputMode="stateHidden|adjustResize"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="com.example.dimitar.studenthub.HomeActivity" />
@@ -86,31 +88,11 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".LibraryActivity"
-            android:label="@string/title_activity_library"
-            android:screenOrientation="portrait">
-            <intent-filter>
-                <action android:name="com.example.dimitar.studenthub.LibraryActivity" />
-
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-        </activity>
-        <activity
             android:name=".MessageActivity"
             android:label="@string/title_activity_message"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="com.example.dimitar.studenthub.MessageActivity" />
-
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-        </activity>
-        <activity
-            android:name=".ProfileActivity"
-            android:label="@string/title_activity_profile"
-            android:screenOrientation="portrait">
-            <intent-filter>
-                <action android:name="com.example.dimitar.studenthub.ProfileActivity" />
 
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>

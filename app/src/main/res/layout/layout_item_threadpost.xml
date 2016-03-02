@@ -36,4 +36,12 @@
         android:id="@+id/textViewContent"
         android:layout_below="@+id/view"
         android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="New Text"
+        android:id="@+id/textViewZaTest"
+        android:layout_alignTop="@+id/textViewContent"
+        android:layout_alignStart="@+id/textViewCreatedDate" />
 </RelativeLayout>
