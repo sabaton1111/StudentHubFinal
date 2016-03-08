@@ -5,7 +5,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="com.example.dimitar.studenthub.ProfileFragment"
-    android:background="@color/blue">
+    android:background="@color/teal">
 
 
        <ScrollView
@@ -13,9 +13,9 @@
            android:layout_width="fill_parent"
            android:layout_height="fill_parent"
            android:fillViewport="true"
-        android:background="#2e4954"
-           android:layout_marginRight="15dp"
-           android:layout_marginLeft="15dp"
+        android:background="@color/teal"
+           android:layout_marginRight="10dp"
+           android:layout_marginLeft="10dp"
            android:id="@+id/scrollView2">
 
     <RelativeLayout android:layout_height="fill_parent"
@@ -24,9 +24,10 @@
         android:orientation="vertical"
         android:layout_gravity="center|top"
         android:gravity="center_vertical|center"
+
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:background="#3e616f">
+        android:background="@drawable/layout_bg">
 
         <ImageView
             android:layout_width="200dp"
@@ -58,13 +59,13 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="fill_parent"
-                android:textColor="#c7d0d7"
+                android:textColor="@color/blue"
                 android:textSize="25sp"
                 android:textStyle="bold"
                 android:id="@+id/textViewNickname"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentStart="true"
-                android:background="#3e616f"
+                android:background="#ffffff"
                 android:textAlignment="center"
                 android:layout_alignBottom="@+id/textViewEmailProfile" />
             <View
@@ -72,7 +73,7 @@
                 android:layout_marginStart="10dp"
                 android:layout_marginEnd="10dp"
                 android:layout_height="1dp"
-                android:background="#c7d0d7"
+                android:background="@color/blue"
                 android:id="@+id/view"
                 android:layout_marginTop="44dp"
                 android:layout_alignParentTop="true"
@@ -85,7 +86,7 @@
                 android:text="First Name:"
                 android:id="@+id/textViewFirstName"
                 android:textSize="15sp"
-                android:textColor="#c7d0d7"
+                android:textColor="@color/blue"
                 android:layout_below="@+id/view"
                 android:layout_alignStart="@+id/view"
                 android:layout_marginTop="20dp" />
@@ -97,7 +98,7 @@
                 android:text="Middle Name:"
                 android:id="@+id/textViewMiddleName"
                 android:textSize="15sp"
-                android:textColor="#c7d0d7"
+                android:textColor="@color/blue"
                 android:layout_below="@+id/textViewFirstName"
                 android:layout_alignStart="@+id/textViewFirstName"
                 android:layout_marginTop="20dp" />
@@ -109,14 +110,14 @@
                 android:text="Last Name:"
                 android:id="@+id/textViewLastName"
                 android:textSize="15sp"
-                android:textColor="#c7d0d7"
+                android:textColor="@color/blue"
                 android:layout_below="@+id/textViewMiddleName"
                 android:layout_alignStart="@+id/textViewMiddleName"
                 android:layout_marginTop="20dp" />
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:background="#c7d0d7"
+                android:background="@color/blue"
                 android:id="@+id/viewLine2"
                 android:layout_below="@+id/textViewLastName"
                 android:layout_alignParentStart="true"
@@ -131,7 +132,7 @@
                 android:text="Medium Text"
                 android:textSize="15sp"
                 android:textStyle="bold"
-                android:textColor="#c7d0d7"
+                android:textColor="@color/blue"
                 android:id="@+id/textViewFirstNameParse"
                 android:layout_alignBottom="@+id/textViewFirstName"
                 android:layout_alignStart="@+id/textViewMiddleNameParse" />
@@ -143,7 +144,7 @@
                 android:text="Medium Text"
                 android:textSize="15sp"
                 android:textStyle="bold"
-                android:textColor="#c7d0d7"
+                android:textColor="@color/blue"
                 android:id="@+id/textViewMiddleNameParse"
                 android:layout_alignBottom="@+id/textViewMiddleName"
                 android:layout_centerHorizontal="true" />
@@ -153,7 +154,7 @@
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:text="Medium Text"
-                android:textColor="#c7d0d7"
+                android:textColor="@color/blue"
                 android:textSize="15sp"
                 android:textStyle="bold"
                 android:id="@+id/textViewLastNameParse"
@@ -167,7 +168,7 @@
                 android:text="Email:"
                 android:id="@+id/textViewEmailProfile"
                 android:textSize="15sp"
-                android:textColor="#c7d0d7"
+                android:textColor="@color/blue"
                 android:layout_below="@+id/viewLine2"
                 android:layout_alignStart="@+id/viewLine2"
                 android:layout_marginTop="20dp" />
@@ -179,14 +180,14 @@
                 android:text="Medium Text"
                 android:textSize="15sp"
                 android:textStyle="bold"
-                android:textColor="#c7d0d7"
+                android:textColor="@color/blue"
                 android:id="@+id/textViewEmailParse"
                 android:layout_alignTop="@+id/textViewEmailProfile"
                 android:layout_alignStart="@+id/textViewLastNameParse" />
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:background="#c7d0d7"
+                android:background="@color/blue"
                 android:id="@+id/viewLine3"
                 android:layout_below="@+id/textViewEmailParse"
                 android:layout_alignParentStart="true"
@@ -201,7 +202,7 @@
                 android:text="Organization:"
                 android:id="@+id/textViewOrganization"
                 android:textSize="15sp"
-                android:textColor="#c7d0d7"
+                android:textColor="@color/blue"
                 android:layout_below="@+id/viewLine3"
                 android:layout_alignStart="@+id/viewLine3"
                 android:layout_marginTop="20dp" />
@@ -213,7 +214,7 @@
                 android:text="Medium Text"
                 android:textSize="15sp"
                 android:textStyle="bold"
-                android:textColor="#c7d0d7"
+                android:textColor="@color/blue"
                 android:id="@+id/textViewOrganizationParse"
                 android:layout_alignTop="@+id/viewLine3"
                 android:layout_alignStart="@+id/textViewEmailParse"
@@ -221,7 +222,7 @@
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:background="#c7d0d7"
+                android:background="@color/blue"
                 android:id="@+id/viewLine4"
                 android:layout_below="@+id/textViewOrganizationParse"
                 android:layout_alignParentStart="true"
@@ -236,7 +237,7 @@
                 android:text="Student:"
                 android:id="@+id/textViewIsStudent"
                 android:textSize="15sp"
-                android:textColor="#c7d0d7"
+                android:textColor="@color/blue"
                 android:layout_alignParentStart="true"
                 android:layout_above="@+id/viewLine5"
                 android:layout_marginLeft="10dp"
@@ -249,7 +250,7 @@
                 android:text="Medium Text"
                 android:textSize="15sp"
                 android:textStyle="bold"
-                android:textColor="#c7d0d7"
+                android:textColor="@color/blue"
                 android:id="@+id/textViewIsStudentParse"
                 android:layout_below="@+id/viewLine4"
                 android:layout_alignTop="@+id/viewLine4"
@@ -259,7 +260,7 @@
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:background="#c7d0d7"
+                android:background="@color/blue"
                 android:id="@+id/viewLine5"
                 android:layout_below="@+id/textViewIsStudentParse"
                 android:layout_alignParentStart="true"
@@ -274,7 +275,7 @@
                 android:text="FollowingLessons:"
                 android:textSize="15sp"
                 android:textStyle="bold"
-                android:textColor="#c7d0d7"
+                android:textColor="@color/blue"
                 android:id="@+id/textViewFollowingLessons"
                 android:layout_below="@+id/viewLine5"
                 android:layout_alignTop="@+id/viewLine5"
@@ -332,6 +333,7 @@
                         android:textAppearance="?android:attr/textAppearanceMedium"
                         android:text="Medium Text"
                         android:id="@+id/textView"
+                        android:textColor="@color/blue"
                         android:layout_row="2"
                         android:layout_column="0" />
 
@@ -341,6 +343,7 @@
                         android:textAppearance="?android:attr/textAppearanceMedium"
                         android:text="Medium Text"
                         android:id="@+id/textView2"
+                        android:textColor="@color/blue"
                         android:layout_row="2"
                         android:layout_column="1" />
 
@@ -350,6 +353,7 @@
                         android:textAppearance="?android:attr/textAppearanceMedium"
                         android:text="Medium Text"
                         android:id="@+id/textView3"
+                        android:textColor="@color/blue"
                         android:layout_row="2"
                         android:layout_column="2" />
 

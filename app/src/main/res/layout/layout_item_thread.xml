@@ -1,16 +1,58 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="fill_parent" android:layout_height="64dp"
-    >
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="80dp">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="New Text"
-        android:id="@+id/textViewFirst"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:id="@+id/textViewUsername"
+        android:textColor="#545454"
+        android:textSize="18sp"
+        android:layout_marginTop="29dp"
+        android:layout_marginLeft="50dp" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text=">"
+        android:id="@+id/textViewGo"
+        android:textColor="#545454"
+        android:textSize="18sp"
+        android:layout_alignTop="@+id/textViewUsername"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="30dp" />
+    <ImageView
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:id="@+id/imageViewCalendar"
+        android:layout_alignTop="@+id/textViewSecond"
+        android:layout_alignParentStart="true"
+        android:src="@drawable/calendar_icon1"
+        android:layout_marginLeft="25dp"
+        android:layout_marginBottom="4dp" />
+    <ImageView
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:id="@+id/imageViewViews"
+        android:layout_marginLeft="30dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/view_icon"
+        android:layout_alignTop="@+id/textViewSecond"
+        android:layout_alignEnd="@+id/textViewGo"
+        android:layout_marginRight="15dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="0"
+        android:id="@+id/textViewViews"
+        android:layout_alignParentBottom="true"
+        android:layout_alignStart="@+id/textViewGo"
+        android:layout_marginBottom="2dp" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -19,13 +61,38 @@
         android:id="@+id/textViewSecond"
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="50dp"
+        android:layout_marginBottom="2dp"/>
+    <ImageView
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:id="@+id/imageViewThread"
+        android:layout_centerVertical="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="10dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/notebook_icon"
+        android:tint="@color/teal" />
+
+    <ImageView
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:id="@+id/imageViewUsername"
+        android:src="@drawable/username1_icon"
+        android:layout_marginLeft="25dp"
+        android:layout_alignTop="@+id/textViewSecond"
+        android:layout_toEndOf="@+id/textViewSecond"
+        android:layout_marginBottom="4dp"
+        android:tint="@color/teal" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="New Text"
-        android:id="@+id/textViewUsername"
-        android:layout_below="@+id/textViewFirst"
-        android:layout_centerHorizontal="true" />
+        android:id="@+id/textView8"
+        android:layout_marginLeft="22dp"
+        android:layout_alignTop="@+id/imageViewViews"
+        android:layout_alignStart="@+id/imageViewUsername" />
+
 </RelativeLayout>

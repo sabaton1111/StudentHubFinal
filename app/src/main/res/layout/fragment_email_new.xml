@@ -1,13 +1,89 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.dimitar.studenthub.EmailNewFragment">
+    tools:context="com.example.dimitar.studenthub.EmailNewFragment"
+    android:background="@color/teal">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
 
-</FrameLayout>
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:id="@+id/scrollView3"
+        android:background="@drawable/layout_bg"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_margin="10dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="Subject"
+                android:textSize="20sp"
+                android:textColor="@color/blue"
+                android:id="@+id/textViewSubject"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="10dp" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/editTextTitle"
+                android:inputType="text"
+                android:textSize="16sp"
+                android:layout_below="@+id/textViewSubject"
+                android:layout_marginTop="10dp"
+                android:textColor="@color/blue"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:hint="Enter the title"
+                android:gravity="center" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="Write down your Email"
+                android:textColor="@color/blue"
+                android:id="@+id/textViewContent"
+                android:layout_below="@+id/editTextTitle"
+                android:layout_alignStart="@+id/editTextTitle"
+                android:layout_marginTop="20dp" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:inputType="textMultiLine"
+                android:ems="10"
+                android:textColor="@color/blue"
+                android:textSize="16sp"
+                android:id="@+id/editTextContent"
+                android:layout_below="@+id/textViewContent"
+                android:layout_marginTop="10dp"
+                android:layout_alignEnd="@+id/editTextTitle"
+                android:layout_marginLeft="10dp"
+                android:hint="Write your email"
+                android:gravity="top" />
+
+            <Button
+                android:layout_width="150dp"
+                android:layout_height="50dp"
+                android:text="Send"
+                android:id="@+id/buttonSend"
+                android:layout_below="@+id/editTextContent"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp" />
+
+        </RelativeLayout>
+
+
+        </ScrollView>
+
+</RelativeLayout>

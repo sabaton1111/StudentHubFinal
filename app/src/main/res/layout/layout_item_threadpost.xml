@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
     <TextView
         android:layout_width="wrap_content"
@@ -9,13 +11,16 @@
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="Medium Text"
         android:id="@+id/textViewUsername"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true" />
+        android:layout_marginLeft="5dp"
+        android:layout_alignTop="@+id/imageViewRound"
+        android:layout_toEndOf="@+id/imageViewRound"
+        android:layout_marginTop="10dp" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="New Text"
+        android:layout_alignStart="@+id/textViewUsername"
         android:id="@+id/textViewCreatedDate"
         android:layout_below="@+id/textViewUsername"
         android:layout_centerHorizontal="true" />
@@ -31,17 +36,23 @@
 
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="150dp"
         android:text="New Text"
         android:id="@+id/textViewContent"
         android:layout_below="@+id/view"
         android:layout_alignParentStart="true" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="New Text"
-        android:id="@+id/textViewZaTest"
-        android:layout_alignTop="@+id/textViewContent"
-        android:layout_alignStart="@+id/textViewCreatedDate" />
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/imageViewRound"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:scaleType="centerCrop"
+        android:layout_gravity="center"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="10dp"
+        android:layout_margin="10dp"
+        android:src="@drawable/login_background"/>
+
 </RelativeLayout>

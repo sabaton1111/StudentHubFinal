@@ -1,13 +1,17 @@
 package com.example.dimitar.studenthub;
 
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -24,14 +28,6 @@ import java.util.HashMap;
 import java.util.List;
 
 
-/**
- * A simple {@link Fragment} subclass.
- * Activities that contain this fragment must implement the
- * {@link SingleThreadFragment.OnFragmentInteractionListener} interface
- * to handle interaction events.
- * Use the {@link SingleThreadFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
 public class SingleThreadFragment extends Fragment
 {
     Context context;
@@ -40,7 +36,7 @@ public class SingleThreadFragment extends Fragment
     List<ParseObject> parseObjectList = new ArrayList<ParseObject>();
     PostsParseArrayAdapter parseArrayAdapter;
     HashMap<String, Object> parseRequestHashMap = new HashMap<String, Object>();
-
+    OnClickNewPostButtonListener onClickNewPostButtonListener;
     public SingleThreadFragment()
     {
     }
@@ -158,6 +154,14 @@ public class SingleThreadFragment extends Fragment
         view = inflater.inflate(R.layout.fragment_single_thread, container, false);
         ListView threadPostsListView = (ListView) view.findViewById(R.id.listViewThreadPosts);
         threadPostsListView.setAdapter(parseArrayAdapter);
+
+        FloatingActionButton buttonPost = (FloatingActionButton) view.findViewById(R.id.fab_new_post);
+        buttonPost.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onClickNewPostButtonListener.onClickNewPostButton();
+            }
+        });
         return view;
     }
 
@@ -167,5 +171,18 @@ public class SingleThreadFragment extends Fragment
         super.onAttach(context);
         this.context = context;
         Log.d("context", context.toString());
+
+        if (context instanceof OnClickNewPostButtonListener)
+        {
+            onClickNewPostButtonListener = (OnClickNewPostButtonListener) context;
+        }
+        else
+        {
+            throw new RuntimeException(context.toString() + " must implement OnClickNewPostButtonListener");
+        }
+    }
+    public interface OnClickNewPostButtonListener
+    {
+        public void onClickNewPostButton();
     }
 }

@@ -1,19 +1,19 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
     tools:context=".HomeFragment">
 
     <TabHost
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
         android:id="@+id/tabHost"
         android:textColor="#ffffff"
         android:layout_gravity="left|top">
 
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
             android:orientation="vertical">
 
             <TabWidget
@@ -23,198 +23,169 @@
 
             <FrameLayout
                 android:id="@android:id/tabcontent"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-                <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent">
+                <RelativeLayout
                     android:id="@+id/tab1"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="vertical"
-                    android:background="#ffffff">
+                    android:background="#f0f0f0"
+                    android:paddingRight="10dp"
+                    android:paddingLeft="10dp">
+
+                    <HorizontalScrollView
+                        android:layout_width="match_parent"
+                        android:layout_height="250dp"
+                        android:scrollbars="none"
+                        android:id="@+id/horizontalScrollView"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentStart="true"
+                        android:layout_marginTop="60dp" >
+
+                        <RelativeLayout
+                            android:layout_height="250dp"
+                            android:layout_width="match_parent">
+                                <RelativeLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="250dp"
+                                    android:background="@drawable/layout_bg"
+                                    android:id="@+id/firstLayout">
+                                    <ImageView
+                                        android:layout_height="150dp"
+                                        android:layout_width="150dp"
+                                        android:scaleType="fitXY"
+                                        android:layout_marginStart="10dp"
+                                        android:layout_marginEnd="10dp"
+                                        android:layout_marginTop="10dp"
+                                        android:src="@drawable/login_background"
+                                        android:background="@drawable/layout_bg"
+                                        >
+
+                                    </ImageView>
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:textAppearance="?android:attr/textAppearanceLarge"
+                                        android:text="Android"
+                                        android:id="@+id/textView19"
+                                        android:layout_alignParentBottom="true"
+                                        android:layout_centerHorizontal="true"
+                                        android:layout_marginBottom="20dp" />
+
+                                </RelativeLayout>
+                            <RelativeLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="250dp"
+                                android:layout_toEndOf="@+id/firstLayout"
+                                android:background="@drawable/layout_bg"
+                                android:layout_marginStart="10dp"
+                                android:id="@+id/secondLayout">
+
+                                <ImageView
+                                    android:layout_height="150dp"
+                                    android:layout_width="150dp"
+                                    android:layout_marginStart="10dp"
+                                    android:layout_marginEnd="10dp"
+                                    android:layout_marginTop="10dp"
+                                    android:scaleType="fitXY"
+                                    android:src="@drawable/help_icon"
+                                    android:background="@drawable/layout_bg"
+                                    android:id="@+id/imageView3">
+                                </ImageView>
+
+                                <TextView
+                                    android:layout_width="180dp"
+                                    android:layout_height="wrap_content"
+                                    android:textAppearance="?android:attr/textAppearanceLarge"
+                                    android:text="    Errors in Android Studio"
+                                    android:id="@+id/textView20"
+                                    android:layout_alignParentBottom="true"
+                                    android:layout_alignStart="@+id/imageView3"
+                                    android:layout_alignEnd="@+id/imageView3"
+                                    android:layout_marginBottom="10dp" />
+                            </RelativeLayout>
+                            <RelativeLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="250dp"
+                                android:layout_toEndOf="@+id/secondLayout"
+                                android:background="@drawable/layout_bg"
+                                android:layout_marginStart="10dp"
+                                android:id="@+id/thirdLayout">
+                                <ImageView
+                                    android:layout_width="150dp"
+                                    android:layout_height="150dp"
+                                    android:layout_marginStart="10dp"
+                                    android:layout_marginEnd="10dp"
+                                    android:layout_marginTop="10dp"
+                                    android:scaleType="fitXY"
+                                    android:src="@drawable/inquiry_icon"
+                                    android:background="@drawable/layout_bg"/>
+                                </RelativeLayout>
+                                </RelativeLayout>
+    </HorizontalScrollView>
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textAppearance="?android:attr/textAppearanceMedium"
                         android:text="Forum"
+                        android:id="@+id/textViewForum"
                         android:textStyle="bold"
-                        android:layout_marginTop="15dp"
-                        android:textSize="20dp"
-                        android:layout_marginBottom="10dp"
-                        android:id="@+id/textViewLatest"
                         android:layout_alignParentTop="true"
-                        android:layout_alignParentLeft="true"
                         android:layout_alignParentStart="true"
-                        android:layout_marginLeft="10dp" />
+                        android:layout_marginTop="20dp"
+                        android:layout_marginLeft="20dp"
+                        android:textSize="22dp" />
 
-                    <HorizontalScrollView
-                        android:layout_height="150sp"
-                        android:layout_width="match_parent"
-                        android:layout_below="@+id/textViewLatest"
-                        android:layout_alignParentLeft="true"
-                        android:layout_alignParentStart="true"
-                        android:id="@+id/horizontalScrollView2">
-
-                        <GridLayout
-                            android:layout_height="150sp"
-                            android:layout_width="match_parent"
-                            android:layout_marginLeft="10dp"
-                            android:layout_below="@+id/textViewLatest"
-                            android:layout_alignParentLeft="true"
-                            android:layout_alignParentStart="true">
-
-                            <ImageView
-                                android:layout_width="100dp"
-                                android:layout_height="100dp"
-                                android:id="@+id/imageViewNewCourse"
-                                android:layout_marginRight="20sp"
-                                android:background="@drawable/home_icon"
-                                android:scaleType="fitXY"
-                                android:layout_row="0"
-                                android:layout_column="0" />
-                            <ImageView
-                                android:layout_width="100dp"
-                                android:layout_height="100dp"
-                                android:id="@+id/imageView1"
-                                android:layout_marginRight="20sp"
-                                android:background="@drawable/inquiry_icon"
-                                android:scaleType="fitXY"
-                                android:layout_row="0"
-                                android:layout_column="1" />
-                            <ImageView
-                                android:layout_width="100dp"
-                                android:layout_height="100dp"
-                                android:id="@+id/imageView2"
-                                android:background="@drawable/library_icon"
-                                android:scaleType="fitXY"
-                                android:layout_row="0"
-                                android:layout_column="2" />
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:textAppearance="?android:attr/textAppearanceMedium"
-                                android:text="Medium Text"
-                                android:id="@+id/textView"
-                                android:layout_row="2"
-                                android:layout_column="0" />
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:textAppearance="?android:attr/textAppearanceMedium"
-                                android:text="Medium Text"
-                                android:id="@+id/textView2"
-                                android:layout_row="2"
-                                android:layout_column="1" />
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:textAppearance="?android:attr/textAppearanceMedium"
-                                android:text="Medium Text"
-                                android:id="@+id/textView3"
-                                android:layout_row="2"
-                                android:layout_column="2" />
-
-                        </GridLayout>
-                    </HorizontalScrollView>
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="More"
+                        style="?android:attr/borderlessButtonStyle"
+                        android:id="@+id/buttonForum"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginRight="10dp"
+                        android:textColor="@color/teal"
+                        android:background="#f0f0f0" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textAppearance="?android:attr/textAppearanceMedium"
                         android:text="Lessons"
+                        android:id="@+id/textViewLessons"
                         android:textStyle="bold"
-                        android:layout_marginTop="15dp"
-                        android:layout_marginBottom="10dp"
-                        android:textSize="20dp"
-                        android:id="@+id/textView4"
-                        android:layout_centerVertical="true"
-                        android:layout_alignParentLeft="true"
+                        android:layout_marginLeft="20dp"
+                        android:textSize="22dp"
+                        android:layout_below="@+id/horizontalScrollView"
                         android:layout_alignParentStart="true"
-                        android:layout_marginLeft="10dp" />
+                        android:layout_marginTop="20dp" />
 
-                    <HorizontalScrollView
-                        android:layout_height="150sp"
-                        android:layout_width="match_parent"
-                        android:id="@+id/horizontalScrollView3"
-                        android:layout_below="@+id/textView4"
-                        android:layout_alignParentLeft="true"
-                        android:layout_alignParentStart="true">
+                    <Button
+                        style="?android:attr/borderlessButtonStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="More"
+                        android:id="@+id/buttonLessons"
+                        android:layout_marginRight="10dp"
+                        android:textColor="@color/teal"
+                        android:background="#f0f0f0"
+                        android:layout_below="@+id/horizontalScrollView"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginTop="10dp" />
+                </RelativeLayout>
 
-                        <GridLayout
-                            android:layout_height="150sp"
-                            android:layout_width="match_parent"
-                            android:layout_marginLeft="10dp"
-                            android:layout_below="@+id/textViewLatest"
-                            android:layout_alignParentLeft="true"
-                            android:layout_alignParentStart="true" >
-
-                            <ImageView
-                                android:layout_width="100dp"
-                                android:layout_height="100dp"
-                                android:id="@+id/imageView3"
-                                android:layout_marginRight="20sp"
-                                android:background="@drawable/library_icon"
-                                android:scaleType="fitXY"
-                                android:layout_row="0"
-                                android:layout_column="0" />
-
-                            <ImageView
-                                android:layout_width="100dp"
-                                android:layout_height="100dp"
-                                android:id="@+id/imageView4"
-                                android:layout_marginRight="20sp"
-                                android:background="@drawable/home_icon"
-                                android:scaleType="fitXY"
-                                android:layout_row="0"
-                                android:layout_column="1" />
-
-                            <ImageView
-                                android:layout_width="100dp"
-                                android:layout_height="100dp"
-                                android:id="@+id/imageView5"
-                                android:background="@drawable/inquiry_icon"
-                                android:scaleType="fitXY"
-                                android:layout_row="0"
-                                android:layout_column="2" />
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:textAppearance="?android:attr/textAppearanceMedium"
-                                android:text="Medium Text"
-                                android:id="@+id/textView5"
-                                android:layout_row="2"
-                                android:layout_column="0" />
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:textAppearance="?android:attr/textAppearanceMedium"
-                                android:text="Medium Text"
-                                android:id="@+id/textView6"
-                                android:layout_row="2"
-                                android:layout_column="1" />
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:textAppearance="?android:attr/textAppearanceMedium"
-                                android:text="Medium Text"
-                                android:id="@+id/textView7"
-                                android:layout_row="2"
-                                android:layout_column="2" />
-                        </GridLayout>
-                    </HorizontalScrollView>
-                </LinearLayout>
-
-                <LinearLayout
+                <RelativeLayout
                     android:id="@+id/tab2"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:orientation="vertical"></LinearLayout>
+                    android:orientation="vertical">
+
+                </RelativeLayout>
             </FrameLayout>
         </LinearLayout>
 

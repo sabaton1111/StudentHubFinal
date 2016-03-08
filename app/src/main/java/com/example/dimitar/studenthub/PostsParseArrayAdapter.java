@@ -45,7 +45,6 @@ public class PostsParseArrayAdapter extends ArrayAdapter<ParseObject>
             viewHolder.textUsername = (TextView) view.findViewById(R.id.textViewUsername);
             viewHolder.textCreatedDate = (TextView) view.findViewById(R.id.textViewCreatedDate);
             viewHolder.textContent = (TextView) view.findViewById(R.id.textViewContent);
-            viewHolder.textZaTestvane = (TextView) view.findViewById(R.id.textViewZaTest);
             view.setTag(viewHolder);
         }
         else
@@ -57,7 +56,6 @@ public class PostsParseArrayAdapter extends ArrayAdapter<ParseObject>
         viewHolder.textUsername.setText(((ParseObject)parseObject.get("user")).getString("username"));
         viewHolder.textCreatedDate.setText(parseObject.getCreatedAt().toString());
         viewHolder.textContent.setText(parseObject.getString("content"));
-        viewHolder.textZaTestvane.setText("pesho....");
 
         return view;
     }
@@ -67,6 +65,5 @@ public class PostsParseArrayAdapter extends ArrayAdapter<ParseObject>
         public TextView textUsername;
         public TextView textCreatedDate;
         public TextView textContent;
-        public TextView textZaTestvane;
     }
 }

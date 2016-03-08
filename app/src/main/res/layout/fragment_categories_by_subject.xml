@@ -1,41 +1,51 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:id="@+id/categories_subject_fragment"
+    tools:context="com.example.martin.fortesting.CategoriesBySubject"
+    android:background="@color/teal">
     tools:context="com.example.martin.fortesting.CategoriesBySubject" >
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="New Text"
-        android:id="@+id/textViewSubject"
-        android:layout_marginLeft="45dp"
-        android:textSize="48px"
-        android:textStyle="bold"
-        android:textColor="@color/blue"
+        android:text="Subject Title"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:textSize="23sp"
+        android:layout_marginStart="10dp"
+        android:background="#009688"
+        android:textColor="#ffffff"
+        android:id="@+id/textViewSubjectTitle"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp" />
+        android:layout_alignParentStart="false"
+        android:gravity="left|center" />
 
     <ListView
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="fill_parent"
         android:id="@+id/listViewCategories"
-        android:layout_below="@+id/textViewSubject"
+        android:layout_below="@+id/textViewSubjectTitle"
+        android:background="@drawable/layout_bg"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="35dp" />
+        android:dividerHeight="1dp"
+        android:divider="#2e4954"
+        android:layout_alignParentStart="true" />
 
     <android.support.design.widget.FloatingActionButton
-        android:id="@+id/fab"
+        android:id="@+id/fab_new_category"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
         android:src="@android:drawable/ic_menu_add"
-        android:layout_marginRight="25dp"
-        android:layout_alignParentBottom="true"
+        android:layout_alignParentBottom="false"
         android:layout_alignParentEnd="true"
-        android:layout_marginBottom="25dp"
-        android:paddingEnd="40dp" />
+        app:backgroundTint="@color/teal"
+        android:tint="#ffffff"
+        app:fabSize="normal"
+        android:scaleType="center"
+        app:borderWidth="5dp"
+        android:layout_alignBottom="@+id/listViewCategories"
+        android:layout_margin="25dp"
+        android:baselineAlignBottom="false" />
 </RelativeLayout>

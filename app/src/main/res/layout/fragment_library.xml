@@ -1,20 +1,31 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.dimitar.studenthub.LibraryFragment">
+    android:orientation="vertical"
+    android:background="#f0f0f0"
+    tools:context="com.example.dimitar.studenthub.LibraryFragment"
+    android:weightSum="1">
 
-    <!-- TODO: Update blank fragment layout -->
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recyclerViewLibrary"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="0.00" />
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/fab_new_lesson"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom|end"
+        android:layout_height="match_parent"
+        app:fabSize="normal"
+        app:borderWidth="5dp"
+        android:tint="#ffffff"
+        android:scaleType="center"
+        android:layout_gravity="end|bottom"
+        app:backgroundTint="@color/teal"
         android:src="@android:drawable/ic_menu_add"
-        android:layout_marginRight="25dp"
-        android:layout_alignParentBottom="true"
-        android:layout_alignEnd="@+id/listViewThreads"
-        android:layout_marginEnd="40dp"
-        android:layout_marginBottom="25dp" />
-</RelativeLayout>
+        android:layout_marginBottom="25dp"
+        android:layout_marginRight="25dp" />
+
+</FrameLayout>

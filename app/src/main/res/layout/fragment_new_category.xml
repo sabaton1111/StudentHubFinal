@@ -1,0 +1,247 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="com.example.dimitar.studenthub.NewCategoryFragment">
+
+
+    <TextView
+        android:text="  Make New Category"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:textSize="23sp"
+        android:background="#009688"
+        android:textColor="#ffffff"
+        android:id="@+id/textViewMakeNewCategory"
+        android:gravity="left|center"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:linksClickable="false" />
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab_new_category"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@android:drawable/ic_menu_save"
+        app:backgroundTint="@color/teal"
+        android:tint="#ffffff"
+        app:fabSize="normal"
+        android:scaleType="center"
+        android:layout_gravity="end|bottom"
+        app:borderWidth="5dp"
+        android:baselineAlignBottom="false"
+        android:layout_marginRight="25dp"
+        android:layout_marginBottom="25dp"/>
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:id="@+id/scrollViewNewCategory"
+        android:layout_marginTop="50dp"
+        android:layout_alignParentStart="true"
+        android:background="#ffffff"
+        android:layout_alignParentEnd="false">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#ffffff">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="Category"
+                android:textSize="22sp"
+                android:textColor="@color/blue"
+                android:id="@+id/textViewCategory"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="60dp" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:textSize="18sp"
+                android:hint="Enter category name"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/textViewCategory"
+                android:id="@+id/editTextCategory"
+                android:autoText="false" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="Thread"
+                android:textSize="22sp"
+                android:layout_below="@+id/editTextCategory"
+                android:textColor="@color/blue"
+                android:layout_alignStart="@+id/textViewCategory"
+                android:id="@+id/textViewThread1"
+                android:layout_marginTop="20dp" />
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="80dp"
+                android:textSize="18sp"
+                android:hint="Enter thread1 name"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/textViewThread1"
+                android:id="@+id/editTextThread" />
+
+            <ImageButton
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:id="@+id/imageButtonNewThread"
+                android:scaleType="fitXY"
+                android:background="@drawable/plus_icon"
+                android:layout_alignBottom="@+id/editTextThread"
+                android:layout_alignEnd="@+id/editTextCategory"
+                android:layout_marginBottom="8dp"
+                android:layout_marginRight="10dp" />
+            <ImageButton
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:id="@+id/imageButtonRemoveThread"
+                android:scaleType="fitXY"
+                android:background="@drawable/remove_icon2"
+                android:layout_alignBottom="@+id/editTextThread"
+                android:layout_alignEnd="@+id/editTextCategory"
+                android:layout_marginBottom="8dp"
+                android:layout_marginRight="10dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="Thread 2"
+                android:textSize="22sp"
+                android:layout_below="@+id/editTextPostDescription"
+                android:layout_alignStart="@+id/textViewThread1"
+                android:textColor="@color/blue"
+                android:id="@+id/textViewThread2"
+                android:layout_marginTop="20dp" />
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="80dp"
+                android:textSize="18sp"
+                android:hint="Enter thread2 name"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/textViewThread2"
+                android:id="@+id/editTextThread2"
+                android:visibility="visible" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="@string/post"
+                android:textSize="22sp"
+                android:layout_below="@+id/editTextThread"
+                android:textColor="@color/blue"
+                android:id="@+id/textViewPost"
+                android:layout_marginTop="15dp"
+                android:layout_marginStart="100dp" />
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="200dp"
+                android:hint="Description"
+                android:inputType="textMultiLine"
+                android:ems="10"
+                android:layout_marginTop="15dp"
+                android:id="@+id/editTextPostDescription"
+                android:layout_alignEnd="@+id/editTextCategory"
+                android:layout_below="@+id/textViewPost"
+                android:gravity="top"
+                android:layout_alignStart="@+id/imageViewCategoryNew"
+                android:background="#fafafa" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="Post 2"
+                android:layout_below="@+id/editTextThread2"
+                android:textSize="22sp"
+                android:layout_marginTop="15dp"
+                android:textColor="@color/blue"
+                android:id="@+id/textViewPost2"
+                android:layout_alignStart="@+id/textViewPost"
+                android:layout_alignParentBottom="false" />
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="200dp"
+                android:hint="Description"
+                android:inputType="textMultiLine"
+                android:ems="10"
+                android:layout_marginTop="15dp"
+                android:id="@+id/editTextPostDescription2"
+                android:layout_alignEnd="@+id/editTextCategory"
+                android:layout_below="@+id/textViewPost2"
+                android:gravity="top"
+                android:layout_alignStart="@+id/imageViewCategoryNew"
+                android:background="#fafafa"
+                android:layout_marginBottom="20dp"/>
+
+
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:id="@+id/imageViewCategoryNew"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentStart="true"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="20dp"
+                android:src="@drawable/category_icon" />
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:id="@+id/imageViewThread"
+                android:layout_marginLeft="20dp"
+                android:src="@drawable/notebook_icon"
+                android:layout_alignTop="@+id/textViewThread1"
+                android:layout_alignParentStart="true"
+                android:tint="@color/teal" />
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:id="@+id/imageViewPost"
+                android:src="@drawable/pen_icon"
+                android:tint="@color/teal"
+                android:layout_below="@+id/editTextThread"
+                android:layout_alignStart="@+id/textViewThread1"
+                android:layout_marginTop="11dp" />
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:id="@+id/imageViewThread2"
+                android:src="@drawable/notebook_icon"
+                android:tint="@color/teal"
+                android:layout_alignTop="@+id/textViewThread2"
+                android:layout_alignStart="@+id/imageViewThread" />
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:id="@+id/imageViewPost2"
+                android:src="@drawable/pen_icon"
+                android:tint="@color/teal"
+                android:layout_alignTop="@+id/textViewPost2"
+                android:layout_alignStart="@+id/imageViewPost" />
+        </RelativeLayout>
+    </ScrollView>
+
+
+</FrameLayout>

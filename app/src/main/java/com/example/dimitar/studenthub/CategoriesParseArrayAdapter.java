@@ -12,6 +12,10 @@ import com.parse.ParseObject;
 
 import org.w3c.dom.Text;
 
+import java.text.DateFormat;
+import java.text.Format;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -51,8 +55,12 @@ public class CategoriesParseArrayAdapter extends ArrayAdapter<ParseObject> {
         }
         ParseObject parseObject = super.getItem(position);
 
+        Date date = parseObject.getCreatedAt();
+        SimpleDateFormat formater = new SimpleDateFormat("d/M/yyyy");
+        String datestring = formater.format(date);
+
         viewHolder.textFirst.setText(parseObject.getString("title"));
-        viewHolder.textSecond.setText(parseObject.getCreatedAt().toString());
+        viewHolder.textSecond.setText(datestring);
 
         return view;
     }

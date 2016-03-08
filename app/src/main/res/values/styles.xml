@@ -9,7 +9,8 @@
         <item name="android:colorForeground">@color/blue</item>
         <item name="android:textColorPrimary">@color/blue</item>
         <item name="android:textColorSecondary">@color/blue</item>
-        <item name="android:statusBarColor">@color/blue</item>
+        <item name="android:actionBarTabStyle">@color/white</item>
+        <item name="android:statusBarColor">#00695c</item>
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
     </style>
@@ -17,6 +18,9 @@
     <style name="AppTheme.NoActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
+    </style>
+    <style name="TabColor">
+            <item name="android:background">@color/white</item>
     </style>
 
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
