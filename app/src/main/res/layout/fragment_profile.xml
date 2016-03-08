@@ -302,7 +302,7 @@
                     <ImageView
                         android:layout_width="100dp"
                         android:layout_height="100dp"
-                        android:id="@+id/imageView"
+                        android:id="@+id/imageViewNewCourse"
                         android:layout_marginRight="20sp"
                         android:background="@drawable/home_icon"
                         android:scaleType="fitXY"

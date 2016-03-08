@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-=======
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
->>>>>>> origin/master
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -10,7 +6,6 @@
 
     <!-- TODO: Update blank fragment layout -->
 
-<<<<<<< HEAD
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/fab_new_lesson"
         android:layout_width="wrap_content"
@@ -22,7 +17,4 @@
         android:layout_alignEnd="@+id/listViewThreads"
         android:layout_marginEnd="40dp"
         android:layout_marginBottom="25dp" />
-</FrameLayout>
-=======
 </RelativeLayout>
->>>>>>> origin/master

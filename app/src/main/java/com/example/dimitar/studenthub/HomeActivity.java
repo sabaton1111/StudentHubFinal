@@ -2,35 +2,17 @@ package com.example.dimitar.studenthub;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTabHost;
 import android.support.v4.app.FragmentTransaction;
-import android.app.ListFragment;
 import android.content.Intent;
-import android.support.v4.view.MenuItemCompat;
-import android.view.MenuInflater;
-import android.view.ViewGroup;
 import android.os.Bundle;
-import android.widget.SearchView;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.app.SearchManager;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.TabHost;
-import android.widget.TextView;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import com.parse.Parse;
 import com.parse.ParseObject;
 import com.parse.ParseUser;
 
@@ -83,7 +65,7 @@ public class HomeActivity extends AppCompatActivity
 
         Fragment homeFragment;
         homeFragment = new HomeFragment();
-        ChangeFragment(homeFragment, true);
+        ChangeFragment(homeFragment, false);
     }
 
 
@@ -113,7 +95,7 @@ public class HomeActivity extends AppCompatActivity
     public void onClickNewCourseButton()
     {
         Fragment newLessonFragment;
-        newLessonFragment = new MakeNewLesson();
+        newLessonFragment = new MakeNewLessonFragment();
         ChangeFragment(newLessonFragment, true);
     }
 

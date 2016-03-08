@@ -3,8 +3,7 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:id="@+id/categories_subject_fragment"
-    tools:context="com.example.martin.fortesting.CategoriesBySubject"
-    android:background="@drawable/forum_background_test">
+    tools:context="com.example.martin.fortesting.CategoriesBySubject" >
 
     <TextView
         android:layout_width="wrap_content"
