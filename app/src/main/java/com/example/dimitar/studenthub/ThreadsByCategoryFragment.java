@@ -1,5 +1,6 @@
 package com.example.dimitar.studenthub;
 
+import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
 import android.content.Context;
 import android.os.Bundle;
@@ -37,7 +38,7 @@ public class ThreadsByCategoryFragment extends Fragment
     ThreadsParseArrayAdapter parseArrayAdapter;
     HashMap<String, Object> parseRequestHashMap = new HashMap<String, Object>();
     OnClickThreadItemListener onClickThreadItemListener;
-
+    OnClickNewThreadButtonListener onClickNewThreadButtonListener;
     public ThreadsByCategoryFragment()
     {
     }
@@ -178,6 +179,13 @@ public class ThreadsByCategoryFragment extends Fragment
                 onClickThreadItemListener.onClickThreadItem(parseArrayAdapter.getItem(position));
             }
         });
+        FloatingActionButton button1 = (FloatingActionButton) view.findViewById(R.id.fab_new_thread);
+        button1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onClickNewThreadButtonListener.onClickNewThreadButton();
+            }
+        });
         return view;
     }
 
@@ -195,10 +203,22 @@ public class ThreadsByCategoryFragment extends Fragment
             throw new RuntimeException(context.toString() + " must implement OnClickCategoryItemListener");
         }
         Log.d("context", context.toString());
+        if (context instanceof OnClickNewThreadButtonListener)
+        {
+            onClickNewThreadButtonListener = (OnClickNewThreadButtonListener) context;
+        }
+        else
+        {
+            throw new RuntimeException(context.toString() + " must implement OnClickNewThreadButtonListener");
+        }
     }
 
     public interface OnClickThreadItemListener
     {
         void onClickThreadItem(ParseObject thread);
+    }
+    public interface OnClickNewThreadButtonListener
+    {
+        public void onClickNewThreadButton();
     }
 }

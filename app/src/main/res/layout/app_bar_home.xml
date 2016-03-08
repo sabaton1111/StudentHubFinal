@@ -12,7 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:titleTextColor="@android:color/white"
-        android:background="?attr/colorPrimary">
+        android:background="#ffffff">
     </android.support.v7.widget.Toolbar>
 
     <View
@@ -26,7 +26,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:background="#616161">
+        android:background="#009688">
 
         <RelativeLayout
             android:id="@+id/search_top_bar"
@@ -35,7 +35,8 @@
             android:layout_height="45dp"
             android:layout_marginTop="10dp"
             android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp">
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="10dp">
 
             <EditText
                 android:id="@+id/searchTextView"
@@ -56,14 +57,17 @@
                 android:id="@+id/action_up_btn"
                 style="@style/MSV_ImageButton"
                 android:layout_centerVertical="true"
-                android:src="@drawable/ic_action_navigation_arrow_back"/>
+                android:src="@drawable/menu_icon"
+                android:scaleType="fitXY"
+                android:tint="#808080"
+                android:layout_width="35dp" />
 
             <ImageButton
                 android:id="@+id/action_voice_btn"
                 style="@style/MSV_ImageButton"
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentRight="true"
-                android:src="@drawable/ic_action_voice_search"/>
+                android:src="@android:drawable/ic_btn_speak_now"/>
 
             <ImageButton
                 android:id="@+id/action_empty_btn"
@@ -94,7 +98,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@android:color/white"
-            android:divider="@android:color/transparent"/>
+            android:divider="@android:color/transparent" />
     </LinearLayout>
 
 

@@ -34,18 +34,20 @@
             android:id="@+id/nav_inquiry"
             android:icon="@drawable/inquiry_icon"
             android:title="Inquiry" />
-        <item
-            android:id="@+id/nav_email"
-            android:icon="@drawable/email_icon"
-            android:title="Email" />
+
     </group>
 
     <item android:title="Advanced">
         <menu>
+            <group android:checkableBehavior="single">
             <item
                 android:id="@+id/nav_settings"
                 android:icon="@drawable/settings_icon"
                 android:title="Settings" />
+            <item
+            android:id="@+id/nav_email"
+            android:icon="@drawable/email_icon"
+            android:title="Contact Us" />
             <item
                 android:id="@+id/nav_help"
                 android:icon="@drawable/help_icon"
@@ -54,6 +56,7 @@
                 android:id="@+id/nav_exit"
                 android:icon="@drawable/exit_icon"
                 android:title="Exit" />
+            </group>
         </menu>
     </item>
 

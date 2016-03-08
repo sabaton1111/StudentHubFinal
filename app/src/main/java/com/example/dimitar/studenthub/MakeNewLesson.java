@@ -68,6 +68,8 @@ public class MakeNewLesson extends Fragment {
             mScrollView = (ScrollView) inflater.inflate(R.layout.fragment_make_new_lesson, container, false);
             mFormView = (RelativeLayout) mScrollView.findViewById(R.id.form);
 
+
+            //Setting up the button for the image
             buttonLoadImage = (Button) mScrollView.findViewById(R.id.selectPicture);
 
             buttonLoadImage.setOnClickListener(new View.OnClickListener() {
@@ -92,7 +94,7 @@ public class MakeNewLesson extends Fragment {
         return mScrollView;
     }
 
-
+    //Displaying the picture in image view
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);

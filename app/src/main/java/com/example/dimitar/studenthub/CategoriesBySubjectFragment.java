@@ -1,5 +1,6 @@
 package com.example.dimitar.studenthub;
 
+import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
 import android.content.Context;
 import android.os.Bundle;
@@ -35,6 +36,8 @@ public class CategoriesBySubjectFragment extends Fragment
     HashMap<String, Object> parseRequestHashMap = new HashMap<String, Object>();
     OnClickCategoryItemListener onClickCategoryItemListener;
 
+
+    OnClickNewCategoryButtonListener onClickNewCategoryButtonListener;
     public CategoriesBySubjectFragment()
     {
     }
@@ -138,6 +141,13 @@ public class CategoriesBySubjectFragment extends Fragment
                 onClickCategoryItemListener.onClickCategoryItem(parseArrayAdapter.getItem(position));
             }
         });
+        FloatingActionButton button = (FloatingActionButton) view.findViewById(R.id.fab_new_category);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onClickNewCategoryButtonListener.onClickNewCategoryButton();
+            }
+        });
         return view;
     }
 
@@ -155,10 +165,23 @@ public class CategoriesBySubjectFragment extends Fragment
             throw new RuntimeException(context.toString() + " must implement OnClickCategoryItemListener");
         }
         Log.d("context", context.toString());
+
+        if (context instanceof OnClickNewCategoryButtonListener)
+    {
+        onClickNewCategoryButtonListener = (OnClickNewCategoryButtonListener) context;
+    }
+    else
+    {
+        throw new RuntimeException(context.toString() + " must implement OnClickNewCategoryButtonListener");
+    }
     }
 
     public interface OnClickCategoryItemListener
     {
         public void onClickCategoryItem(ParseObject category);
+    }
+    public interface OnClickNewCategoryButtonListener
+    {
+        public void onClickNewCategoryButton();
     }
 }

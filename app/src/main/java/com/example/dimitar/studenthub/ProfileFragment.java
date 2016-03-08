@@ -75,6 +75,8 @@ public class ProfileFragment extends Fragment {
             layout1 = (RelativeLayout) inflater.inflate(R.layout.fragment_profile, container, false);
             mFormView = (RelativeLayout) layout1.findViewById(R.id.form1);
 
+
+            //Getting user information and display it in profile section
             ParseUser.getCurrentUser();
             ParseUser currentUser = ParseUser.getCurrentUser();
             name = currentUser.getUsername();
@@ -109,6 +111,8 @@ public class ProfileFragment extends Fragment {
             }
             else {isStudentText.setText("No");}
 
+
+            //Setting up the button which loads picture from gallery
             buttonLoadImage = (Button) layout1.findViewById(R.id.buttonProfilePicture);
 
             buttonLoadImage.setOnClickListener(new View.OnClickListener() {
@@ -133,6 +137,8 @@ public class ProfileFragment extends Fragment {
         return layout1;
     }
 
+
+    //Displaying the picture in image view
 
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {

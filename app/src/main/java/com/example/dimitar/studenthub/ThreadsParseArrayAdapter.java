@@ -12,6 +12,8 @@ import com.parse.ParseUser;
 
 import org.w3c.dom.Text;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -44,7 +46,6 @@ public class ThreadsParseArrayAdapter extends ArrayAdapter<ParseObject>
             LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             view = inflater.inflate(R.layout.layout_item_thread, parent, false);
             viewHolder = new ThreadViewHolder();
-            viewHolder.textFirst = (TextView) view.findViewById(R.id.textViewFirst);
             viewHolder.textSecond = (TextView) view.findViewById(R.id.textViewSecond);
             viewHolder.textUsername = (TextView) view.findViewById(R.id.textViewUsername);
             view.setTag(viewHolder);
@@ -55,9 +56,10 @@ public class ThreadsParseArrayAdapter extends ArrayAdapter<ParseObject>
         }
         ParseObject parseObject = super.getItem(position);
         //ParseUser author = (ParseUser) parseObject.get("user");
-
-        viewHolder.textFirst.setText(parseObject.getString("title"));
-        viewHolder.textSecond.setText(parseObject.getCreatedAt().toString());
+        Date date = parseObject.getCreatedAt();
+        SimpleDateFormat formater = new SimpleDateFormat("d/M/yyyy");
+        String datestring = formater.format(date);
+        viewHolder.textSecond.setText(datestring);
         //viewHolder.textUsername.setText(author.getUsername());
 
         return view;
