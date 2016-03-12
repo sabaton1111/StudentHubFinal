@@ -7,6 +7,7 @@ import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -50,7 +51,7 @@ public class MakeNewLessonFragment extends Fragment
     private ImageView imageViewCourseImage;
     private Spinner spinnerSubjects;
     private Button buttonLoadImage;
-    private Button buttonMakeCourse;
+    private FloatingActionButton buttonMakeCourse;
     private ParseFile courseImage;
     HashMap<String, Object> parseRequestHashMap = new HashMap<>();
     HashMap<String, String> lectorsByNameHashMap = new HashMap<>();
@@ -85,7 +86,7 @@ public class MakeNewLessonFragment extends Fragment
         editTextResources = (EditText) view.findViewById(R.id.editTextResources);
         imageViewCourseImage = (ImageView) view.findViewById(R.id.imageViewNewCourse);
         spinnerSubjects = (Spinner) view.findViewById(R.id.spinnerSubjects);
-        buttonMakeCourse = (Button) view.findViewById(R.id.buttonMakeCourse);
+        buttonMakeCourse = (FloatingActionButton) view.findViewById(R.id.fab_save_lesson);
 
         buttonMakeCourse.setOnClickListener(new View.OnClickListener() {
             @Override

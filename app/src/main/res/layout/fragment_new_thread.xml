@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="fill_parent"
+    android:layout_alignParentBottom="true"
     android:background="#ffffff"
     tools:context="com.example.dimitar.studenthub.NewThreadFragment">
 
@@ -37,12 +38,15 @@
         android:layout_height="fill_parent"
         android:id="@+id/scrollViewNewCategory"
         android:background="#ffffff"
+        android:layout_alignParentBottom="true"
         android:layout_marginTop="50dp">
         <RelativeLayout
             android:layout_width="match_parent"
             android:orientation="vertical"
+            android:paddingBottom="100dp"
             android:layout_height="match_parent"
-            android:background="#ffffff">
+            android:background="#ffffff"
+            android:gravity="fill_vertical">
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -100,13 +104,13 @@
         android:inputType="textMultiLine"
         android:ems="10"
         android:id="@+id/editTextContent"
-        android:gravity="top"
         android:background="#fafafa"
         android:layout_below="@+id/textViewPost"
         android:layout_alignParentLeft="true"
         android:layout_marginStart="20dp"
         android:layout_marginTop="20dp"
-        android:layout_marginEnd="20dp" />
+        android:layout_marginEnd="20dp"
+                android:gravity="top" />
 
             <ImageButton
                 android:layout_width="25dp"

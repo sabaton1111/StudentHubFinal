@@ -33,12 +33,92 @@
                     android:background="#f0f0f0"
                     android:paddingRight="10dp"
                     android:paddingLeft="10dp">
+                    <ScrollView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        >
+                      <RelativeLayout
+                          android:layout_height="match_parent"
+                          android:layout_width="match_parent">
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/recyclerViewForum"
+                        android:layout_width="match_parent"
+                        android:layout_height="300dp"
+                        android:layout_marginTop="50dp"
+                        android:orientation="horizontal"
+                        android:background="#f0f0f0" />
 
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:text="Lessons"
+                        android:id="@+id/textView20"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentStart="true"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="10dp" />
+
+                    <Button
+                        style="?android:attr/buttonStyleSmall"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="More"
+                        android:background="@android:color/transparent"
+                        android:id="@+id/buttonMoreLessons"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentEnd="true"
+                        android:textColor="@color/teal" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:text="Forum"
+                        android:id="@+id/textView25"
+                        android:layout_marginLeft="10dp"
+                        android:layout_below="@+id/recyclerViewForum"
+                        android:layout_alignStart="@+id/textView20"
+                        android:layout_marginTop="10dp" />
+
+                          <android.support.v7.widget.RecyclerView
+                              android:id="@+id/recyclerViewLesson"
+                              android:layout_width="match_parent"
+                              android:layout_height="300dp"
+                              android:orientation="horizontal"
+                              android:background="#f0f0f0"
+                              android:layout_below="@+id/textView25"
+                              android:layout_alignParentStart="true"
+                              android:layout_marginTop="10dp" />
+
+                          <Button
+                              style="?android:attr/buttonStyleSmall"
+                              android:layout_width="wrap_content"
+                              android:layout_height="wrap_content"
+                              android:text="More"
+                              android:background="@android:color/transparent"
+                              android:id="@+id/button"
+                              android:textColor="@color/teal"
+                              android:layout_below="@+id/recyclerViewForum"
+                              android:layout_alignParentEnd="true" />
+                      </RelativeLayout>
+            </ScrollView>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/tab2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:paddingRight="10dp"
+                    android:paddingLeft="10dp"
+                    android:background="#f0f0f0">
                     <HorizontalScrollView
                         android:layout_width="match_parent"
                         android:layout_height="250dp"
                         android:scrollbars="none"
-                        android:id="@+id/horizontalScrollView"
+                        android:id="@+id/horizontalScrollViewPopular"
                         android:layout_alignParentTop="true"
                         android:layout_alignParentStart="true"
                         android:layout_marginTop="60dp" >
@@ -46,42 +126,42 @@
                         <RelativeLayout
                             android:layout_height="250dp"
                             android:layout_width="match_parent">
-                                <RelativeLayout
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="250dp"
-                                    android:background="@drawable/layout_bg"
-                                    android:id="@+id/firstLayout">
-                                    <ImageView
-                                        android:layout_height="150dp"
-                                        android:layout_width="150dp"
-                                        android:scaleType="fitXY"
-                                        android:layout_marginStart="10dp"
-                                        android:layout_marginEnd="10dp"
-                                        android:layout_marginTop="10dp"
-                                        android:src="@drawable/login_background"
-                                        android:background="@drawable/layout_bg"
-                                        >
-
-                                    </ImageView>
-
-                                    <TextView
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:textAppearance="?android:attr/textAppearanceLarge"
-                                        android:text="Android"
-                                        android:id="@+id/textView19"
-                                        android:layout_alignParentBottom="true"
-                                        android:layout_centerHorizontal="true"
-                                        android:layout_marginBottom="20dp" />
-
-                                </RelativeLayout>
                             <RelativeLayout
                                 android:layout_width="wrap_content"
                                 android:layout_height="250dp"
-                                android:layout_toEndOf="@+id/firstLayout"
+                                android:background="@drawable/layout_bg"
+                                android:id="@+id/firstLayoutPopular">
+                                <ImageView
+                                    android:layout_height="150dp"
+                                    android:layout_width="150dp"
+                                    android:scaleType="fitXY"
+                                    android:layout_marginStart="10dp"
+                                    android:layout_marginEnd="10dp"
+                                    android:layout_marginTop="10dp"
+                                    android:src="@drawable/login_background"
+                                    android:background="@drawable/layout_bg"
+                                    >
+
+                                </ImageView>
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textAppearance="?android:attr/textAppearanceLarge"
+                                    android:text="Android"
+                                    android:id="@+id/textView19Popular"
+                                    android:layout_alignParentBottom="true"
+                                    android:layout_centerHorizontal="true"
+                                    android:layout_marginBottom="20dp" />
+
+                            </RelativeLayout>
+                            <RelativeLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="250dp"
+                                android:layout_toEndOf="@+id/firstLayoutPopular"
                                 android:background="@drawable/layout_bg"
                                 android:layout_marginStart="10dp"
-                                android:id="@+id/secondLayout">
+                                android:id="@+id/secondLayoutPopular">
 
                                 <ImageView
                                     android:layout_height="150dp"
@@ -92,7 +172,7 @@
                                     android:scaleType="fitXY"
                                     android:src="@drawable/help_icon"
                                     android:background="@drawable/layout_bg"
-                                    android:id="@+id/imageView3">
+                                    android:id="@+id/imageView3Popular">
                                 </ImageView>
 
                                 <TextView
@@ -100,19 +180,19 @@
                                     android:layout_height="wrap_content"
                                     android:textAppearance="?android:attr/textAppearanceLarge"
                                     android:text="    Errors in Android Studio"
-                                    android:id="@+id/textView20"
+                                    android:id="@+id/textView20Popular"
                                     android:layout_alignParentBottom="true"
-                                    android:layout_alignStart="@+id/imageView3"
-                                    android:layout_alignEnd="@+id/imageView3"
+                                    android:layout_alignStart="@+id/imageView3Popular"
+                                    android:layout_alignEnd="@+id/imageView3Popular"
                                     android:layout_marginBottom="10dp" />
                             </RelativeLayout>
                             <RelativeLayout
                                 android:layout_width="wrap_content"
                                 android:layout_height="250dp"
-                                android:layout_toEndOf="@+id/secondLayout"
+                                android:layout_toEndOf="@+id/secondLayoutPopular"
                                 android:background="@drawable/layout_bg"
                                 android:layout_marginStart="10dp"
-                                android:id="@+id/thirdLayout">
+                                android:id="@+id/thirdLayoutPopular">
                                 <ImageView
                                     android:layout_width="150dp"
                                     android:layout_height="150dp"
@@ -122,16 +202,16 @@
                                     android:scaleType="fitXY"
                                     android:src="@drawable/inquiry_icon"
                                     android:background="@drawable/layout_bg"/>
-                                </RelativeLayout>
-                                </RelativeLayout>
-    </HorizontalScrollView>
+                            </RelativeLayout>
+                        </RelativeLayout>
+                    </HorizontalScrollView>
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textAppearance="?android:attr/textAppearanceMedium"
                         android:text="Forum"
-                        android:id="@+id/textViewForum"
+                        android:id="@+id/textViewForumPopular"
                         android:textStyle="bold"
                         android:layout_alignParentTop="true"
                         android:layout_alignParentStart="true"
@@ -144,7 +224,7 @@
                         android:layout_height="wrap_content"
                         android:text="More"
                         style="?android:attr/borderlessButtonStyle"
-                        android:id="@+id/buttonForum"
+                        android:id="@+id/buttonForumPopular"
                         android:layout_alignParentTop="true"
                         android:layout_alignParentEnd="true"
                         android:layout_marginTop="10dp"
@@ -157,11 +237,11 @@
                         android:layout_height="wrap_content"
                         android:textAppearance="?android:attr/textAppearanceMedium"
                         android:text="Lessons"
-                        android:id="@+id/textViewLessons"
+                        android:id="@+id/textViewLessonsPopular"
                         android:textStyle="bold"
                         android:layout_marginLeft="20dp"
                         android:textSize="22dp"
-                        android:layout_below="@+id/horizontalScrollView"
+                        android:layout_below="@+id/horizontalScrollViewPopular"
                         android:layout_alignParentStart="true"
                         android:layout_marginTop="20dp" />
 
@@ -170,21 +250,13 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="More"
-                        android:id="@+id/buttonLessons"
+                        android:id="@+id/buttonLessonsPopular"
                         android:layout_marginRight="10dp"
                         android:textColor="@color/teal"
                         android:background="#f0f0f0"
-                        android:layout_below="@+id/horizontalScrollView"
+                        android:layout_below="@+id/horizontalScrollViewPopular"
                         android:layout_alignParentEnd="true"
                         android:layout_marginTop="10dp" />
-                </RelativeLayout>
-
-                <RelativeLayout
-                    android:id="@+id/tab2"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical">
-
                 </RelativeLayout>
             </FrameLayout>
         </LinearLayout>
