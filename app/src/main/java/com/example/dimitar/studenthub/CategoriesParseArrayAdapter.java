@@ -5,15 +5,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.EditText;
 import android.widget.TextView;
 
 import com.parse.ParseObject;
 
-import org.w3c.dom.Text;
-
-import java.text.DateFormat;
-import java.text.Format;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
@@ -36,7 +31,7 @@ public class CategoriesParseArrayAdapter extends ArrayAdapter<ParseObject> {
 
     @Override
     public ParseObject getItem(int position) {
-        return super.getItem(super.getCount() - 1 - position);
+        return super.getItem(position);
     }
 
     @Override
@@ -48,7 +43,7 @@ public class CategoriesParseArrayAdapter extends ArrayAdapter<ParseObject> {
             view = inflater.inflate(R.layout.layout_item_category, parent, false);
             viewHolder = new CategoryViewHolder();
             viewHolder.textFirst = (TextView) view.findViewById(R.id.textViewFirst);
-            viewHolder.textSecond = (TextView) view.findViewById(R.id.textViewSecond);
+            viewHolder.textSecond = (TextView) view.findViewById(R.id.textViewDate);
             view.setTag(viewHolder);
         } else {
             viewHolder = (CategoryViewHolder) view.getTag();

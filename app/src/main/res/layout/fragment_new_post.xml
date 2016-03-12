@@ -13,7 +13,7 @@
         android:textSize="23sp"
         android:background="#009688"
         android:textColor="#ffffff"
-        android:id="@+id/textViewMakeNewThread"
+        android:id="@+id/textViewThreadTitle"
         android:gravity="left|center"
         android:layout_alignParentTop="true"
         android:layout_alignParentStart="true"
@@ -27,7 +27,7 @@
         android:textColor="@color/blue"
         android:id="@+id/textViewPost"
         android:layout_marginLeft="100dp"
-        android:layout_below="@+id/textViewMakeNewThread"
+        android:layout_below="@+id/textViewThreadTitle"
         android:layout_alignParentStart="true"
         android:layout_marginTop="20dp"
         android:layout_marginBottom="20dp" />
@@ -43,10 +43,10 @@
     <EditText
         android:layout_width="match_parent"
         android:layout_height="200dp"
-        android:hint="Description"
+        android:hint="Content"
         android:inputType="textMultiLine"
         android:ems="10"
-        android:id="@+id/editTextDescription"
+        android:id="@+id/editTextContent"
         android:gravity="top"
         android:background="#fafafa"
         android:layout_below="@+id/textViewPost"
@@ -56,10 +56,10 @@
 <RelativeLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_below="@+id/editTextDescription"
+    android:layout_below="@+id/editTextContent"
     android:background="#ffff">
     <android.support.design.widget.FloatingActionButton
-        android:id="@+id/fab_new_post"
+        android:id="@+id/fab_new_post_save"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"

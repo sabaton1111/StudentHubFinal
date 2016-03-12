@@ -1,9 +1,7 @@
 package com.example.dimitar.studenthub;
 
-import android.app.admin.DeviceAdminInfo;
 import android.content.Intent;
 import android.database.Cursor;
-import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.net.Uri;
@@ -23,7 +21,6 @@ import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.parse.FunctionCallback;
-import com.parse.Parse;
 import com.parse.ParseCloud;
 import com.parse.ParseException;
 import com.parse.ParseFile;
@@ -84,7 +81,7 @@ public class MakeNewLessonFragment extends Fragment
         editTextHomework = (EditText) view.findViewById(R.id.editTextHomework);
         editTextLectors = (EditText) view.findViewById(R.id.editTextLectors);
         editTextTitle = (EditText) view.findViewById(R.id.editTextTitle);
-        editTextDescription = (EditText) view.findViewById(R.id.editTextDescription);
+        editTextDescription = (EditText) view.findViewById(R.id.editTextContent);
         editTextResources = (EditText) view.findViewById(R.id.editTextResources);
         imageViewCourseImage = (ImageView) view.findViewById(R.id.imageViewNewCourse);
         spinnerSubjects = (Spinner) view.findViewById(R.id.spinnerSubjects);

@@ -8,7 +8,6 @@ import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
 import com.parse.ParseObject;
-import com.parse.ParseUser;
 
 import java.util.List;
 
@@ -29,7 +28,7 @@ public class PostsParseArrayAdapter extends ArrayAdapter<ParseObject>
 
     @Override
     public ParseObject getItem(int position) {
-        return super.getItem(super.getCount() - 1 - position);
+        return super.getItem(position);
     }
 
     @Override
@@ -42,7 +41,7 @@ public class PostsParseArrayAdapter extends ArrayAdapter<ParseObject>
             LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             view = inflater.inflate(R.layout.layout_item_threadpost, parent, false);
             viewHolder = new PostViewHolder();
-            viewHolder.textUsername = (TextView) view.findViewById(R.id.textViewUsername);
+            viewHolder.textUsername = (TextView) view.findViewById(R.id.textViewTitle);
             viewHolder.textCreatedDate = (TextView) view.findViewById(R.id.textViewCreatedDate);
             viewHolder.textContent = (TextView) view.findViewById(R.id.textViewContent);
             view.setTag(viewHolder);

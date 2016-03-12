@@ -6,13 +6,12 @@
     android:id="@+id/categories_subject_fragment"
     tools:context="com.example.martin.fortesting.CategoriesBySubject"
     android:background="@color/teal">
-    tools:context="com.example.martin.fortesting.CategoriesBySubject" >
 
     <TextView
         android:text="Subject Title"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:textSize="23sp"
+        android:textSize="12sp"
         android:layout_marginStart="10dp"
         android:background="#009688"
         android:textColor="#ffffff"

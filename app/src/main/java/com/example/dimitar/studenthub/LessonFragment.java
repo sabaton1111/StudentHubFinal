@@ -1,5 +1,5 @@
 package com.example.dimitar.studenthub;
-
+import android.support.v4.app.FragmentTransaction;
 import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
@@ -9,9 +9,14 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
 
+import com.google.android.youtube.player.YouTubeInitializationResult;
+import com.google.android.youtube.player.YouTubePlayer;
+import com.google.android.youtube.player.YouTubePlayerSupportFragment;
+
 public class LessonFragment extends Fragment {
 View view;
     Boolean check;
+    YouTubePlayer tubePlayer;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -21,7 +26,7 @@ View view;
         follow.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View button) {
-               button.setSelected(!button.isSelected());
+                button.setSelected(!button.isSelected());
                 if (button.isSelected()) {
                     follow.setImageResource(R.drawable.btn_star_on);
                 } else {
@@ -29,6 +34,28 @@ View view;
                 }
             }
         });
+
+        YouTubePlayerSupportFragment youTubePlayerFragment = YouTubePlayerSupportFragment.newInstance();
+        youTubePlayerFragment.initialize(YouTubeDeveloperKey.DEVELOPER_KEY, new YouTubePlayer.OnInitializedListener() {
+            @Override
+            public void onInitializationSuccess(YouTubePlayer.Provider provider, YouTubePlayer youTubePlayer, boolean wasRestored) {
+                if(!wasRestored)
+                {
+                    tubePlayer = youTubePlayer;
+                    tubePlayer.cueVideo("vyiftpiCs9o");
+                }
+            }
+
+            @Override
+            public void onInitializationFailure(YouTubePlayer.Provider provider, YouTubeInitializationResult youTubeInitializationResult) {
+
+            }
+        });
+
+        FragmentTransaction transaction = getChildFragmentManager().beginTransaction();
+        transaction.replace(R.id.fragment_youtube_holder, youTubePlayerFragment);
+        transaction.commit();
+
         return view;
     }
 

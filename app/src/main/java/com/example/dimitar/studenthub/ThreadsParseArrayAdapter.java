@@ -33,7 +33,7 @@ public class ThreadsParseArrayAdapter extends ArrayAdapter<ParseObject>
 
     @Override
     public ParseObject getItem(int position) {
-        return super.getItem(super.getCount() - 1 - position);
+        return super.getItem(position);
     }
 
     @Override
@@ -46,8 +46,9 @@ public class ThreadsParseArrayAdapter extends ArrayAdapter<ParseObject>
             LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             view = inflater.inflate(R.layout.layout_item_thread, parent, false);
             viewHolder = new ThreadViewHolder();
-            viewHolder.textSecond = (TextView) view.findViewById(R.id.textViewSecond);
+            viewHolder.textDate = (TextView) view.findViewById(R.id.textViewDate);
             viewHolder.textUsername = (TextView) view.findViewById(R.id.textViewUsername);
+            viewHolder.textTitle = (TextView) view.findViewById(R.id.textViewTitle);
             view.setTag(viewHolder);
         }
         else
@@ -55,20 +56,21 @@ public class ThreadsParseArrayAdapter extends ArrayAdapter<ParseObject>
             viewHolder = (ThreadViewHolder) view.getTag();
         }
         ParseObject parseObject = super.getItem(position);
-        //ParseUser author = (ParseUser) parseObject.get("user");
+        ParseUser author = (ParseUser) parseObject.get("user");
         Date date = parseObject.getCreatedAt();
         SimpleDateFormat formater = new SimpleDateFormat("d/M/yyyy");
         String datestring = formater.format(date);
-        viewHolder.textSecond.setText(datestring);
-        //viewHolder.textUsername.setText(author.getUsername());
+        viewHolder.textDate.setText(datestring);
+        viewHolder.textUsername.setText(author.getUsername());
+        viewHolder.textTitle.setText(parseObject.getString("title"));
 
         return view;
     }
 
     private class ThreadViewHolder
     {
-        public TextView textFirst;
-        public TextView textSecond;
+        public TextView textDate;
         public TextView textUsername;
+        public TextView textTitle;
     }
 }

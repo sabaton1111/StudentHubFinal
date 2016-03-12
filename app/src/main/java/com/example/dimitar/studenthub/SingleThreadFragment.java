@@ -13,6 +13,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.parse.DeleteCallback;
@@ -22,6 +23,7 @@ import com.parse.ParseCloud;
 import com.parse.ParseException;
 import com.parse.ParseObject;
 import com.parse.ParseQuery;
+import com.parse.SaveCallback;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -57,11 +59,6 @@ public class SingleThreadFragment extends Fragment
     {
         parseObjectList.clear();
         parseObjectList.addAll(ForumModel.getPosts(this.thread.getObjectId()));
-        if (parseArrayAdapter == null)
-        {
-            Log.d("adaptera e null...", "---------");
-        }
-        Log.d(parseObjectList.toString(), "--te tova e lista na postovete");
         parseArrayAdapter.notifyDataSetChanged();
     }
 
@@ -77,23 +74,20 @@ public class SingleThreadFragment extends Fragment
         final List<ParseObject> ramPosts = ForumModel.getPosts(this.thread.getObjectId());
         if (ramPosts == null || ramPosts.size() == 0) {
             ParseQuery query = ParseQuery.getQuery("Post");
+            String pinName = "threads" + thread.getObjectId();
             query.whereEqualTo("thread", this.thread);
-            //query.include("user");
-            //query.fromPin();
-            query.fromLocalDatastore();
+            query.fromPin(pinName);
             query.ignoreACLs();
             query.include("user");
             query.findInBackground(new FindCallback() {
                 @Override
                 public void done(List list, ParseException e) {
-                    Log.d("Deba", "!!!!! Post");
                     ForumModel.UpdatePostData(thread.getObjectId(), list);
                     FetchDataWithModel();
                 }
 
                 @Override
                 public void done(Object o, Throwable throwable) {
-                    //Log.d("Deba", "))))) category" + o.toString() + ((ParseObject)((List)o).get(0)).getParseObject("subject"));
                     try {
                         throw throwable;
                     } catch (Throwable throwable1) {
@@ -113,7 +107,6 @@ public class SingleThreadFragment extends Fragment
     public void LoadOnlineData()
     {
         parseRequestHashMap.put("threadId", this.thread.getObjectId());
-        Log.d("Deba", "categoriqta e " + this.thread.getObjectId());
         ParseCloud.callFunctionInBackground("GetAllPosts", parseRequestHashMap, new FunctionCallback<List<ParseObject>>() {
             @Override
             public void done(final List<ParseObject> parseObjects, ParseException e) {
@@ -123,7 +116,12 @@ public class SingleThreadFragment extends Fragment
                     ParseObject.unpinAllInBackground(pinName, new DeleteCallback() {
                         @Override
                         public void done(ParseException e) {
-                            ParseObject.pinAllInBackground(pinName, parseObjects);
+                            ParseObject.pinAllInBackground(pinName, parseObjects, new SaveCallback() {
+                                @Override
+                                public void done(ParseException e) {
+                                    FetchDataWithModel();
+                                }
+                            });
                         }
                     });
                 } else {
@@ -149,17 +147,25 @@ public class SingleThreadFragment extends Fragment
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState)
     {
-        Log.d("Created", "Done!!!");
         // Inflate the layout for this fragment
         view = inflater.inflate(R.layout.fragment_single_thread, container, false);
         ListView threadPostsListView = (ListView) view.findViewById(R.id.listViewThreadPosts);
         threadPostsListView.setAdapter(parseArrayAdapter);
 
+        View header = inflater.inflate(R.layout.layout_header_threadpost, threadPostsListView, false);
+
+        TextView textViewHeaderTitle = (TextView) header.findViewById(R.id.textViewTitle);
+        TextView textViewHeaderContent = (TextView) header.findViewById(R.id.textViewContent);
+        textViewHeaderTitle.setText(thread.getString("title"));
+        textViewHeaderContent.setText(thread.getString("content"));
+
+        threadPostsListView.addHeaderView(header);
+
         FloatingActionButton buttonPost = (FloatingActionButton) view.findViewById(R.id.fab_new_post);
         buttonPost.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                onClickNewPostButtonListener.onClickNewPostButton();
+                onClickNewPostButtonListener.onClickNewPostButton(thread);
             }
         });
         return view;
@@ -170,7 +176,6 @@ public class SingleThreadFragment extends Fragment
     {
         super.onAttach(context);
         this.context = context;
-        Log.d("context", context.toString());
 
         if (context instanceof OnClickNewPostButtonListener)
         {
@@ -183,6 +188,6 @@ public class SingleThreadFragment extends Fragment
     }
     public interface OnClickNewPostButtonListener
     {
-        public void onClickNewPostButton();
+        void onClickNewPostButton(ParseObject thread);
     }
 }

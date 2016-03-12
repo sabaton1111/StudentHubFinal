@@ -39,7 +39,7 @@ public class HomeActivity extends AppCompatActivity
         LibraryFragment.OnClickLessonOpenListener,
         HomeFragment.OnClickForumOpenListener,
         HomeFragment.OnClickLessonsOpenListener
-        {
+{
     FragmentManager fragmentManager;
     Fragment categoriesBySubjectFragment;
     Fragment threadsByCategoryFragment;
@@ -124,13 +124,15 @@ public class HomeActivity extends AppCompatActivity
         newLessonFragment = new MakeNewLessonFragment();
         ChangeFragment(newLessonFragment, true);
     }
-            @Override
-            public void OnClickLessonOpen()
-            {
-                Fragment lesson;
-                lesson = new LessonFragment();
-                ChangeFragment(lesson, true);
-            }
+
+    @Override
+    public void OnClickLessonOpen()
+    {
+        Fragment lesson;
+        lesson = new LessonFragment();
+        ChangeFragment(lesson, true);
+    }
+
     @Override
     public void onClickNewCategoryButton()
     {
@@ -138,34 +140,39 @@ public class HomeActivity extends AppCompatActivity
         newCategoryFragment = new NewCategoryFragment();
         ChangeFragment(newCategoryFragment, true);
     }
-            @Override
-            public void OnClickForumOpenButton()
-            {
-                Fragment newFragment;
-                newFragment = new ForumFragment();
-                ChangeFragment(newFragment, true);
-            }
-            @Override
-            public void OnClickLessonsOpenButton()
-            {
-                Fragment newLessons;
-                newLessons = new LibraryFragment();
-                ChangeFragment(newLessons, true);
-            }
-@Override
-public void onClickNewThreadButton()
-        {
-        Fragment newThreadFragment;
-        newThreadFragment = new NewThreadFragment();
-        ChangeFragment(newThreadFragment, true);
-        }
 
-            @Override
-            public void onClickNewPostButton() {
-                Fragment newPostFragment;
-                newPostFragment = new NewPostFragment();
-                ChangeFragment(newPostFragment, true);
-            }
+    @Override
+    public void OnClickForumOpenButton()
+    {
+        Fragment newFragment;
+        newFragment = new ForumFragment();
+        ChangeFragment(newFragment, true);
+    }
+
+    @Override
+    public void OnClickLessonsOpenButton()
+    {
+        Fragment newLessons;
+        newLessons = new LibraryFragment();
+        ChangeFragment(newLessons, true);
+    }
+
+    @Override
+    public void onClickNewThreadButton(ParseObject category)
+    {
+        Fragment newThreadFragment;
+        newThreadFragment = NewThreadFragment.newInstance(category);
+        ChangeFragment(newThreadFragment, true);
+    }
+
+    @Override
+    public void onClickNewPostButton(ParseObject thread)
+    {
+        Fragment newPostFragment;
+        newPostFragment = NewPostFragment.newInstance(thread);
+        ChangeFragment(newPostFragment, true);
+    }
+
     @Override
     public void onBackPressed() {
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -242,5 +249,4 @@ public void onClickNewThreadButton()
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
-
-        }
+}

@@ -11,6 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.parse.DeleteCallback;
@@ -183,9 +184,12 @@ public class ThreadsByCategoryFragment extends Fragment
         button1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                onClickNewThreadButtonListener.onClickNewThreadButton();
+                onClickNewThreadButtonListener.onClickNewThreadButton(category);
             }
         });
+        TextView textViewCategoryTitle = (TextView) view.findViewById(R.id.textViewCategoryTitle);
+        textViewCategoryTitle.setText(category.getString("title"));
+
         return view;
     }
 
@@ -219,6 +223,6 @@ public class ThreadsByCategoryFragment extends Fragment
     }
     public interface OnClickNewThreadButtonListener
     {
-        public void onClickNewThreadButton();
+        public void onClickNewThreadButton(ParseObject category);
     }
 }

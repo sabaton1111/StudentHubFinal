@@ -10,7 +10,7 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="Medium Text"
-        android:id="@+id/textViewUsername"
+        android:id="@+id/textViewTitle"
         android:layout_marginLeft="5dp"
         android:layout_alignTop="@+id/imageViewRound"
         android:layout_toEndOf="@+id/imageViewRound"
@@ -20,9 +20,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="New Text"
-        android:layout_alignStart="@+id/textViewUsername"
+        android:layout_alignStart="@+id/textViewTitle"
         android:id="@+id/textViewCreatedDate"
-        android:layout_below="@+id/textViewUsername"
+        android:layout_below="@+id/textViewTitle"
         android:layout_centerHorizontal="true" />
 
     <View

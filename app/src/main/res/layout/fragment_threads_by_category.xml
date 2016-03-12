@@ -15,7 +15,7 @@
         android:dividerHeight="1dp"
         android:divider="#2e4954"
         android:layout_alignParentStart="true"
-        android:layout_below="@+id/textViewSubjectTitle"
+        android:layout_below="@+id/textViewCategoryTitle"
         android:layout_centerHorizontal="true" />
     <TextView
         android:text="  Category Title"
@@ -24,7 +24,7 @@
         android:textSize="23sp"
         android:background="#009688"
         android:textColor="#ffffff"
-        android:id="@+id/textViewSubjectTitle"
+        android:id="@+id/textViewCategoryTitle"
         android:layout_alignParentTop="true"
         android:layout_alignParentStart="false"
         android:gravity="left|center" />

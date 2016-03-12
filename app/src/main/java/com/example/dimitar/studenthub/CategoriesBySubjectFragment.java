@@ -11,6 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.parse.FindCallback;
@@ -35,9 +36,8 @@ public class CategoriesBySubjectFragment extends Fragment
     CategoriesParseArrayAdapter parseArrayAdapter;
     HashMap<String, Object> parseRequestHashMap = new HashMap<String, Object>();
     OnClickCategoryItemListener onClickCategoryItemListener;
-
-
     OnClickNewCategoryButtonListener onClickNewCategoryButtonListener;
+
     public CategoriesBySubjectFragment()
     {
     }
@@ -148,6 +148,10 @@ public class CategoriesBySubjectFragment extends Fragment
                 onClickNewCategoryButtonListener.onClickNewCategoryButton();
             }
         });
+
+        TextView textViewSubjectTitle = (TextView) view.findViewById(R.id.textViewSubjectTitle);
+        textViewSubjectTitle.setText(subject.getString("title"));
+
         return view;
     }
 
@@ -180,6 +184,7 @@ public class CategoriesBySubjectFragment extends Fragment
     {
         public void onClickCategoryItem(ParseObject category);
     }
+
     public interface OnClickNewCategoryButtonListener
     {
         public void onClickNewCategoryButton();
