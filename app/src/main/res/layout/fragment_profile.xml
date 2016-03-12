@@ -182,8 +182,8 @@
                 android:textStyle="bold"
                 android:textColor="@color/blue"
                 android:id="@+id/textViewEmailParse"
-                android:layout_alignTop="@+id/textViewEmailProfile"
-                android:layout_alignStart="@+id/textViewLastNameParse" />
+                android:layout_alignBottom="@+id/textViewNickname"
+                android:layout_toEndOf="@+id/textViewFollowingLessons" />
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
@@ -272,7 +272,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="FollowingLessons:"
+                android:text="Following Lessons:"
                 android:textSize="15sp"
                 android:textStyle="bold"
                 android:textColor="@color/blue"
