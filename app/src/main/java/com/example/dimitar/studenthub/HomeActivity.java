@@ -1,5 +1,6 @@
 package com.example.dimitar.studenthub;
 
+import android.os.PersistableBundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
@@ -89,12 +90,12 @@ public class HomeActivity extends AppCompatActivity
             }
         });
 
-        Fragment homeFragment;
-        homeFragment = new HomeFragment();
-        ChangeFragment(homeFragment, false);
+        if(savedInstanceState == null) {
+            Fragment homeFragment;
+            homeFragment = new HomeFragment();
+            ChangeFragment(homeFragment, false);
+        }
     }
-
-
 
     @Override
     public void onClickSubjectItem(ParseObject subject)

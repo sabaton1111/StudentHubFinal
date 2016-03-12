@@ -63,8 +63,8 @@
             android:layout_marginRight="10dp" />
 
         <FrameLayout
-            android:layout_width="300dp"
-            android:layout_height="300dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:id="@+id/fragment_youtube_holder"
             android:layout_alignTop="@+id/textViewVideoLinkLesson"
             android:layout_below="@+id/textView18"
