@@ -27,10 +27,11 @@ public class HomeFragment extends Fragment {
         LINEAR_LAYOUT_MANAGER
     }
     protected LayoutManagerType mCurrentLayoutManagerType;
-    protected RecyclerView mRecyclerView;
+    protected RecyclerView mRecyclerView,mRecyclerView1;
     protected CustomAdapterForum mAdapter;
-    protected RecyclerView.LayoutManager mLayoutManager;
-    protected String[] mDataset;
+    protected CustomAdapterLessons mAdapter1;
+    protected RecyclerView.LayoutManager mLayoutManager,mLayoutManager1;
+    protected String[] mDataset,mDataset1;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -81,11 +82,14 @@ public class HomeFragment extends Fragment {
 
         view.setTag(TAG);
         mRecyclerView = (RecyclerView) view.findViewById(R.id.recyclerViewForum);
-
+        mRecyclerView1 = (RecyclerView) view.findViewById(R.id.recyclerViewLesson);
        /* mLayoutManager = new LinearLayoutManager(getActivity());
         LinearLayoutManager horizontalLayoutManagaer*/
                mLayoutManager = new LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false);
+        mLayoutManager1 = new LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false);
         mRecyclerView.setLayoutManager(mLayoutManager);
+        mRecyclerView1.setLayoutManager(mLayoutManager1);
+        mRecyclerView1.setAdapter(mAdapter1);
         mRecyclerView.setAdapter(mAdapter);
 
         mCurrentLayoutManagerType = LayoutManagerType.LINEAR_LAYOUT_MANAGER;
@@ -97,6 +101,8 @@ public class HomeFragment extends Fragment {
        // setRecyclerViewLayoutManager(mCurrentLayoutManagerType);
 
         mAdapter = new CustomAdapterForum(mDataset);
+        mAdapter1 = new CustomAdapterLessons(mDataset1);
+        mRecyclerView1.setAdapter(mAdapter1);
         mRecyclerView.setAdapter(mAdapter);
 
         return view;
@@ -126,6 +132,10 @@ public class HomeFragment extends Fragment {
 
     private void initDataset() {
         mDataset = new String[DATASET_COUNT];
+        for (int i = 0; i < DATASET_COUNT; i++) {
+            //elements of array
+        }
+        mDataset1 = new String[DATASET_COUNT];
         for (int i = 0; i < DATASET_COUNT; i++) {
             //elements of array
         }
