@@ -40,6 +40,7 @@ import java.util.HashMap;
 
 public class MakeNewLessonFragment extends Fragment
 {
+    View view;
     private ScrollView mScrollView;
     private RelativeLayout mFormView;
     private EditText editTextVideoLink;
@@ -49,6 +50,7 @@ public class MakeNewLessonFragment extends Fragment
     private EditText editTextDescription;
     private EditText editTextResources;
     private ImageView imageViewCourseImage;
+    public ImageView isLector, noLector;
     private Spinner spinnerSubjects;
     private Button buttonLoadImage;
     private FloatingActionButton buttonMakeCourse;
@@ -65,7 +67,7 @@ public class MakeNewLessonFragment extends Fragment
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_make_new_lesson, container, false);
+        view = inflater.inflate(R.layout.fragment_make_new_lesson, container, false);
         mScrollView = (ScrollView) view.findViewById(R.id.scrollViewNewLesson);
         mFormView = (RelativeLayout) view.findViewById(R.id.form);
         buttonLoadImage = (Button) view.findViewById(R.id.selectPicture);
@@ -87,7 +89,10 @@ public class MakeNewLessonFragment extends Fragment
         imageViewCourseImage = (ImageView) view.findViewById(R.id.imageViewNewCourse);
         spinnerSubjects = (Spinner) view.findViewById(R.id.spinnerSubjects);
         buttonMakeCourse = (FloatingActionButton) view.findViewById(R.id.fab_save_lesson);
-
+        isLector = (ImageView)view.findViewById(R.id.imageViewLectorsCheck);
+        noLector = (ImageView)view.findViewById(R.id.imageViewLectorsCheckFalse);
+        isLector.setVisibility(view.GONE);
+        noLector.setVisibility(view.GONE);
         buttonMakeCourse.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -247,7 +252,9 @@ public class MakeNewLessonFragment extends Fragment
     {
         final HashMap<String, Object> requestHashMap = new HashMap<>();
         if(lectorsByNameHashMap.containsKey(username)) {
-            editTextLectors.setBackgroundColor(Color.BLUE);
+           // editTextLectors.setBackgroundColor(Color.BLUE);
+            isLector.setVisibility(view.VISIBLE);
+            noLector.setVisibility(view.GONE);
             isLectorExisting = true;
         }
         else {
@@ -257,11 +264,15 @@ public class MakeNewLessonFragment extends Fragment
                 public void done(ParseObject parseObject, ParseException e) {
                     if (e == null) {
                         if (parseObject != null) {
-                            editTextLectors.setBackgroundColor(Color.BLUE);
+                            isLector.setVisibility(view.VISIBLE);
+                            noLector.setVisibility(view.GONE);
+                            //editTextLectors.setBackgroundColor(Color.BLUE);
                             isLectorExisting = true;
                             lectorsByNameHashMap.put(username, parseObject.getObjectId());
                         } else {
-                            editTextLectors.setBackgroundColor(Color.RED);
+                           // editTextLectors.setBackgroundColor(Color.RED);
+                            noLector.setVisibility(view.VISIBLE);
+                            isLector.setVisibility(view.GONE);
                         }
                     } else {
                         e.printStackTrace();

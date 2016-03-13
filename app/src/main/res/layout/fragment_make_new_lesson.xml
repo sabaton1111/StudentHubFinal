@@ -47,7 +47,7 @@
                 android:layout_below="@+id/spinnerSubjects"
                 android:layout_marginTop="10dp" />
             <EditText
-                android:layout_width="298dp"
+                android:layout_width="275dp"
                 android:layout_height="30dp"
                 android:ems="10"
                 android:background="#ffffff"
@@ -193,7 +193,28 @@
             android:scaleType="fitXY"
             android:src="@drawable/homework_icon"
             android:layout_marginStart="30dp" />
-
+        <ImageView
+        android:layout_width="15dp"
+        android:layout_height="15dp"
+        android:layout_marginTop="15dp"
+        android:id="@+id/imageViewLectorsCheck"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@+id/editTextHomework"
+        android:layout_toEndOf="@+id/editTextLectors"
+        android:tint="@color/teal"
+        android:scaleType="fitXY"
+        android:src="@drawable/tick_icon" />
+        <ImageView
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_marginTop="15dp"
+            android:id="@+id/imageViewLectorsCheckFalse"
+            android:layout_alignParentEnd="true"
+            android:layout_below="@+id/editTextHomework"
+            android:layout_toEndOf="@+id/editTextLectors"
+            android:tint="@color/teal"
+            android:scaleType="fitXY"
+            android:src="@drawable/remove_icon2" />
         <ImageView
             android:layout_width="30dp"
             android:layout_height="30dp"
