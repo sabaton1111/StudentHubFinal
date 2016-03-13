@@ -54,7 +54,7 @@ public class PostsParseArrayAdapter extends ArrayAdapter<ParseObject>
         ParseObject parseObject = super.getItem(position);
 
         viewHolder.textUsername.setText(((ParseObject)parseObject.get("user")).getString("username"));
-        viewHolder.textUsername2.setText(((ParseObject)parseObject.get("user")).getString("username"));
+//        viewHolder.textUsername2.setText(((ParseObject)parseObject.get("user")).getString("username"));
         viewHolder.textCreatedDate.setText(parseObject.getCreatedAt().toString());
         viewHolder.textContent.setText(parseObject.getString("content"));
 
