@@ -61,7 +61,7 @@
                 android:layout_marginLeft="5dp" />
         <EditText
             android:layout_width="fill_parent"
-            android:layout_height="30dp"
+            android:layout_height="wrap_content"
             android:id="@+id/editTextTitle"
             android:background="#ffffff"
             android:hint="Title"

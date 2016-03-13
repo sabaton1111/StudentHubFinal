@@ -8,7 +8,7 @@
     android:layout_width="match_parent">
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content">
 
 
         <TextView
@@ -36,19 +36,19 @@
             android:layout_height="wrap_content"
             android:text="New Text"
             android:id="@+id/textViewDescriptionLesson"
-            android:layout_below="@+id/textViewTitleLesson"
-            android:layout_alignStart="@+id/textViewTitleLesson"
-            android:layout_marginRight="20dp"
+            android:layout_below="@+id/imageViewLesson"
+
+            android:layout_marginLeft="20dp"
             android:layout_marginTop="10dp"
-            android:layout_alignBottom="@+id/imageViewLesson" />
+            android:layout_marginBottom="20dp"/>
+        <!--android:layout_alignStart="@+id/textViewTitleLesson"-->
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="Video Link"
             android:id="@+id/textView18"
-            android:layout_below="@+id/imageViewLesson"
+            android:layout_below="@+id/textViewDescriptionLesson"
             android:layout_alignStart="@+id/imageViewLesson"
             android:layout_marginTop="20dp" />
 
@@ -60,15 +60,17 @@
             android:layout_alignTop="@+id/textView18"
             android:layout_toEndOf="@+id/imageViewLesson"
             android:layout_marginLeft="20dp"
-            android:layout_marginRight="10dp" />
+            android:layout_marginRight="10dp"
+            android:visibility="gone" />
 
         <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/fragment_youtube_holder"
             android:layout_alignTop="@+id/textViewVideoLinkLesson"
-            android:layout_below="@+id/textView18"
+            android:layout_below="@+id/textViewVideoLinkLesson"
             android:layout_alignParentStart="true"
+            android:layout_marginTop="20dp"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp" />
 
@@ -80,13 +82,14 @@
             android:layout_below="@+id/fragment_youtube_holder"
             android:layout_alignStart="@+id/textView18"
             android:layout_marginTop="20dp"
-            android:layout_marginRight="10dp" />
+            android:layout_marginRight="10dp"
+            android:visibility="gone" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="Resourced"
+            android:text="Resources"
             android:id="@+id/textView21"
             android:layout_below="@+id/textViewMainLesson"
             android:layout_alignStart="@+id/textViewMainLesson"
@@ -94,9 +97,10 @@
 
         <TextView
             android:layout_width="match_parent"
-            android:layout_height="50dp"
+            android:layout_height="wrap_content"
             android:text="New Text"
-            android:id="@+id/textView7"
+            android:id="@+id/textViewResources"
+            android:textIsSelectable="true"
             android:layout_below="@+id/textView21"
             android:layout_alignStart="@+id/textView21"
             android:layout_marginTop="10dp"
@@ -108,8 +112,8 @@
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:text="Lectors"
             android:id="@+id/textView9"
-            android:layout_below="@+id/textView7"
-            android:layout_alignStart="@+id/textView7" />
+            android:layout_below="@+id/textViewHomework"
+            android:layout_alignStart="@+id/textViewResources" />
 
         <TextView
             android:layout_width="match_parent"
@@ -131,6 +135,24 @@
             android:src="@drawable/btn_star_off"
             android:background="@android:color/transparent"
             android:scaleType="fitXY" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Homework"
+            android:id="@+id/textViewHomeworkHeader"
+            android:textSize="24dp"
+            android:layout_below="@+id/textViewResources"
+            android:layout_alignStart="@id/textViewResources"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="New Text"
+            android:textIsSelectable="true"
+            android:id="@+id/textViewHomework"
+            android:layout_alignStart="@id/textViewResources"
+            android:layout_below="@id/textViewHomeworkHeader" />
     </RelativeLayout>
 </ScrollView>
 </FrameLayout>

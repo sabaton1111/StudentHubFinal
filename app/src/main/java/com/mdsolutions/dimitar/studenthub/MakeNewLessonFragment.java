@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.provider.MediaStore;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -189,7 +190,22 @@ public class MakeNewLessonFragment extends Fragment
         parseRequestHashMap.put("homework", homework);
         parseRequestHashMap.put("description", description);
         parseRequestHashMap.put("resourcesLink", resources);
-        parseRequestHashMap.put("videoLink", videoLink);
+
+        String video = "";
+
+        for(int i = videoLink.length() - 1; i >= 0; i--)
+        {
+            if((videoLink.charAt(i) >= 'A' && videoLink.charAt(i) <= 'Z') ||
+                    (videoLink.charAt(i) >= 'a' && videoLink.charAt(i) <= 'z') ||
+                    (videoLink.charAt(i) >= '0' && videoLink.charAt(i) <= '9')) {
+                video = videoLink.charAt(i) + video;
+            } else {
+                //Log.d("indexa e", i+"");
+                break;
+            }
+        }
+
+        parseRequestHashMap.put("videoLink", video);
         ArrayList<String> lectorsArray = new ArrayList<>();
         lectorsArray.add(lectorsByNameHashMap.get(lectors));
 

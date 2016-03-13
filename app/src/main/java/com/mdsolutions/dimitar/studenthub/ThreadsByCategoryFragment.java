@@ -56,12 +56,12 @@ public class ThreadsByCategoryFragment extends Fragment
     public void FetchDataWithModel()
     {
         parseObjectList.clear();
-        parseObjectList.addAll(ForumModel.getThreads(category.getObjectId()));
+        parseObjectList.addAll(ParseDataModel.getThreads(category.getObjectId()));
         parseArrayAdapter.notifyDataSetChanged();
 
-        /*if(ForumModel.getThreads(category.getObjectId()).size() > 0)
+        /*if(ParseDataModel.getThreads(category.getObjectId()).size() > 0)
         {
-            createToast(((ParseUser) (ForumModel.getThreads(category.getObjectId()).get(0).get("user"))).getUsername());
+            createToast(((ParseUser) (ParseDataModel.getThreads(category.getObjectId()).get(0).get("user"))).getUsername());
         }*/
     }
 
@@ -74,7 +74,7 @@ public class ThreadsByCategoryFragment extends Fragment
 
     public void LoadLocalData()
     {
-        final List<ParseObject> ramThreads = ForumModel.getThreads(this.category.getObjectId());
+        final List<ParseObject> ramThreads = ParseDataModel.getThreads(this.category.getObjectId());
         if (ramThreads == null || ramThreads.size() == 0) {
             ParseQuery query = ParseQuery.getQuery("Thread");
             query.whereEqualTo("category", this.category);
@@ -91,7 +91,7 @@ public class ThreadsByCategoryFragment extends Fragment
                     }
                     else
                     {
-                        ForumModel.UpdateThreadData(category.getObjectId(), list);
+                        ParseDataModel.UpdateThreadData(category.getObjectId(), list);
                         FetchDataWithModel();
                     }
                 }
@@ -107,7 +107,7 @@ public class ThreadsByCategoryFragment extends Fragment
                         }
                     }
                     final List<ParseObject> list = (List<ParseObject>) o;
-                    ForumModel.UpdateThreadData(category.getObjectId(), (List) o);
+                    ParseDataModel.UpdateThreadData(category.getObjectId(), (List) o);
                     FetchDataWithModel();
                 }
             });
@@ -124,7 +124,7 @@ public class ThreadsByCategoryFragment extends Fragment
             @Override
             public void done(final List<ParseObject> parseObjects, ParseException e) {
                 if (e == null) {
-                    ForumModel.UpdateThreadData(category.getObjectId(), parseObjects);
+                    ParseDataModel.UpdateThreadData(category.getObjectId(), parseObjects);
                     final String pinName = "threads" + category.getObjectId();
                     ParseObject.unpinAllInBackground(pinName, new DeleteCallback() {
                         @Override
