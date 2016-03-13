@@ -29,7 +29,10 @@ public class HomeActivity extends AppCompatActivity
         SingleThreadFragment.OnClickNewPostButtonListener,
         LibraryFragment.OnClickLessonOpenListener,
         HomeFragment.OnClickForumOpenListener,
-        HomeFragment.OnClickLessonsOpenListener
+        HomeFragment.OnClickLessonsOpenListener,
+        LibrarySubjectsFragment.OnClickLibrarySubjectItemListener,
+        LibraryBySubjectFragment.OnClickLibraryItemListener,
+        LibraryBySubjectFragment.OnClickNewCourseButtonListener
 {
     FragmentManager fragmentManager;
     Fragment categoriesBySubjectFragment;
@@ -66,7 +69,7 @@ public class HomeActivity extends AppCompatActivity
         drawer.setDrawerListener(toggle);
         toggle.syncState();
         fragmentManager = getSupportFragmentManager();
-        ForumModel.Initialize();
+        ParseDataModel.Initialize();
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
@@ -195,7 +198,7 @@ public class HomeActivity extends AppCompatActivity
             ChangeFragment(forumFragment, true);
         } else if (id == R.id.nav_library) {
             Fragment libraryFragment;
-            libraryFragment = new LibraryFragment();
+            libraryFragment = new LibrarySubjectsFragment();
             ChangeFragment(libraryFragment, true);
         } else if (id == R.id.nav_message) {
             Fragment messageFragment;
@@ -239,5 +242,17 @@ public class HomeActivity extends AppCompatActivity
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    @Override
+    public void onClickLibrarySubjectItem(ParseObject subject) {
+        Fragment libraryBySubjectFragment = LibraryBySubjectFragment.newInstance(subject);
+        ChangeFragment(libraryBySubjectFragment, true);
+    }
+
+    @Override
+    public void onClickLibraryItem(ParseObject course) {
+        Fragment lessonFragment = LessonFragment.newInstance(course);
+        ChangeFragment(lessonFragment, true);
     }
 }

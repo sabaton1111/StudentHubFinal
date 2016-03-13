@@ -22,22 +22,22 @@ import java.util.HashMap;
 import java.util.List;
 
 // Fragment for showing the first page of the forum - list of all Subjects
-public class ForumFragment extends Fragment
+public class LibrarySubjectsFragment extends Fragment
 {
     private static final String ARG_SUBJECT_ID = "param1";
     Context context;
     View view;
     List<ParseObject> parseObjectList = new ArrayList<ParseObject>();
     SubjectParseArrayAdapter parseArrayAdapter;
-    OnClickSubjectItemListener onClickSubjectItemListener;
+    OnClickLibrarySubjectItemListener onClickSubjectItemListener;
 
-    public ForumFragment()
+    public LibrarySubjectsFragment()
     {
     }
 
-    public static ForumFragment newInstance()
+    public static LibrarySubjectsFragment newInstance()
     {
-        ForumFragment fragment = new ForumFragment();
+        LibrarySubjectsFragment fragment = new LibrarySubjectsFragment();
         return fragment;
     }
 
@@ -120,7 +120,7 @@ public class ForumFragment extends Fragment
         subjectsListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                onClickSubjectItemListener.onClickSubjectItem(parseObjectList.get(position));
+                onClickSubjectItemListener.onClickLibrarySubjectItem(parseObjectList.get(position));
             }
         });
 
@@ -132,9 +132,9 @@ public class ForumFragment extends Fragment
     {
         super.onAttach(context);
         this.context = context;
-        if (context instanceof OnClickSubjectItemListener)
+        if (context instanceof OnClickLibrarySubjectItemListener)
         {
-            onClickSubjectItemListener = (OnClickSubjectItemListener) context;
+            onClickSubjectItemListener = (OnClickLibrarySubjectItemListener) context;
         }
         else
         {
@@ -142,8 +142,8 @@ public class ForumFragment extends Fragment
         }
     }
 
-    public interface OnClickSubjectItemListener
+    public interface OnClickLibrarySubjectItemListener
     {
-        void onClickSubjectItem(ParseObject subject);
+        void onClickLibrarySubjectItem(ParseObject subject);
     }
 }

@@ -24,7 +24,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-public class CategoriesBySubjectFragment extends Fragment
+public class LibraryBySubjectFragment extends Fragment
 {
     private static final String ARG_SUBJECT_ID = "param1";
     Context context;
@@ -33,10 +33,10 @@ public class CategoriesBySubjectFragment extends Fragment
     List<ParseObject> parseObjectList = new ArrayList<ParseObject>();
     CategoriesParseArrayAdapter parseArrayAdapter;
     HashMap<String, Object> parseRequestHashMap = new HashMap<String, Object>();
-    OnClickCategoryItemListener onClickCategoryItemListener;
-    OnClickNewCategoryButtonListener onClickNewCategoryButtonListener;
+    OnClickLibraryItemListener onClickCategoryItemListener;
+    OnClickNewCourseButtonListener onClickNewCategoryButtonListener;
 
-    public CategoriesBySubjectFragment()
+    public LibraryBySubjectFragment()
     {
     }
 
@@ -45,9 +45,9 @@ public class CategoriesBySubjectFragment extends Fragment
         this.subject = subject;
     }
 
-    public static CategoriesBySubjectFragment newInstance(ParseObject subject)
+    public static LibraryBySubjectFragment newInstance(ParseObject subject)
     {
-        CategoriesBySubjectFragment fragment = new CategoriesBySubjectFragment();
+        LibraryBySubjectFragment fragment = new LibraryBySubjectFragment();
         fragment.setSubject(subject);
         return fragment;
     }
@@ -55,34 +55,34 @@ public class CategoriesBySubjectFragment extends Fragment
     public void FetchDataWithModel()
     {
         parseObjectList.clear();
-        parseObjectList.addAll(ParseDataModel.getCategories(subject.getObjectId()));
+        parseObjectList.addAll(ParseDataModel.getCourses(subject.getObjectId()));
         parseArrayAdapter.notifyDataSetChanged();
     }
 
     public void LoadData()
     {
-        LoadLocalData();
+        //LoadLocalData();
         // Now that the local DB content is displayed, if there is a network, load online content for changes
         LoadOnlineData();
     }
 
     public void LoadLocalData()
     {
-        final List<ParseObject> ramCategories = ParseDataModel.getCategories(this.subject.getObjectId());
-        if (ramCategories == null || ramCategories.size() == 0) {
-            ParseQuery query = ParseQuery.getQuery("Category");
+        final List<ParseObject> ramCourses = ParseDataModel.getCourses(this.subject.getObjectId());
+        if (ramCourses == null || ramCourses.size() == 0) {
+            ParseQuery query = ParseQuery.getQuery("Course");
             query.whereEqualTo("subject", this.subject);
             query.fromLocalDatastore();
             query.findInBackground(new FindCallback() {
                 @Override
                 public void done(List list, ParseException e) {
-                    ParseDataModel.UpdateCategoryData(subject.getObjectId(), list);
+                    ParseDataModel.UpdateCourseData(subject.getObjectId(), list);
                     FetchDataWithModel();
                 }
 
                 @Override
                 public void done(Object o, Throwable throwable) {
-                    ParseDataModel.UpdateCategoryData(subject.getObjectId(), (List) o);
+                    ParseDataModel.UpdateCourseData(subject.getObjectId(), (List) o);
                     FetchDataWithModel();
                 }
             });
@@ -96,15 +96,16 @@ public class CategoriesBySubjectFragment extends Fragment
     public void LoadOnlineData()
     {
         parseRequestHashMap.put("subjectId", this.subject.getObjectId());
-        ParseCloud.callFunctionInBackground("GetAllCategories", parseRequestHashMap, new FunctionCallback<List<ParseObject>>() {
+        ParseCloud.callFunctionInBackground("GetAllCourses", parseRequestHashMap, new FunctionCallback<List<ParseObject>>() {
             @Override
             public void done(List<ParseObject> parseObjects, ParseException e) {
                 if (e == null) {
-                    ParseDataModel.UpdateCategoryData(subject.getObjectId(), parseObjects);
-                    ParseObject.pinAllInBackground(parseObjects);
+                    ParseDataModel.UpdateCourseData(subject.getObjectId(), parseObjects);
+                    //ParseObject.pinAll
+                    //ParseObject.pinAllInBackground(parseObjects);
                     FetchDataWithModel();
                 } else {
-                    createToast(e.getMessage());
+                    e.printStackTrace();
                 }
             }
         });
@@ -133,14 +134,14 @@ public class CategoriesBySubjectFragment extends Fragment
         categoriesListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                onClickCategoryItemListener.onClickCategoryItem(parseArrayAdapter.getItem(position));
+                onClickCategoryItemListener.onClickLibraryItem(parseArrayAdapter.getItem(position));
             }
         });
         FloatingActionButton button = (FloatingActionButton) view.findViewById(R.id.fab_new_category);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                onClickNewCategoryButtonListener.onClickNewCategoryButton();
+                onClickNewCategoryButtonListener.onClickNewCourseButton();
             }
         });
 
@@ -155,32 +156,32 @@ public class CategoriesBySubjectFragment extends Fragment
     {
         super.onAttach(context);
         this.context = context;
-        if (context instanceof OnClickCategoryItemListener)
+        if (context instanceof OnClickLibraryItemListener)
         {
-            this.onClickCategoryItemListener = (OnClickCategoryItemListener) context;
+            this.onClickCategoryItemListener = (OnClickLibraryItemListener) context;
         }
         else
         {
             throw new RuntimeException(context.toString() + " must implement OnClickCategoryItemListener");
         }
 
-        if (context instanceof OnClickNewCategoryButtonListener)
-    {
-        onClickNewCategoryButtonListener = (OnClickNewCategoryButtonListener) context;
-    }
-    else
-    {
-        throw new RuntimeException(context.toString() + " must implement OnClickNewCategoryButtonListener");
-    }
-    }
-
-    public interface OnClickCategoryItemListener
-    {
-        public void onClickCategoryItem(ParseObject category);
+        if (context instanceof OnClickNewCourseButtonListener)
+        {
+            onClickNewCategoryButtonListener = (OnClickNewCourseButtonListener) context;
+        }
+        else
+        {
+            throw new RuntimeException(context.toString() + " must implement OnClickNewCategoryButtonListener");
+        }
     }
 
-    public interface OnClickNewCategoryButtonListener
+    public interface OnClickLibraryItemListener
     {
-        public void onClickNewCategoryButton();
+        public void onClickLibraryItem(ParseObject category);
+    }
+
+    public interface OnClickNewCourseButtonListener
+    {
+        public void onClickNewCourseButton();
     }
 }

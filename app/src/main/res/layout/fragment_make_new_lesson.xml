@@ -61,7 +61,7 @@
                 android:layout_marginLeft="5dp" />
         <EditText
             android:layout_width="fill_parent"
-            android:layout_height="30dp"
+            android:layout_height="wrap_content"
             android:id="@+id/editTextTitle"
             android:background="#ffffff"
             android:hint="Title"
@@ -81,7 +81,7 @@
             android:layout_marginRight="25dp"
             android:textAlignment="center"
             android:layout_marginTop="10dp"
-            android:layout_below="@+id/editTextDescription"
+            android:layout_below="@+id/editTextContent"
             android:layout_toEndOf="@+id/imageViewTitle"
             android:layout_marginLeft="10dp" />
 
@@ -90,7 +90,7 @@
             android:layout_height="200dp"
             android:inputType="textMultiLine"
             android:ems="10"
-            android:id="@+id/editTextDescription"
+            android:id="@+id/editTextContent"
             android:background="#FFFFFF"
             android:hint="Description"
             android:gravity="top|left"
@@ -141,8 +141,8 @@
             android:id="@+id/imageViewTitle"
             android:src="@drawable/title_icon"
             android:tint="@color/teal"
-            android:layout_above="@+id/editTextDescription"
-            android:layout_alignStart="@+id/editTextDescription"
+            android:layout_above="@+id/editTextContent"
+            android:layout_alignStart="@+id/editTextContent"
             android:scaleType="fitXY" />
 
         <ImageView

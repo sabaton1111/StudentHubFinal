@@ -53,7 +53,7 @@ public class SingleThreadFragment extends Fragment
     public void FetchDataWithModel()
     {
         parseObjectList.clear();
-        parseObjectList.addAll(ForumModel.getPosts(this.thread.getObjectId()));
+        parseObjectList.addAll(ParseDataModel.getPosts(this.thread.getObjectId()));
         parseArrayAdapter.notifyDataSetChanged();
     }
 
@@ -66,7 +66,7 @@ public class SingleThreadFragment extends Fragment
 
     public void LoadLocalData()
     {
-        final List<ParseObject> ramPosts = ForumModel.getPosts(this.thread.getObjectId());
+        final List<ParseObject> ramPosts = ParseDataModel.getPosts(this.thread.getObjectId());
         if (ramPosts == null || ramPosts.size() == 0) {
             ParseQuery query = ParseQuery.getQuery("Post");
             String pinName = "threads" + thread.getObjectId();
@@ -77,7 +77,7 @@ public class SingleThreadFragment extends Fragment
             query.findInBackground(new FindCallback() {
                 @Override
                 public void done(List list, ParseException e) {
-                    ForumModel.UpdatePostData(thread.getObjectId(), list);
+                    ParseDataModel.UpdatePostData(thread.getObjectId(), list);
                     FetchDataWithModel();
                 }
 
@@ -88,7 +88,7 @@ public class SingleThreadFragment extends Fragment
                     } catch (Throwable throwable1) {
                         throwable1.printStackTrace();
                     }
-                    ForumModel.UpdatePostData(thread.getObjectId(), (List) o);
+                    ParseDataModel.UpdatePostData(thread.getObjectId(), (List) o);
                     FetchDataWithModel();
                 }
             });
@@ -106,7 +106,7 @@ public class SingleThreadFragment extends Fragment
             @Override
             public void done(final List<ParseObject> parseObjects, ParseException e) {
                 if (e == null) {
-                    ForumModel.UpdatePostData(thread.getObjectId(), parseObjects);
+                    ParseDataModel.UpdatePostData(thread.getObjectId(), parseObjects);
                     final String pinName = "threads" + thread.getObjectId();
                     ParseObject.unpinAllInBackground(pinName, new DeleteCallback() {
                         @Override
