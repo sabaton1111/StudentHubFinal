@@ -61,7 +61,7 @@ public class LibraryBySubjectFragment extends Fragment
 
     public void LoadData()
     {
-        //LoadLocalData();
+        LoadLocalData();
         // Now that the local DB content is displayed, if there is a network, load online content for changes
         LoadOnlineData();
     }
@@ -70,7 +70,7 @@ public class LibraryBySubjectFragment extends Fragment
     {
         final List<ParseObject> ramCourses = ParseDataModel.getCourses(this.subject.getObjectId());
         if (ramCourses == null || ramCourses.size() == 0) {
-            ParseQuery query = ParseQuery.getQuery("Course");
+            /*ParseQuery query = ParseQuery.getQuery("Course");
             query.whereEqualTo("subject", this.subject);
             query.fromLocalDatastore();
             query.findInBackground(new FindCallback() {
@@ -85,7 +85,7 @@ public class LibraryBySubjectFragment extends Fragment
                     ParseDataModel.UpdateCourseData(subject.getObjectId(), (List) o);
                     FetchDataWithModel();
                 }
-            });
+            });*/
         }
         else
         {

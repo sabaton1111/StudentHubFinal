@@ -118,9 +118,9 @@ View view;
                         public void onFullscreen(boolean isFullscreen) {
                             if(isFullscreen)
                             {
-                                tubePlayer.setFullscreen(false);
-                                Intent intent = YouTubeStandalonePlayer.createVideoIntent((Activity)context, YouTubeDeveloperKey.DEVELOPER_KEY, "vyiftpiCs9o");
-                                startActivity(intent);
+                                /*tubePlayer.setFullscreen(false);
+                                Intent intent = YouTubeStandalonePlayer.createVideoIntent((Activity)context, YouTubeDeveloperKey.DEVELOPER_KEY, course.getString("videoLink"));
+                                startActivity(intent);*/
                             }
                         }
                     });
