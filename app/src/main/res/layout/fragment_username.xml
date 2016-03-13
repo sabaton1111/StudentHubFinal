@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/fragment_username"
-    tools:context="com.example.dimitar.studenthub.UsernameFragment"
+    tools:context="com.mdsolutions.dimitar.studenthub.UsernameFragment"
     android:background="@drawable/login_background">
 
 

@@ -5,7 +5,7 @@
     android:layout_height="fill_parent"
     android:layout_alignParentBottom="true"
     android:background="#ffffff"
-    tools:context="com.example.dimitar.studenthub.NewThreadFragment">
+    tools:context="com.mdsolutions.dimitar.studenthub.NewThreadFragment">
 
     <TextView
         android:text="  Make New Thread"

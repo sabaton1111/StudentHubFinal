@@ -1,4 +1,4 @@
-package com.example.dimitar.studenthub;
+package com.mdsolutions.dimitar.studenthub;
 
 import org.junit.Test;
 

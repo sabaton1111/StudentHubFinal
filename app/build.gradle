@@ -2,14 +2,14 @@ apply plugin: 'com.android.application'
 
 android {
     signingConfigs {
-        StudentHub {
+        /*StudentHub {
             storeFile file('C:/Users/Dimitar/AndroidStudioProjects/StudentHubFinal9/app/build/outputs/logs/manifest-merger-release-report.txt')
-        }
+        }*/
     }
     compileSdkVersion 23
     buildToolsVersion '23.0.2'
     defaultConfig {
-        applicationId "com.example.dimitar.studenthub"
+        applicationId "com.mdsolutions.dimitar.studenthub"
         minSdkVersion 21
         targetSdkVersion 23
         versionCode 1

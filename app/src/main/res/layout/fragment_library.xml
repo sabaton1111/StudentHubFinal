@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="#f0f0f0"
-    tools:context="com.example.dimitar.studenthub.LibraryFragment"
+    tools:context="com.mdsolutions.dimitar.studenthub.LibraryFragment"
     android:weightSum="1">
 
     <android.support.v7.widget.RecyclerView

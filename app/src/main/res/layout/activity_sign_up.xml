@@ -7,13 +7,13 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.example.dimitar.studenthub.SignUp"
+    tools:context="com.mdsolutions.dimitar.studenthub.SignUp"
     android:background="@drawable/login_background"
     android:orientation="vertical"
     android:weightSum="1">
 
    <fragment
-       android:name="com.example.dimitar.studenthub.UsernameFragment"
+       android:name="com.mdsolutions.dimitar.studenthub.UsernameFragment"
        android:layout_height="fill_parent"
        android:layout_width="fill_parent"
        android:id="@+id/parent_fragment">

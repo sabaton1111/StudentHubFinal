@@ -4,7 +4,7 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:id="@+id/categories_subject_fragment"
-    tools:context="com.example.martin.fortesting.CategoriesBySubject"
+    tools:context="com.mdsolutions.martin.fortesting.CategoriesBySubject"
     android:background="@color/teal">
 
     <TextView
