@@ -20,7 +20,7 @@ public class CustomAdapterForum  extends RecyclerView.Adapter<CustomAdapterForum
      */
     public static class ViewHolder extends RecyclerView.ViewHolder {
         private final TextView textView;
-
+        public TextView element1;
         public ViewHolder(View v) {
             super(v);
             // Define click listener for the ViewHolder's View.
@@ -30,10 +30,12 @@ public class CustomAdapterForum  extends RecyclerView.Adapter<CustomAdapterForum
                 }
             });
             textView = (TextView) v.findViewById(R.id.textView);
+            element1 = (TextView) v.findViewById(R.id.textViewForumRecycler);
         }
 
         public TextView getTextView() {
-            return textView;
+            element1.setText("r");
+            return element1;
         }
     }
     // END_INCLUDE(recyclerViewSampleViewHolder)
@@ -65,14 +67,13 @@ public class CustomAdapterForum  extends RecyclerView.Adapter<CustomAdapterForum
     // BEGIN_INCLUDE(recyclerViewOnBindViewHolder)
     // Replace the contents of a view (invoked by the layout manager)
     @Override
-    public void onBindViewHolder(ViewHolder viewHolder, final int position) {
-
+    public void onBindViewHolder(ViewHolder viewHolder, int position) {
         // Get element from your dataset at this position and replace the contents of the view
         // with that element
 
         //!!!CRASHES!!!  viewHolder.getTextView().setText(mDataSet[position]);
-
-
+        viewHolder.getTextView().setText(mDataSet[1]);
+        //viewHolder.getTextView().setText(mDataSet[1]);
 
 
     }

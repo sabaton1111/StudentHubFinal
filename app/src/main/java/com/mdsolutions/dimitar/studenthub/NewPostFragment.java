@@ -20,6 +20,7 @@ import java.util.HashMap;
 public class NewPostFragment extends Fragment {
     FloatingActionButton fabSave;
     TextView textViewThreadTitle;
+    TextView textViewUsername2;
     EditText editTextContent;
     HashMap<String, Object> parseRequestHashMap = new HashMap<>();
     ParseObject thread;
@@ -48,7 +49,7 @@ public class NewPostFragment extends Fragment {
         fabSave = (FloatingActionButton) view.findViewById(R.id.fab_new_post_save);
         textViewThreadTitle = (TextView) view.findViewById(R.id.textViewThreadTitle);
         editTextContent = (EditText) view.findViewById(R.id.editTextContent);
-
+       // textViewUsername2 = (TextView)view.findViewById(R.id.textViewUsername2);
         fabSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

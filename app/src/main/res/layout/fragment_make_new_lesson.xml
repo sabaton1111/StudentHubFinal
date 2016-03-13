@@ -47,7 +47,7 @@
                 android:layout_below="@+id/spinnerSubjects"
                 android:layout_marginTop="10dp" />
             <EditText
-                android:layout_width="298dp"
+                android:layout_width="275dp"
                 android:layout_height="30dp"
                 android:ems="10"
                 android:background="#ffffff"
@@ -81,7 +81,7 @@
             android:layout_marginRight="25dp"
             android:textAlignment="center"
             android:layout_marginTop="10dp"
-            android:layout_below="@+id/editTextDescription"
+            android:layout_below="@+id/editTextContent"
             android:layout_toEndOf="@+id/imageViewTitle"
             android:layout_marginLeft="10dp" />
 
@@ -90,7 +90,7 @@
             android:layout_height="200dp"
             android:inputType="textMultiLine"
             android:ems="10"
-            android:id="@+id/editTextDescription"
+            android:id="@+id/editTextContent"
             android:background="#FFFFFF"
             android:hint="Description"
             android:gravity="top|left"
@@ -141,8 +141,8 @@
             android:id="@+id/imageViewTitle"
             android:src="@drawable/title_icon"
             android:tint="@color/teal"
-            android:layout_above="@+id/editTextDescription"
-            android:layout_alignStart="@+id/editTextDescription"
+            android:layout_above="@+id/editTextContent"
+            android:layout_alignStart="@+id/editTextContent"
             android:scaleType="fitXY" />
 
         <ImageView
@@ -193,7 +193,28 @@
             android:scaleType="fitXY"
             android:src="@drawable/homework_icon"
             android:layout_marginStart="30dp" />
-
+        <ImageView
+        android:layout_width="15dp"
+        android:layout_height="15dp"
+        android:layout_marginTop="15dp"
+        android:id="@+id/imageViewLectorsCheck"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@+id/editTextHomework"
+        android:layout_toEndOf="@+id/editTextLectors"
+        android:tint="@color/teal"
+        android:scaleType="fitXY"
+        android:src="@drawable/tick_icon" />
+        <ImageView
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_marginTop="15dp"
+            android:id="@+id/imageViewLectorsCheckFalse"
+            android:layout_alignParentEnd="true"
+            android:layout_below="@+id/editTextHomework"
+            android:layout_toEndOf="@+id/editTextLectors"
+            android:tint="@color/teal"
+            android:scaleType="fitXY"
+            android:src="@drawable/remove_icon2" />
         <ImageView
             android:layout_width="30dp"
             android:layout_height="30dp"

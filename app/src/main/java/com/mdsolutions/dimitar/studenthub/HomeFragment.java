@@ -10,6 +10,8 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.RelativeLayout;
 import android.widget.TabHost;
 import android.widget.TextView;
 
@@ -67,7 +69,35 @@ public class HomeFragment extends Fragment {
         latest_tab.setIndicator("Popular");
         th.addTab(latest_tab);
 
+
+        RelativeLayout forum1 = (RelativeLayout)view.findViewById(R.id.firstLayoutPopular);
+        forum1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+
+        Button openMoreLessons = (Button)view.findViewById(R.id.buttonMoreLessons);
+        Button openMoreForum = (Button)view.findViewById(R.id.buttonMoreForum);
+
+        openMoreLessons.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+
+        openMoreForum.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+
         //Change the text color of tabs
+
+
         th.getTabWidget();
         for(int i=0;i<th.getTabWidget().getChildCount();i++)
         {
