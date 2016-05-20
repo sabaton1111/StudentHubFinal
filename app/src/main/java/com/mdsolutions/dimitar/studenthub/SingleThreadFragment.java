@@ -129,7 +129,13 @@ public class SingleThreadFragment extends Fragment
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        parseArrayAdapter = new PostsParseArrayAdapter(context, R.layout.layout_item_threadpost, parseObjectList);
+        parseArrayAdapter = new PostsParseArrayAdapter(context, R.layout.layout_item_threadpost, parseObjectList,
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+
+                    }
+                });
         LoadData();
     }
 
@@ -150,7 +156,7 @@ public class SingleThreadFragment extends Fragment
         View header = inflater.inflate(R.layout.layout_header_threadpost, threadPostsListView, false);
 
         TextView textViewHeaderTitle = (TextView) header.findViewById(R.id.textViewTitle);
-        TextView textViewHeaderContent = (TextView) header.findViewById(R.id.textViewContent);
+        TextView textViewHeaderContent = (TextView) header.findViewById(R.id.editTextContent);
         textViewHeaderTitle.setText(thread.getString("title"));
         textViewHeaderContent.setText(thread.getString("content"));
 

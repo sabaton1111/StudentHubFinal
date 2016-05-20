@@ -54,4 +54,20 @@
         android:layout_marginTop="10dp"
         android:layout_margin="10dp"
         android:src="@drawable/login_background"/>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@android:color/darker_gray"
+        android:id="@+id/view2"
+        android:layout_below="@+id/editTextContent"
+        android:layout_marginTop="10dp"
+        android:layout_alignParentStart="true" />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Edit"
+        android:id="@+id/buttonEditPost"
+        android:layout_below="@+id/view2"
+        android:layout_centerHorizontal="true" />
+
 </RelativeLayout>
