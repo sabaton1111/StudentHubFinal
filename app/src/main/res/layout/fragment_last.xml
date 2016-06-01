@@ -25,7 +25,6 @@
         android:id="@+id/registerSignUpButton"
         android:textColor="#967478"
         android:background="#523336"
-        android:background="#523336"
         android:textSize="20sp"
         android:width="200dp"
         android:layout_marginTop="400dp"
