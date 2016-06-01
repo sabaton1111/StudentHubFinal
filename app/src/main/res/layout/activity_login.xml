@@ -32,7 +32,9 @@
         android:layout_alignParentRight="false"
         android:layout_alignParentBottom="false"
         android:padding="10dp"
-        android:background="#fff" />
+        android:background="#fff"
+        android:layout_alignParentLeft="false"
+        android:layout_alignParentEnd="true" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -51,7 +53,8 @@
         android:layout_alignParentStart="true"
         android:layout_marginTop="20dp"
         android:background="#fff"
-        android:padding="10dp" />
+        android:padding="10dp"
+        android:layout_alignParentEnd="true" />
 
     <Button
         android:layout_width="wrap_content"
@@ -106,7 +109,8 @@
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="10dp"
         android:layout_marginTop="5dp"
-        android:layout_margin="5dp" />
+        android:layout_margin="5dp"
+        android:layout_alignParentStart="false" />
 
 
 </RelativeLayout>
