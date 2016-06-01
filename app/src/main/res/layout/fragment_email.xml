@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".EmailFragment"
-    android:background="@drawable/login_background"
+    android:background="@drawable/background_greyv4"
     android:id="@+id/fragment_email">
 
 
@@ -19,6 +19,8 @@
         android:hint="Email"
         android:textSize="20sp"
         android:textColor="#c7d0d7"
+        android:background="#fff"
+        android:padding="10dp"
         android:layout_marginTop="225dp"
         android:layout_gravity="center_horizontal|top" />
     <Button
@@ -26,8 +28,6 @@
         android:layout_height="wrap_content"
         android:text="Next"
         android:id="@+id/buttonNext10"
-        android:textColor="#c7d0d7"
-        android:background="@drawable/button"
         android:textSize="20sp"
         android:width="200dp"
         android:layout_below="@+id/editText8"
@@ -36,6 +36,8 @@
         android:layout_marginLeft="80dp"
         android:layout_gravity="center_horizontal|bottom"
         android:layout_marginRight="80dp"
+        android:textColor="#967478"
+        android:background="#523336"
         android:layout_marginBottom="175dp" />
 
     <TextView
@@ -46,7 +48,7 @@
         android:textStyle="bold"
         android:id="@+id/textView15"
         android:layout_gravity="center_horizontal|top"
-        android:textColor="#c7d0d7"
-        android:textSize="20sp"
+        android:textColor="#523336"
+        android:textSize="24sp"
         android:layout_marginTop="120dp" />
 </FrameLayout>
