@@ -8,21 +8,8 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.mdsolutions.dimitar.studenthub.Login"
-    android:background="@drawable/login_background"
-    android:fitsSystemWindows="true">
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Explore the world"
-        android:id="@+id/textView10"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        android:textColor="#c7d0d7"
-        android:layout_centerHorizontal="true"
-        android:textColorHint="#c7d0d7"
-        android:layout_marginTop="160dp" />
+    android:fitsSystemWindows="true"
+    android:background="@drawable/background_greyv2">
 
     <EditText
         android:layout_width="wrap_content"
@@ -35,10 +22,17 @@
         android:id="@+id/editText6"
         android:textColorHint="#c7d0d7"
         android:hint="Username"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true"
         android:textSize="20sp"
-        android:textColor="#c7d0d7" />
+        android:textColor="#c7d0d7"
+        android:layout_centerVertical="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="20dp"
+        android:layout_alignParentTop="false"
+        android:layout_alignWithParentIfMissing="false"
+        android:layout_alignParentRight="false"
+        android:layout_alignParentBottom="false"
+        android:padding="10dp"
+        android:background="#fff" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -51,25 +45,28 @@
         android:id="@+id/editText7"
         android:textColorHint="#c7d0d7"
         android:hint="Password"
-        android:layout_below="@+id/editText6"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
         android:textSize="20sp"
-        android:textColor="#c7d0d7" />
+        android:textColor="#c7d0d7"
+        android:layout_below="@+id/editText6"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="20dp"
+        android:background="#fff"
+        android:padding="10dp" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/login"
         android:id="@+id/buttonLogin"
-        android:layout_marginTop="46dp"
-        android:textColor="#c7d0d7"
-        android:background="@drawable/button"
+        android:textColor="#967478"
+        android:background="#523336"
         android:textSize="20sp"
+        android:width="200dp"
+        android:onClick="onClickLoginButton"
         android:layout_below="@+id/editText7"
         android:layout_centerHorizontal="true"
-        android:width="200dp"
-        android:onClick="onClickLoginButton" />
+        android:layout_marginTop="52dp"
+        android:layout_alignParentEnd="false" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -78,36 +75,38 @@
         android:text="Don't have an account yet?"
         android:id="@+id/textView11"
         android:textSize="18sp"
-        android:textColor="#c7d0d7"
+        android:textColor="#be7415"
         android:layout_alignParentBottom="true"
-        android:layout_alignEnd="@+id/textView10" />
+        android:layout_alignParentTop="false"
+        android:layout_alignParentLeft="false"
+        android:layout_marginBottom="35dp"
+        android:layout_alignWithParentIfMissing="false"
+        android:layout_marginLeft="20dp" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="SignUp"
         android:id="@+id/buttonSignUp"
-        android:background="@android:color/transparent"
-        android:textColor="#90aabf"
+        android:background="#be7415"
+        android:textColor="#ddaf73"
         android:textSize="17sp"
         android:layout_alignTop="@+id/textView11"
-        android:layout_toEndOf="@+id/textView11" />
+        android:layout_toEndOf="@+id/textView11"
+        android:layout_marginLeft="5dp"
+        android:layout_alignBottom="@+id/textView11"
+        android:layout_alignParentLeft="false" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="StudentHub"
-        android:id="@+id/textView17"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true"
-        android:textSize="65dp"
-        android:textColor="#c7d0d7"
-        android:fontFamily="sans-serif-condensed"
-        android:layout_marginTop="75dp"
-        android:layout_marginLeft="17dp"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentRight="true" />
+    <ImageView
+        android:layout_width="165dp"
+        android:layout_height="180dp"
+        android:id="@+id/imageView3"
+        android:background="@drawable/logo"
+        android:layout_above="@+id/editText6"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="5dp"
+        android:layout_margin="5dp" />
 
 
 </RelativeLayout>
