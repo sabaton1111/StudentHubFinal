@@ -3,8 +3,46 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.mdsolutions.dimitar.studenthub.LastFragment"
-    android:background="@drawable/login_background"
+    android:background="@drawable/background_greyv4"
     android:id="@+id/fragment_last">
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Are you a student?"
+        android:textColor="#be7415"
+        android:ems="10"
+        android:textSize="20sp"
+        android:id="@+id/isStudentSignUpCheckBox"
+        android:layout_gravity="center"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="10dp" />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Register"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/registerSignUpButton"
+        android:textColor="#967478"
+        android:background="#523336"
+        android:background="#523336"
+        android:textSize="20sp"
+        android:width="200dp"
+        android:layout_marginTop="400dp"
+        android:layout_gravity="top|center"
+        android:onClick="onClickRegisterSignUpButton" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Other information:"
+        android:textStyle="bold"
+        android:id="@+id/textView16"
+        android:layout_gravity="center_horizontal|top"
+        android:textColor="#523336"
+        android:textSize="24sp"
+        android:layout_marginTop="120dp" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -20,42 +58,9 @@
         android:textColor="#c7d0d7"
         android:layout_centerVertical="true"
         android:layout_alignParentStart="true"
-        android:layout_marginTop="190dp" />
-
-    <CheckBox
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Are you a student?"
-        android:textColor="#c7d0d7"
-        android:ems="10"
-        android:textSize="20sp"
-        android:id="@+id/isStudentSignUpCheckBox"
-        android:layout_gravity="center"
-        android:layout_marginLeft="10dp" />
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Register"
-        android:id="@+id/registerSignUpButton"
-        android:textColor="#c7d0d7"
-        android:background="@drawable/button"
-        android:textSize="20sp"
-        android:width="200dp"
-        android:layout_marginTop="340dp"
-        android:layout_gravity="top|left|center"
-        android:layout_marginLeft="65dp"
-        android:onClick="onClickRegisterSignUpButton" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Other information:"
-        android:textStyle="bold"
-        android:id="@+id/textView16"
-        android:layout_gravity="center_horizontal|top"
-        android:textColor="#c7d0d7"
-        android:textSize="20sp"
-        android:layout_marginTop="120dp" />
+        android:layout_marginTop="250dp"
+        android:background="#fff"
+        android:padding="10dp"
+        android:layout_gravity="center_horizontal|top" />
 
 </FrameLayout>
