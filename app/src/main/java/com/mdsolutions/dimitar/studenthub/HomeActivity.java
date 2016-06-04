@@ -1,5 +1,6 @@
 package com.mdsolutions.dimitar.studenthub;
 
+import android.content.Intent;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
@@ -230,9 +231,8 @@ public class HomeActivity extends AppCompatActivity
             ChangeFragment(settingsFragment, true);
         }
         else if (id == R.id.nav_help) {
-            Fragment helpFragment;
-            helpFragment = new LessonFragment();
-            ChangeFragment(helpFragment, true);
+           Intent intent = new Intent(this, VideoChatActivity.class);
+            startActivity(intent);
         }
         else if (id == R.id.nav_exit) {
             ParseUser.getCurrentUser().logOut();

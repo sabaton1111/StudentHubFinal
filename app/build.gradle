@@ -11,7 +11,7 @@ android {
     defaultConfig {
         applicationId "com.mdsolutions.dimitar.studenthub"
         minSdkVersion 21
-        targetSdkVersion 23
+        targetSdkVersion 22
         versionCode 1
         versionName '1.0'
         multiDexEnabled true
@@ -38,4 +38,8 @@ dependencies {
     compile 'de.hdodenhof:circleimageview:2.0.0'
     compile 'com.android.support:recyclerview-v7:23.1.1'
     compile 'com.github.siyamed:android-shape-imageview:0.9.+'
+    compile 'io.pristine:libjingle:9694@aar'
+    compile 'me.kevingleason:pnwebrtc:1.0.6@aar'
+    compile 'com.pubnub:pubnub-android:3.7.4'
+    //compile project(':pnwebrtc')
 }

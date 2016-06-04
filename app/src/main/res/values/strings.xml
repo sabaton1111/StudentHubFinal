@@ -24,5 +24,6 @@
     <string name="post">Post</string>
     <string name="new_category">Enter category name</string>
     <string name="categorytitle">Category Title</string>
+    <string name="title_activity_video_chat">VideoChatActivity</string>
 
 </resources>
