@@ -113,7 +113,7 @@
                 android:layout_height="25dp"
                 android:id="@+id/imageButtonRemoveThread"
                 android:scaleType="fitXY"
-                android:background="@drawable/remove_icon2"
+                android:background="@drawable/close_icon"
                 android:layout_alignBottom="@+id/editTextThread"
                 android:layout_alignEnd="@+id/editTextCategory"
                 android:layout_marginBottom="8dp"
@@ -138,6 +138,8 @@
                 android:layout_marginEnd="80dp"
                 android:textSize="18sp"
                 android:hint="Enter thread2 name"
+                android:background="#fff"
+                android:padding="10dp"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/textViewThread2"
                 android:id="@+id/editTextThread2"
@@ -190,6 +192,8 @@
                 android:layout_height="200dp"
                 android:hint="Description"
                 android:inputType="textMultiLine"
+                android:background="#fff"
+                android:padding="10dp"
                 android:ems="10"
                 android:layout_marginTop="15dp"
                 android:id="@+id/editTextPostDescription2"
@@ -197,7 +201,7 @@
                 android:layout_below="@+id/textViewPost2"
                 android:gravity="top"
                 android:layout_alignStart="@+id/imageViewCategoryNew"
-                android:background="#fafafa"
+
                 android:layout_marginBottom="20dp"/>
 
 
@@ -210,7 +214,9 @@
                 android:layout_alignParentStart="true"
                 android:layout_marginTop="20dp"
                 android:layout_marginLeft="20dp"
-                android:src="@drawable/category_icon" />
+                android:src="@drawable/chat_icon"
+                android:tint="#523336"
+                android:background="@drawable/chat_icon" />
 
             <ImageView
                 android:layout_width="30dp"
