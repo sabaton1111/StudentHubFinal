@@ -5,7 +5,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="com.mdsolutions.dimitar.studenthub.ProfileFragment"
-    android:background="@color/teal">
+    android:background="#523336">
 
 
        <ScrollView
@@ -14,8 +14,8 @@
            android:layout_height="fill_parent"
            android:fillViewport="true"
         android:background="@color/teal"
-           android:layout_marginRight="10dp"
-           android:layout_marginLeft="10dp"
+           android:layout_marginRight="40dp"
+           android:layout_marginLeft="40dp"
            android:id="@+id/scrollView2">
 
     <RelativeLayout android:layout_height="fill_parent"
@@ -23,11 +23,12 @@
         android:id="@+id/form1"
         android:orientation="vertical"
         android:layout_gravity="center|top"
-        android:gravity="center_vertical|center"
+        android:gravity="center|center_vertical"
 
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:background="@drawable/layout_bg">
+        android:background="#f3f3f3"
+        android:paddingLeft="20dp">
 
         <ImageView
             android:layout_width="200dp"
@@ -54,7 +55,8 @@
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:layout_below="@+id/imageViewProfilePicture"
-            android:layout_marginTop="20dp">
+            android:layout_marginTop="30dp"
+            android:layout_marginRight="20dp">
 
             <TextView
                 android:layout_width="match_parent"
@@ -65,19 +67,8 @@
                 android:id="@+id/textViewNickname"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentStart="true"
-                android:background="#ffffff"
                 android:textAlignment="center"
                 android:layout_alignBottom="@+id/textViewEmailProfile" />
-            <View
-                android:layout_width="match_parent"
-                android:layout_marginStart="10dp"
-                android:layout_marginEnd="10dp"
-                android:layout_height="1dp"
-                android:background="@color/blue"
-                android:id="@+id/view"
-                android:layout_marginTop="44dp"
-                android:layout_alignParentTop="true"
-                android:layout_alignParentStart="true" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -87,8 +78,6 @@
                 android:id="@+id/textViewFirstName"
                 android:textSize="15sp"
                 android:textColor="@color/blue"
-                android:layout_below="@+id/view"
-                android:layout_alignStart="@+id/view"
                 android:layout_marginTop="20dp" />
 
             <TextView
@@ -114,16 +103,6 @@
                 android:layout_below="@+id/textViewMiddleName"
                 android:layout_alignStart="@+id/textViewMiddleName"
                 android:layout_marginTop="20dp" />
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="@color/blue"
-                android:id="@+id/viewLine2"
-                android:layout_below="@+id/textViewLastName"
-                android:layout_alignParentStart="true"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
-                android:layout_marginTop="20dp" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -135,7 +114,10 @@
                 android:textColor="@color/blue"
                 android:id="@+id/textViewFirstNameParse"
                 android:layout_alignBottom="@+id/textViewFirstName"
-                android:layout_alignStart="@+id/textViewMiddleNameParse" />
+                android:layout_alignStart="@+id/textViewMiddleNameParse"
+                android:layout_alignParentStart="false"
+                android:layout_alignParentEnd="false"
+                android:layout_alignParentRight="true" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -147,7 +129,9 @@
                 android:textColor="@color/blue"
                 android:id="@+id/textViewMiddleNameParse"
                 android:layout_alignBottom="@+id/textViewMiddleName"
-                android:layout_centerHorizontal="true" />
+                android:layout_centerHorizontal="true"
+                android:layout_alignParentLeft="false"
+                android:layout_alignParentRight="true" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -159,7 +143,9 @@
                 android:textStyle="bold"
                 android:id="@+id/textViewLastNameParse"
                 android:layout_alignBottom="@+id/textViewLastName"
-                android:layout_alignStart="@+id/textViewMiddleNameParse" />
+                android:layout_alignStart="@+id/textViewMiddleNameParse"
+                android:layout_alignParentStart="false"
+                android:layout_alignParentEnd="true" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -169,9 +155,8 @@
                 android:id="@+id/textViewEmailProfile"
                 android:textSize="15sp"
                 android:textColor="@color/blue"
-                android:layout_below="@+id/viewLine2"
-                android:layout_alignStart="@+id/viewLine2"
-                android:layout_marginTop="20dp" />
+                android:layout_marginTop="20dp"
+                android:layout_below="@+id/textViewLastName" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -183,17 +168,10 @@
                 android:textColor="@color/blue"
                 android:id="@+id/textViewEmailParse"
                 android:layout_alignBottom="@+id/textViewNickname"
-                android:layout_toEndOf="@+id/textViewFollowingLessons" />
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="@color/blue"
-                android:id="@+id/viewLine3"
-                android:layout_below="@+id/textViewEmailParse"
-                android:layout_alignParentStart="true"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
-                android:layout_marginTop="20dp" />
+                android:layout_toEndOf="@+id/textViewOrganization"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignStart="@+id/textViewLastNameParse" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -203,9 +181,9 @@
                 android:id="@+id/textViewOrganization"
                 android:textSize="15sp"
                 android:textColor="@color/blue"
-                android:layout_below="@+id/viewLine3"
-                android:layout_alignStart="@+id/viewLine3"
-                android:layout_marginTop="20dp" />
+                android:layout_alignBaseline="@+id/textViewOrganizationParse"
+                android:layout_alignBottom="@+id/textViewOrganizationParse"
+                android:layout_alignParentStart="true" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -216,12 +194,13 @@
                 android:textStyle="bold"
                 android:textColor="@color/blue"
                 android:id="@+id/textViewOrganizationParse"
-                android:layout_alignTop="@+id/viewLine3"
+                android:layout_marginTop="17dp"
+                android:layout_below="@+id/textViewEmailParse"
                 android:layout_alignStart="@+id/textViewEmailParse"
-                android:layout_marginTop="20dp" />
+                android:layout_alignParentRight="true" />
             <View
                 android:layout_width="match_parent"
-                android:layout_height="1dp"
+                android:layout_height="0dp"
                 android:background="@color/blue"
                 android:id="@+id/viewLine4"
                 android:layout_below="@+id/textViewOrganizationParse"
@@ -238,10 +217,9 @@
                 android:id="@+id/textViewIsStudent"
                 android:textSize="15sp"
                 android:textColor="@color/blue"
-                android:layout_alignParentStart="true"
-                android:layout_above="@+id/viewLine5"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="20dp"/>
+                android:layout_marginLeft="0dp"
+                android:layout_alignTop="@+id/viewLine4"
+                android:layout_alignParentStart="true" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -252,21 +230,9 @@
                 android:textStyle="bold"
                 android:textColor="@color/blue"
                 android:id="@+id/textViewIsStudentParse"
-                android:layout_below="@+id/viewLine4"
                 android:layout_alignTop="@+id/viewLine4"
-                android:layout_marginTop="20dp"
-                android:layout_alignStart="@+id/textViewOrganizationParse" />
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="@color/blue"
-                android:id="@+id/viewLine5"
-                android:layout_below="@+id/textViewIsStudentParse"
-                android:layout_alignParentStart="true"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
-                android:layout_marginTop="20dp" />
+                android:layout_alignStart="@+id/textViewOrganizationParse"
+                android:layout_alignParentRight="true" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -277,89 +243,128 @@
                 android:textStyle="bold"
                 android:textColor="@color/blue"
                 android:id="@+id/textViewFollowingLessons"
-                android:layout_below="@+id/viewLine5"
-                android:layout_alignTop="@+id/viewLine5"
-                android:layout_marginTop="20dp"
-                android:layout_alignStart="@+id/viewLine3" />
+                android:layout_marginTop="25dp"
+                android:layout_below="@+id/textViewIsStudent"
+                android:layout_toEndOf="@+id/imageView5"
+                android:layout_marginLeft="5dp" />
 
             <HorizontalScrollView
                 android:layout_height="150sp"
                 android:layout_width="match_parent"
                 android:layout_below="@+id/textViewFollowingLessons"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true"
-                android:id="@+id/horizontalScrollView2">
+                android:id="@+id/horizontalScrollView2"
+                android:layout_centerHorizontal="true">
 
-                <GridLayout
-                    android:layout_height="150sp"
-                    android:layout_marginTop="20dp"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="20dp"
-                    android:layout_width="match_parent"
-                    android:layout_below="@+id/textViewFollowingLessons"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentStart="true">
-
-                    <ImageView
-                        android:layout_width="100dp"
-                        android:layout_height="100dp"
-                        android:id="@+id/imageViewNewCourse"
-                        android:layout_marginRight="20sp"
-                        android:background="@drawable/home_icon"
-                        android:scaleType="fitXY"
-                        android:layout_row="0"
-                        android:layout_column="0" />
-                    <ImageView
-                        android:layout_width="100dp"
-                        android:layout_height="100dp"
-                        android:id="@+id/imageView1"
-                        android:layout_marginRight="20sp"
-                        android:background="@drawable/inquiry_icon"
-                        android:scaleType="fitXY"
-                        android:layout_row="0"
-                        android:layout_column="1" />
-                    <ImageView
-                        android:layout_width="100dp"
-                        android:layout_height="100dp"
-                        android:id="@+id/imageView2"
-                        android:background="@drawable/library_icon"
-                        android:scaleType="fitXY"
-                        android:layout_row="0"
-                        android:layout_column="2" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textAppearance="?android:attr/textAppearanceMedium"
-                        android:text="Medium Text"
-                        android:id="@+id/textView"
-                        android:textColor="@color/blue"
-                        android:layout_row="2"
-                        android:layout_column="0" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textAppearance="?android:attr/textAppearanceMedium"
-                        android:text="Medium Text"
-                        android:id="@+id/textView2"
-                        android:textColor="@color/blue"
-                        android:layout_row="2"
-                        android:layout_column="1" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textAppearance="?android:attr/textAppearanceMedium"
-                        android:text="Medium Text"
-                        android:id="@+id/textView3"
-                        android:textColor="@color/blue"
-                        android:layout_row="2"
-                        android:layout_column="2" />
-
-                </GridLayout>
             </HorizontalScrollView>
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:id="@+id/imageView5"
+                android:background="@drawable/book_icon"
+                android:layout_alignTop="@+id/textViewFollowingLessons"
+                android:layout_alignParentStart="true" />
+
+            <GridLayout
+                android:layout_height="150sp"
+                android:layout_width="wrap_content"
+                android:orientation="horizontal"
+                android:paddingTop="15dp"
+                android:alignmentMode="alignBounds"
+                android:layout_below="@+id/imageView5"
+                android:layout_centerHorizontal="true">
+
+                <ImageView
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:id="@+id/imageViewNewCourse"
+                    android:layout_marginRight="10sp"
+                    android:background="@drawable/home_icon"
+                    android:scaleType="fitXY"
+                    android:layout_row="0"
+                    android:layout_column="0"
+                    android:layout_marginLeft="10dp" />
+                <ImageView
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:id="@+id/imageView1"
+                    android:background="@drawable/inquiry_icon"
+                    android:scaleType="fitXY"
+                    android:layout_row="0"
+                    android:layout_column="1"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp" />
+                <ImageView
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:id="@+id/imageView2"
+                    android:background="@drawable/library_icon"
+                    android:scaleType="fitXY"
+                    android:layout_row="0"
+                    android:layout_column="2"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp" />
+
+                <TextView
+                    android:layout_width="87dp"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="Medium Text"
+                    android:id="@+id/textView"
+                    android:textColor="@color/blue"
+                    android:layout_row="1"
+                    android:layout_column="0"
+                    android:textSize="18sp"
+                    android:singleLine="false" />
+
+                <TextView
+                    android:layout_width="76dp"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="Medium Text"
+                    android:id="@+id/textView2"
+                    android:textColor="@color/blue"
+                    android:layout_row="1"
+                    android:layout_column="1" />
+
+                <TextView
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="Medium Text"
+                    android:id="@+id/textView3"
+                    android:textColor="@color/blue"
+                    android:layout_row="1"
+                    android:layout_column="2"
+                    android:layout_marginTop="10dp" />
+
+            </GridLayout>
+
         </RelativeLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Personal information"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:textColor="#523336"
+            android:id="@+id/textView7"
+            android:layout_below="@+id/buttonProfilePicture"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="25dp" />
+
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:id="@+id/imageView4"
+            android:background="@drawable/edit_user"
+            android:layout_alignBottom="@+id/textView7"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="10dp" />
+
     </RelativeLayout>
 
 
