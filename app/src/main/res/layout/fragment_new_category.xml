@@ -11,7 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:textSize="23sp"
-        android:background="#009688"
+        android:background="#523336"
         android:textColor="#ffffff"
         android:id="@+id/textViewMakeNewCategory"
         android:gravity="left|center"
@@ -23,7 +23,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@android:drawable/ic_menu_save"
-        app:backgroundTint="@color/teal"
+        app:backgroundTint="#be7415"
         android:tint="#ffffff"
         app:fabSize="normal"
         android:scaleType="center"
@@ -46,7 +46,7 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="#ffffff">
+            android:background="#f3f3f3">
 
 
             <TextView
@@ -65,7 +65,9 @@
                 android:layout_marginTop="10dp"
                 android:layout_marginStart="20dp"
                 android:layout_marginEnd="20dp"
-                android:textSize="18sp"
+                android:textSize="20sp"
+                android:background="#fff"
+                android:padding="10dp"
                 android:hint="Enter category name"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/textViewCategory"
@@ -88,7 +90,9 @@
                 android:layout_marginTop="10dp"
                 android:layout_marginStart="20dp"
                 android:layout_marginEnd="80dp"
-                android:textSize="18sp"
+                android:textSize="20sp"
+                android:background="#fff"
+                android:padding="10dp"
                 android:hint="Enter thread1 name"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/textViewThread1"
@@ -113,7 +117,8 @@
                 android:layout_alignBottom="@+id/editTextThread"
                 android:layout_alignEnd="@+id/editTextCategory"
                 android:layout_marginBottom="8dp"
-                android:layout_marginRight="10dp" />
+                android:layout_marginRight="10dp"
+                android:tint="#523336" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -144,11 +149,12 @@
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:text="@string/post"
                 android:textSize="22sp"
-                android:layout_below="@+id/editTextThread"
                 android:textColor="@color/blue"
                 android:id="@+id/textViewPost"
-                android:layout_marginTop="15dp"
-                android:layout_marginStart="100dp" />
+                android:layout_marginTop="21dp"
+                android:layout_below="@+id/editTextThread"
+                android:layout_toEndOf="@+id/imageViewPost"
+                android:layout_marginLeft="5dp" />
 
             <EditText
                 android:layout_width="wrap_content"
@@ -156,13 +162,16 @@
                 android:hint="Description"
                 android:inputType="textMultiLine"
                 android:ems="10"
+                android:textSize="20sp"
+                android:background="#fff"
+                android:padding="10dp"
                 android:layout_marginTop="15dp"
                 android:id="@+id/editTextPostDescription"
                 android:layout_alignEnd="@+id/editTextCategory"
                 android:layout_below="@+id/textViewPost"
                 android:gravity="top"
                 android:layout_alignStart="@+id/imageViewCategoryNew"
-                android:background="#fafafa" />
+              />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -211,24 +220,23 @@
                 android:src="@drawable/notebook_icon"
                 android:layout_alignTop="@+id/textViewThread1"
                 android:layout_alignParentStart="true"
-                android:tint="@color/teal" />
+                android:tint="#523336" />
 
             <ImageView
                 android:layout_width="30dp"
                 android:layout_height="30dp"
                 android:id="@+id/imageViewPost"
                 android:src="@drawable/pen_icon"
-                android:tint="@color/teal"
-                android:layout_below="@+id/editTextThread"
-                android:layout_alignStart="@+id/textViewThread1"
-                android:layout_marginTop="11dp" />
+                android:tint="#523336"
+                android:layout_above="@+id/editTextPostDescription"
+                android:layout_alignStart="@+id/editTextThread" />
 
             <ImageView
                 android:layout_width="30dp"
                 android:layout_height="30dp"
                 android:id="@+id/imageViewThread2"
                 android:src="@drawable/notebook_icon"
-                android:tint="@color/teal"
+                android:tint="#523336"
                 android:layout_alignTop="@+id/textViewThread2"
                 android:layout_alignStart="@+id/imageViewThread" />
 
@@ -237,7 +245,7 @@
                 android:layout_height="30dp"
                 android:id="@+id/imageViewPost2"
                 android:src="@drawable/pen_icon"
-                android:tint="@color/teal"
+                android:tint="#523336"
                 android:layout_alignTop="@+id/textViewPost2"
                 android:layout_alignStart="@+id/imageViewPost" />
         </RelativeLayout>
