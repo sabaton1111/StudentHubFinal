@@ -26,6 +26,8 @@ public class HomeActivity extends AppCompatActivity
         ThreadsByCategoryFragment.OnClickThreadItemListener,
         LibraryFragment.OnClickNewCourseButtonListener,
         CategoriesBySubjectFragment.OnClickNewCategoryButtonListener,
+        CustomAdapterTeachers.OnClickAboutTeacher,
+        CustomAdapterTeachers.OnClickFollowLesson,
         ThreadsByCategoryFragment.OnClickNewThreadButtonListener,
         SingleThreadFragment.OnClickNewPostButtonListener,
         LibraryFragment.OnClickLessonOpenListener,
@@ -143,6 +145,21 @@ public class HomeActivity extends AppCompatActivity
         newFragment = new ForumFragment();
         ChangeFragment(newFragment, true);
     }
+    public void OnClickAboutTeacher()
+    {
+
+        Fragment aboutFragment;
+        aboutFragment = new AboutTheTeacher();
+        ChangeFragment(aboutFragment, true);
+    }
+    public void OnClickFollowLesson()
+    {
+
+        Fragment lesson;
+        lesson = new DateLessonFragment();
+        ChangeFragment(lesson, true);
+    }
+
 
     @Override
     public void OnClickLessonsOpenButton()
@@ -218,6 +235,12 @@ public class HomeActivity extends AppCompatActivity
             Fragment inquiryFragment;
             inquiryFragment = new InquiryFragment();
             ChangeFragment(inquiryFragment, true);
+
+        }
+        else if (id == R.id.nav_teachers) {
+            Fragment teachersFragment;
+            teachersFragment = new BestTeachersFragment();
+            ChangeFragment(teachersFragment, true);
         }
         else if (id == R.id.nav_email) {
             Fragment emailFragment;

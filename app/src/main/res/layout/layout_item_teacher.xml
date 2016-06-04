@@ -1,0 +1,127 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:layout_height="wrap_content"
+    android:layout_width="match_parent">
+
+    <android.support.v7.widget.CardView
+        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/card_view"
+        android:layout_gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        card_view:cardCornerRadius="4dp">
+
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="300dp">
+    <ImageView
+        android:layout_width="150dp"
+        android:layout_height="match_parent"
+        android:id="@+id/imageViewTeacher"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="50dp"
+        android:scaleType="fitXY"
+        android:layout_alignParentStart="true"
+        android:background="#f9f9f9" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Dimitar"
+        android:id="@+id/textViewFirstName"
+        android:layout_alignParentTop="true"
+        android:layout_alignStart="@+id/imageViewTeacher" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Velichkov"
+        android:id="@+id/textViewLastName"
+        android:layout_alignParentTop="true"
+        android:layout_toEndOf="@+id/textViewFirstName"
+        android:paddingStart="10dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Biology"
+        android:id="@+id/textViewFieldOfStudy"
+        android:layout_alignTop="@+id/imageViewTeacher"
+        android:layout_toEndOf="@+id/imageViewTeacher"
+        android:paddingLeft="10dp" />
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:text="Comments"
+        android:id="@+id/buttonComments"
+        android:layout_above="@+id/buttonAboutMeTeacher"
+        android:layout_alignStart="@+id/buttonAboutMeTeacher" />
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:text="About me"
+        android:id="@+id/buttonAboutMeTeacher"
+
+        android:paddingLeft="10dp"
+        android:layout_above="@+id/buttonPoint"
+        android:layout_toEndOf="@+id/textViewWorkingAt" />
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:text="Engage"
+        android:id="@+id/buttonPoint"
+        android:layout_alignBottom="@+id/imageViewTeacher"
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="5 years teacher"
+        android:id="@+id/textViewExperience"
+        android:layout_below="@+id/textViewFieldOfStudy"
+        android:layout_alignStart="@+id/textViewFieldOfStudy"
+        android:paddingLeft="10dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="PMG"
+        android:id="@+id/textViewWorkingAt"
+        android:layout_below="@+id/textViewExperience"
+        android:layout_alignStart="@+id/textViewExperience"
+        android:paddingLeft="10dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Blagoevgard"
+        android:id="@+id/textViewLocation"
+        android:layout_below="@+id/textViewWorkingAt"
+        android:layout_alignStart="@+id/textViewWorkingAt"
+        android:paddingLeft="10dp" />
+
+
+</RelativeLayout>
+
+
+    </android.support.v7.widget.CardView>
+
+
+
+</RelativeLayout>
