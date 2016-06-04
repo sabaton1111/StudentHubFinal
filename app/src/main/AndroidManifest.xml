@@ -1,27 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.mdsolutions.dimitar.studenthub">
+    package="com.mdsolutions.dimitar.studenthub" >
+
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <!-- WebRTC Dependencies -->
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+    <uses-feature
+        android:glEsVersion="0x00020000"
+        android:required="true" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+
+    <!-- PubNub Dependencies -->
+    <!--<uses-permission android:name="android.permission.INTERNET" />-->
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+    <permission android:name="your.package.name.permission.C2D_MESSAGE" android:protectionLevel="signature" />
+    <uses-permission android:name="your.package.name.permission.C2D_MESSAGE" />
+
     <application
         android:allowBackup="true"
         android:icon="@drawable/logo_var2"
         android:label="@string/app_name"
-        android:supportsRtl="true"
         android:largeHeap="true"
-        android:theme="@style/AppTheme">
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme" >
         <meta-data
             android:name="com.parse.APPLICATION_ID"
             android:value="6Pq3dqYs59Z3H4QDIJorebV23KSJo3ZRZMH7nn7o" />
         <meta-data
             android:name="com.parse.CLIENT_KEY"
             android:value="lFYZu9BBZnaMJm4HwedmzhshoKluprQxJMeI1ZVD" />
+
         <activity
-            android:name="com.mdsolutions.dimitar.studenthub.Login"
-            android:label="@string/login"
+            android:name=".Login"
             android:configChanges="screenSize|orientation|keyboardHidden"
-            android:screenOrientation="portrait">
+            android:label="@string/login"
+            android:screenOrientation="portrait" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -29,23 +49,29 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.mdsolutions.dimitar.studenthub.HomeActivity"
+            android:name=".HomeActivity"
             android:label="@string/app_name"
-            android:windowSoftInputMode="stateHidden|adjustResize"
-            android:screenOrientation="portrait">
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustResize" >
             <intent-filter>
                 <action android:name="com.example.dimitar.studenthub.HomeActivity" />
 
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-        <activity android:name="com.mdsolutions.dimitar.studenthub.SignUp"
-            android:screenOrientation="portrait">
+        <activity
+            android:name=".SignUp"
+            android:screenOrientation="portrait" >
             <intent-filter>
                 <action android:name="com.example.dimitar.studenthub.SignUp" />
 
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name=".VideoChatActivity"
+            android:label="@string/title_activity_video_chat"
+            android:theme="@style/AppTheme" >
         </activity>
     </application>
 
