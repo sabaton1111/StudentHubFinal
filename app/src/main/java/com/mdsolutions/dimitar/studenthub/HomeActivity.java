@@ -202,9 +202,8 @@ public class HomeActivity extends AppCompatActivity
             libraryFragment = new LibrarySubjectsFragment();
             ChangeFragment(libraryFragment, true);
         } else if (id == R.id.nav_message) {
-            Fragment messageFragment;
-            messageFragment = new MessageFragment();
-            ChangeFragment(messageFragment, true);
+            Intent intent = new Intent(this, WebViewActivity.class);
+            startActivity(intent);
         } else if (id == R.id.nav_tasks) {
             Fragment tasksFragment;
             tasksFragment = new TasksFragment();
