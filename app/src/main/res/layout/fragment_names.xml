@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.mdsolutions.dimitar.studenthub.NamesFragment"
-    android:background="@drawable/login_background"
+    android:background="@drawable/background_greyv4"
     android:id="@+id/fragment_names">
 
 
@@ -17,12 +17,14 @@
         android:id="@+id/firstNameSignUpField"
         android:textColorHint="#c7d0d7"
         android:hint="First Name"
-        android:textSize="20sp"
         android:textColor="#c7d0d7"
         android:layout_centerVertical="true"
+        android:layout_gravity="center_horizontal|top"
         android:layout_alignParentStart="true"
-        android:layout_marginTop="140dp"
-        android:layout_marginLeft="10dp" />
+        android:textSize="20sp"
+        android:background="#fff"
+        android:padding="10dp"
+        android:layout_marginTop="140dp" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -35,11 +37,13 @@
         android:textColorHint="#c7d0d7"
         android:hint="Middle Name"
         android:textSize="20sp"
+        android:background="#fff"
+        android:padding="10dp"
+        android:layout_gravity="center_horizontal|top"
         android:textColor="#c7d0d7"
         android:layout_centerVertical="true"
         android:layout_alignParentStart="true"
-        android:layout_marginTop="195dp"
-        android:layout_marginLeft="10dp" />
+        android:layout_marginTop="195dp" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -50,25 +54,27 @@
         android:ems="15"
         android:id="@+id/lastNameSignUpField"
         android:textColorHint="#c7d0d7"
-        android:hint="Last Name"
         android:textSize="20sp"
+        android:background="#fff"
+        android:padding="10dp"
+        android:hint="Last Name"
         android:textColor="#c7d0d7"
+        android:layout_gravity="center_horizontal|top"
         android:layout_centerVertical="true"
         android:layout_alignParentStart="true"
-        android:layout_marginTop="250dp"
-        android:layout_marginLeft="10dp" />
+        android:layout_marginTop="250dp" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Next"
         android:id="@+id/buttonNext3"
-        android:textColor="#c7d0d7"
-        android:background="@drawable/button"
-        android:textSize="20sp"
         android:width="200dp"
         android:layout_below="@+id/editText8"
         android:layout_centerHorizontal="true"
+        android:textColor="#967478"
+        android:background="#523336"
+        android:textSize="20sp"
         android:layout_marginLeft="80dp"
         android:layout_marginRight="80dp"
         android:layout_gravity="center_horizontal|bottom"
@@ -81,9 +87,9 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="What&apos;s your name?"
         android:textStyle="bold"
+        android:textColor="#523336"
+        android:textSize="24sp"
         android:id="@+id/textView14"
         android:layout_gravity="center_horizontal|top"
-        android:textColor="#c7d0d7"
-        android:textSize="20sp"
         android:layout_marginTop="90dp" />
 </FrameLayout>
