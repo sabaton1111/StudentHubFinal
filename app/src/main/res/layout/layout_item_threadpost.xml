@@ -37,7 +37,7 @@
         android:background="#fff"
         android:padding="10dp"
         android:layout_marginLeft="0dp"
-        android:layout_marginRight="0dp"
+        android:layout_marginRight="dpdp"
         android:layout_below="@+id/textViewCreatedDate"
         android:layout_margin="20dp" />
 
