@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/StudentHubFinal12.iml" filepath="$PROJECT_DIR$/StudentHubFinal12.iml" />
+      <module fileurl="file://$PROJECT_DIR$/StudentHubFinalFinal.iml" filepath="$PROJECT_DIR$/StudentHubFinalFinal.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/pnwebrtc/pnwebrtc.iml" filepath="$PROJECT_DIR$/pnwebrtc/pnwebrtc.iml" />
     </modules>
