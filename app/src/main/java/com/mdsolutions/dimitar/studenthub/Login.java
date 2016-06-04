@@ -34,7 +34,7 @@ public class Login extends AppCompatActivity {
         buttonSignUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intentSignUp = new Intent("com.mdsolutions.dimitar.studenthub.SignUp");
+                Intent intentSignUp = new Intent(Login.this, SignUp.class);
                 startActivity(intentSignUp);
             }
         });

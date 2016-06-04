@@ -1,4 +1,4 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -7,14 +7,13 @@
 
     <!-- TODO: Update blank fragment layout -->
 
-    <TextView
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="This section will be available soon..."
-        android:id="@+id/textView22"
-        android:layout_gravity="left|top"
-        android:textSize="35dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="150dp" />
-</FrameLayout>
+        android:layout_height="match_parent"
+        android:id="@+id/scrollView">
+        <WebView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/webView" />
+    </ScrollView>
+</RelativeLayout>
