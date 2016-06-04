@@ -5,7 +5,8 @@
     tools:context="com.mdsolutions.dimitar.studenthub.LessonFragment"
     android:background="#ffffff">
 <ScrollView android:layout_height="match_parent"
-    android:layout_width="match_parent">
+    android:layout_width="match_parent"
+    android:background="#f2f2f2">
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -17,19 +18,23 @@
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="Title"
             android:id="@+id/textViewTitleLesson"
-            android:layout_alignTop="@+id/imageViewLesson"
-            android:layout_toEndOf="@+id/imageViewLesson"
-            android:layout_marginLeft="20dp" />
+            android:layout_marginLeft="20dp"
+            android:layout_below="@+id/imageViewLesson"
+            android:textColor="#523336"
+            android:textSize="24sp"
+            android:layout_marginTop="27dp"
+            android:textStyle="bold" />
 
         <ImageView
-            android:layout_width="120dp"
-            android:layout_height="150dp"
+            android:layout_width="130dp"
+            android:layout_height="210dp"
             android:id="@+id/imageViewLesson"
-            android:layout_alignParentTop="true"
+            android:layout_marginLeft="0dp"
+            android:src="@drawable/lesson_image"
+            android:layout_alignParentEnd="true"
             android:layout_alignParentStart="true"
-            android:layout_marginTop="20dp"
-            android:layout_marginLeft="20dp"
-            android:src="@drawable/login_background" />
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="-2dp" />
 
         <TextView
             android:layout_width="match_parent"
@@ -39,8 +44,13 @@
             android:layout_below="@+id/imageViewLesson"
 
             android:layout_marginLeft="20dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="20dp"/>
+            android:layout_marginTop="70dp"
+            android:layout_marginBottom="20dp"
+            android:background="#eeeeee"
+            android:layout_marginRight="20dp"
+            android:padding="10dp"
+            android:textColor="#787878"
+            android:textStyle="italic" />
         <!--android:layout_alignStart="@+id/textViewTitleLesson"-->
 
         <TextView
@@ -90,10 +100,11 @@
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:text="Resources"
+            android:textColor="#523336"
+            android:textSize="20sp"
             android:id="@+id/textView21"
-            android:layout_below="@+id/textViewMainLesson"
-            android:layout_alignStart="@+id/textViewMainLesson"
-            android:layout_marginTop="10dp" />
+            android:layout_above="@+id/fragment_youtube_holder"
+            android:layout_alignStart="@+id/textViewDescriptionLesson" />
 
         <TextView
             android:layout_width="match_parent"
@@ -104,16 +115,22 @@
             android:layout_below="@+id/textView21"
             android:layout_alignStart="@+id/textView21"
             android:layout_marginTop="10dp"
-            android:layout_marginRight="10dp" />
+            android:background="#eeeeee"
+            android:layout_marginRight="20dp"
+            android:padding="10dp"
+            android:textColor="#787878" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:text="Lectors"
+            android:textColor="#523336"
+            android:textSize="20sp"
             android:id="@+id/textView9"
+            android:textStyle="bold"
             android:layout_below="@+id/textViewHomework"
-            android:layout_alignStart="@+id/textViewResources" />
+            android:layout_alignStart="@+id/textViewHomework" />
 
         <TextView
             android:layout_width="match_parent"
@@ -124,26 +141,33 @@
             android:layout_alignStart="@+id/textView9"
             android:layout_marginTop="10dp"
             android:layout_below="@+id/textView9"
-            android:layout_marginRight="10dp" />
+            android:padding="10dp"
+            android:textColor="#787878"
+            android:layout_marginRight="20dp"
+            android:background="#eeeeee"
+            android:textStyle="italic" />
 
         <ImageButton
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:id="@+id/imageButtonFollow"
-            android:layout_alignTop="@+id/textViewTitleLesson"
-            android:layout_alignEnd="@+id/textViewDescriptionLesson"
             android:src="@drawable/btn_star_off"
             android:background="@android:color/transparent"
-            android:scaleType="fitXY" />
+            android:scaleType="fitXY"
+            android:layout_marginRight="0dp"
+            android:layout_alignBottom="@+id/textViewTitleLesson"
+            android:layout_alignEnd="@+id/textViewDescriptionLesson" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Homework"
             android:id="@+id/textViewHomeworkHeader"
-            android:textSize="24dp"
+            android:textColor="#523336"
+            android:textSize="20sp"
             android:layout_below="@+id/textViewResources"
-            android:layout_alignStart="@id/textViewResources"/>
+            android:layout_alignStart="@id/textViewResources"
+            android:layout_marginTop="15dp" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -152,7 +176,11 @@
             android:textIsSelectable="true"
             android:id="@+id/textViewHomework"
             android:layout_alignStart="@id/textViewResources"
-            android:layout_below="@id/textViewHomeworkHeader" />
+            android:layout_below="@id/textViewHomeworkHeader"
+            android:layout_marginRight="20dp"
+            android:padding="10dp"
+            android:textColor="#787878"
+            android:textStyle="bold|italic" />
     </RelativeLayout>
 </ScrollView>
 </FrameLayout>
